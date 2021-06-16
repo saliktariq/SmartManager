@@ -7,24 +7,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import app.smartmanager.R
+import app.smartmanager.databinding.LoginFragmentBinding
 
 class LoginFragment : Fragment() {
 
-
-
-    private lateinit var viewModel: LoginViewModel
+    private var binding: LoginFragmentBinding? = null
+    private val viewBinding get() = binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.login_fragment, container, false)
+        binding = LoginFragmentBinding.inflate(inflater, container, false)
+        val viewModelFactory = LoginViewModelFactory()
+        val loginViewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
+        return viewBinding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        //Destroying the view binding
+        binding = null
     }
 
 }
