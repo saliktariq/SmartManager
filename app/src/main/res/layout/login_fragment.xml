@@ -148,7 +148,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonLogin"
                 style="@style/RegularButtonStyle"
                 android:background="@drawable/button_pressed_state"
