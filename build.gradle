@@ -16,6 +16,7 @@ buildscript {
 
 allprojects {
     repositories {
+        //Including Google Maven repo required for google oAuth 2.0 integration
         google()
         mavenCentral()
 
