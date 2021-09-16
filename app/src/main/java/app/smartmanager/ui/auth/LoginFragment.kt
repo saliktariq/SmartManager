@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import app.smartmanager.R
 import app.smartmanager.databinding.LoginFragmentBinding
+import com.google.android.gms.common.SignInButton
 
 class LoginFragment : Fragment() {
 
@@ -21,6 +21,8 @@ class LoginFragment : Fragment() {
         binding = LoginFragmentBinding.inflate(inflater, container, false)
         val viewModelFactory = LoginViewModelFactory()
         val loginViewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
+        viewBinding.googleSignInButton.setSize(SignInButton.SIZE_WIDE)
+
         return viewBinding.root
     }
 

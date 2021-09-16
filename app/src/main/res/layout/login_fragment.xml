@@ -212,18 +212,13 @@
                         android:textSize="@dimen/normalFont" />
                 </LinearLayout>
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/BoldFontStyle"
-                    android:layout_marginTop="@dimen/xxLargeMargin"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="@string/sign_in_with_google" />
-
                 <!-->Using official google Sign-in button
                 //Source: https://developers.google.com/android/reference/com/google/android/gms/common/SignInButton
                 //Google logo is trademark of Google Inc. -->
 
                 <com.google.android.gms.common.SignInButton
                     android:id="@+id/google_sign_in_button"
+                    android:layout_marginTop="@dimen/xxLargeMargin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
