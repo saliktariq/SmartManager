@@ -31,4 +31,5 @@
     <string name="setup_new_probe_thermometer">Setup new Probe Thermometer</string>
     <string name="add_new_supplier">Add new Supplier</string>
     <string name="add_new_product">Add new Product</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
 </resources>
