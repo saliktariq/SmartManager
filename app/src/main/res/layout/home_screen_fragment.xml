@@ -71,6 +71,7 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLogOut"
                     android:layout_width="150dp"
                     android:layout_height="@dimen/regularButtonHeight"
                     android:textColor="@color/colorPrimaryDark"
