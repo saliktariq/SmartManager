@@ -1,4 +1,7 @@
 package app.smartmanager.ui.initialsetup
 
-class ProbeViewModel {
+import androidx.lifecycle.ViewModel
+
+class ProbeViewModel : ViewModel() {
+
 }

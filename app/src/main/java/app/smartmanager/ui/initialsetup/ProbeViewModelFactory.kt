@@ -11,4 +11,5 @@ class ProbeViewModelFactory() : ViewModelProvider.Factory {
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
+
 }
