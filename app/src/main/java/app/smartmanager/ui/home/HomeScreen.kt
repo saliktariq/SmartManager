@@ -11,6 +11,9 @@ import app.smartmanager.ui.auth.LoginViewModel
 import app.smartmanager.ui.auth.LoginViewModelFactory
 import androidx.annotation.NonNull
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import app.smartmanager.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 
 import com.google.android.gms.tasks.OnCompleteListener
@@ -33,9 +36,26 @@ class HomeScreen : Fragment() {
     ): View? {
         binding = HomeScreenFragmentBinding.inflate(inflater, container, false)
 
+
+        // Variables to hold HomeScreenViewModel reference and HomeScreenViewModelFactory
+        val viewModelFactory = HomeScreenViewModelFactory()
+        val homeScreenViewModel = ViewModelProvider(this, viewModelFactory).get(HomeScreenViewModel::class.java)
+        /*
+        Retrieving the initialSetup variable to see if the application has been previously setup
+        if initialSetup is 0, navigating to InitialSettings fragment
+
+        Conditional navigation learnt at https://developer.android.com/guide/navigation/navigation-conditional
+         */
+        if (homeScreenViewModel.initialSetup == 0) {
+
+           val navCtrl = findNavController()
+            navCtrl.navigate(R.id.initialSettings)
+        }
+
         viewBinding.btnLogOut.setOnClickListener{
             signOut()
         }
+
 
 
 
@@ -44,6 +64,8 @@ class HomeScreen : Fragment() {
 
     private fun signOut(){
         viewBinding.root.findNavController().navigate(HomeScreenDirections.actionGlobalLoginFragment())
+
+
     }
 
     override fun onDestroyView() {

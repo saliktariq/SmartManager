@@ -6,27 +6,38 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import app.smartmanager.R
+import app.smartmanager.databinding.HomeScreenFragmentBinding
+import app.smartmanager.databinding.InitialSettingsFragmentBinding
 
 class InitialSettings : Fragment() {
 
-    companion object {
-        fun newInstance() = InitialSettings()
-    }
-
-    private lateinit var viewModel: InitialSettingsViewModel
+    private var binding: InitialSettingsFragmentBinding? = null
+    private val viewBinding get() = binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.initial_settings_fragment, container, false)
+        binding = InitialSettingsFragmentBinding.inflate(inflater, container, false)
+
+        viewBinding.btnLogOut.setOnClickListener{
+            signOut()
+        }
+
+        return binding!!.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(InitialSettingsViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun signOut(){
+        viewBinding.root.findNavController().navigate(HomeScreenDirections.actionGlobalLoginFragment())
+
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
 }

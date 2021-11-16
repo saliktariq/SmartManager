@@ -30,7 +30,10 @@ import com.google.android.gms.tasks.OnCompleteListener
 
 
 
-
+/*
+Note: Google Sign-In integration learnt at: https://developers.google.com/identity/sign-in/android/start-integrating
+Parts of google integration code is adapted from the above guide from Google
+ */
 
 class LoginFragment : Fragment() {
 
