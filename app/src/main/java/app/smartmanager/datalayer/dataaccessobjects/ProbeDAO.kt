@@ -14,7 +14,7 @@ interface ProbeDAO {
 
     // Query to retrieve all data from table 'probe'
     @Query("Select * from probe")
-    fun getAllProbeData(): Probe?
+    fun getAllProbeData(): List<Probe>?
 
     // Query to retrieve data related to a probe based on given probeID
     @Query("Select * from probe WHERE probeID = :key ORDER BY probeID DESC LIMIT 1")

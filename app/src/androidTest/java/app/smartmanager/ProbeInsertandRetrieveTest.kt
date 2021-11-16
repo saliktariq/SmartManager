@@ -54,8 +54,10 @@ class ProbeInsertandRetrieveTest{
         GlobalScope.launch {
             probeDAO.insertProbeData(newProbeData)
             val userData = probeDAO.getAllProbeData()
-            assertEquals( 1L,userData?.probeID)
-            assertEquals( "P1",userData?.probeName)
+
+            //The retrieved list only has 1 record, hence using first() function on List<Probe>
+            assertEquals( 1L,userData?.first()?.probeID)
+            assertEquals( "P1",userData?.first()?.probeName)
 
         }
 
