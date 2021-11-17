@@ -10,7 +10,7 @@ Declaration: Main concept of this application is from the following stackoverflo
 https://stackoverflow.com/questions/2002288/static-way-to-get-context-in-android?rq=1
  */
 
-class ApplicationContext : Application() {
+class GetAppContext : Application() {
     override fun onCreate() {
         super.onCreate()
         context = applicationContext

@@ -2,8 +2,8 @@ package app.smartmanager.repository
 
 import android.content.Context
 import app.smartmanager.datalayer.SmartManagerDB
-import app.smartmanager.datalayer.entity.Probe
-import app.smartmanager.helper.ApplicationContext
+import app.smartmanager.datalayer.entity.*
+import app.smartmanager.helper.GetAppContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -11,7 +11,7 @@ class SmartManagerRepo private constructor(context: Context) {
 
     /*
     DECLARATION:
-    Code (Lines 16-25) for repository to act as *singleton* implemented following instructions from
+    Code (Lines 20-31) for repository to act as *singleton* implemented following instructions from
     The Big Nerd Ranch Guide at
     https://learning.oreilly.com/library/view/android-programming-the/9780135257555/ch11s04.html
      */
@@ -30,7 +30,7 @@ class SmartManagerRepo private constructor(context: Context) {
     }
 
 
-    private val database: SmartManagerDB = SmartManagerDB.getInstance(ApplicationContext.appContext!!)
+    private val database: SmartManagerDB = SmartManagerDB.getInstance(GetAppContext.appContext!!)
 
     // DAOs bound to data access objects defined in database class to access functions inside relative DAOs
     private val probeDAO = database.probeDAO

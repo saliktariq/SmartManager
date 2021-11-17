@@ -101,7 +101,7 @@
                         app:counterEnabled="true"
                         app:counterMaxLength="128"
                         app:errorEnabled="true"
-                        app:helperText="Minimum length: 1"
+                        app:helperText="Minimum length: 2"
                         app:helperTextEnabled="true"
                         app:hintEnabled="false">
 

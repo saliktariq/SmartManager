@@ -23,7 +23,7 @@ abstract class SmartManagerDB: RoomDatabase(){
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         SmartManagerDB::class.java,
-                        "smartmanager_database"
+                        "smartmanagerdb"
                     )
                         .fallbackToDestructiveMigration()
                         .build()
