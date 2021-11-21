@@ -51,42 +51,27 @@ class ProbeRepoTests{
 
     @Test
     fun insertAndGetProbeDataTest() {
-        val newProbeData = Probe(1L,"P1")
+        val newProbeData = Probe("P1")
         val repo = SmartManagerRepo.get()
         GlobalScope.launch {
             repo.insertProbeData(newProbeData)
-            val userData = repo.retrieveProbeData()
+            val userData = repo.getAllProbeData()
 
             //The retrieved list only has 1 record, hence using first() function on List<Probe>
-            assertEquals( 1L,userData?.first()?.probeID)
             assertEquals( "P1",userData?.first()?.probeName)
 
         }
 
     }
-    @Test
-    fun retrieveDataByProbeIDTest() {
-        val newProbeData = Probe(2L,"P2")
-        val repo = SmartManagerRepo.get()
-        GlobalScope.launch {
-            repo.insertProbeData(newProbeData)
-            val userData = repo.getProbeByID(2L)
-            assertEquals( 2L,userData?.probeID)
-            assertEquals( "P2",userData?.probeName)
 
-        }
-
-    }
     @Test
     fun retrieveDataByProbeNameTest() {
-        val newProbeData = Probe(3L,"P3")
+        val newProbeData = Probe("P2")
         val repo = SmartManagerRepo.get()
         GlobalScope.launch {
             repo.insertProbeData(newProbeData)
-            val userData = repo.getProbeByName("P3")
-            Log.d("ProbeID ", userData?.probeID.toString())
+            val userData = repo.getProbeByName("P2")
             Log.d("ProbeName ", userData?.probeName.toString())
-            assertEquals( 3L,userData?.probeID)
             assertEquals( "P3",userData?.probeName)
 
         }
@@ -95,30 +80,28 @@ class ProbeRepoTests{
 
     @Test
     fun updateProbeNameTest() {
-        val newProbeData = Probe(4L,"P4")
+        val newProbeData = Probe("P3")
         val repo = SmartManagerRepo.get()
         GlobalScope.launch {
             repo.insertProbeData(newProbeData)
-            repo.updateProbeName("P5", 4L)
-            val userData = repo.getProbeByID(4L)
+            repo.updateProbeName("P4", "P3")
+            val userData = repo.getProbeByName("P4")
             Log.d("New ProbeName ", userData?.probeName.toString())
-            assertEquals( 4L,userData?.probeID)
-            assertEquals( "P5",userData?.probeName)
+            assertEquals( "P4",userData?.probeName)
 
         }
 
     }
 
     @Test
-    fun deleteProbeByIDTest() {
-        val newProbeData = Probe(6L,"P6")
+    fun deleteProbeByNameTest() {
+        val newProbeData = Probe("P5")
         val repo = SmartManagerRepo.get()
         GlobalScope.launch {
             repo.insertProbeData(newProbeData)
-            repo.deleteProbeByID(6L)
-            val userData = repo.getProbeByID(6L)
-            Log.d("ProbeID ", userData?.probeID.toString())
-            assertEquals( null,userData?.probeID)
+            repo.deleteProbeByName("P5")
+            val userData = repo.getProbeByName("P5")
+            Log.d("ProbeID ", userData?.probeName.toString())
             assertEquals( null,userData?.probeName)
 
         }
