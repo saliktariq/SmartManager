@@ -22,7 +22,7 @@ import java.io.IOException
 
 
 @RunWith(AndroidJUnit4::class)
-class ProbeInsertandRetrieveTest{
+class ProbeDAOTests{
     private lateinit var probeDAO: ProbeDAO
     private lateinit var database: SmartManagerDB
     @Test
@@ -50,40 +50,24 @@ class ProbeInsertandRetrieveTest{
 
     @Test
     fun insertAndGetProbeDataTest() {
-        val newProbeData = Probe(1L,"P1")
+        val newProbeData = Probe("P1")
         GlobalScope.launch {
             probeDAO.insertProbeData(newProbeData)
             val userData = probeDAO.getAllProbeData()
 
             //The retrieved list only has 1 record, hence using first() function on List<Probe>
-            assertEquals( 1L,userData?.first()?.probeID)
             assertEquals( "P1",userData?.first()?.probeName)
 
         }
 
     }
     @Test
-    fun retrieveDataByProbeIDTest() {
-        val newProbeData = Probe(2L,"P2")
-        GlobalScope.launch {
-            probeDAO.insertProbeData(newProbeData)
-            val userData = probeDAO.getProbeByID(2L)
-            assertEquals( 2L,userData?.probeID)
-            assertEquals( "P2",userData?.probeName)
-
-        }
-
-    }
-    @Test
     fun retrieveDataByProbeNameTest() {
-        val newProbeData = Probe(3L,"P3")
+        val newProbeData = Probe("P2")
         GlobalScope.launch {
             probeDAO.insertProbeData(newProbeData)
-            val userData = probeDAO.getProbeByName("P3")
-            Log.d("ProbeID ", userData?.probeID.toString())
-            Log.d("ProbeName ", userData?.probeName.toString())
-            assertEquals( 3L,userData?.probeID)
-            assertEquals( "P3",userData?.probeName)
+            val userData = probeDAO.getProbeByName("P2")
+            assertEquals( "P2",userData?.probeName)
 
         }
 
@@ -91,13 +75,12 @@ class ProbeInsertandRetrieveTest{
 
     @Test
     fun updateProbeNameTest() {
-        val newProbeData = Probe(4L,"P4")
+        val newProbeData = Probe("P4")
         GlobalScope.launch {
             probeDAO.insertProbeData(newProbeData)
-            probeDAO.updateProbeName("P5", 4L)
-            val userData = probeDAO.getProbeByID(4L)
+            probeDAO.updateProbeName("P5", "P4")
+            val userData = probeDAO.getProbeByName("P5")
             Log.d("New ProbeName ", userData?.probeName.toString())
-            assertEquals( 4L,userData?.probeID)
             assertEquals( "P5",userData?.probeName)
 
         }
@@ -106,13 +89,11 @@ class ProbeInsertandRetrieveTest{
 
     @Test
     fun deleteProbeByIDTest() {
-        val newProbeData = Probe(6L,"P6")
+        val newProbeData = Probe("P6")
         GlobalScope.launch {
             probeDAO.insertProbeData(newProbeData)
-            probeDAO.deleteProbeByID(6L)
-            val userData = probeDAO.getProbeByID(6L)
-            Log.d("ProbeID ", userData?.probeID.toString())
-            assertEquals( null,userData?.probeID)
+            probeDAO.deleteProbeByName("P6")
+            val userData = probeDAO.getProbeByName("P6")
             assertEquals( null,userData?.probeName)
 
         }
