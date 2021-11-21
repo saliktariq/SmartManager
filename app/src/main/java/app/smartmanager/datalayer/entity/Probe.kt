@@ -5,7 +5,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "probe")
 data class Probe(
-    @PrimaryKey(autoGenerate = true)
-    var probeID: Long,
-    var probeName: String?
+    @PrimaryKey
+    var probeName: String
 )
