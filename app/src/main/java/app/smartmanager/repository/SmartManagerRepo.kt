@@ -48,28 +48,29 @@ class SmartManagerRepo private constructor(context: Context) {
     }
 
     // Function to retrieve all data from table 'probe' in a List<Probe>
-    suspend fun retrieveProbeData(): List<Probe>? = withContext(Dispatchers.IO){
+    suspend fun getAllProbeData(): List<Probe>? = withContext(Dispatchers.IO){
         return@withContext probeDAO.getAllProbeData()
     }
 
-    // Function to retrieve data related to a probe based on given probeID
-    suspend fun getProbeByID(probeID: Long): Probe? = withContext(Dispatchers.IO) {
-        return@withContext probeDAO.getProbeByID(probeID)
-    }
-
     // Function to retrieve data related to a probe based on given probeName
-    suspend fun getProbeByName(probeName: String): Probe? = withContext(Dispatchers.IO) {
+    suspend fun getProbeByName(probeName: String): Probe? = withContext(Dispatchers.IO)  {
         return@withContext probeDAO.getProbeByName(probeName)
     }
 
+
     // Function to update probeName based on probeID
-    suspend fun updateProbeName(newProbeName: String, givenProbeID: Long) = withContext(Dispatchers.IO) {
-        return@withContext probeDAO.updateProbeName(newProbeName,givenProbeID)
+    suspend fun updateProbeName(newProbeName: String, givenProbeName: String) = withContext(Dispatchers.IO) {
+        return@withContext probeDAO.updateProbeName(newProbeName,givenProbeName)
     }
 
-    // Function to delete a record based on a given probeID
-    suspend fun deleteProbeByID(probeID: Long) = withContext(Dispatchers.IO) {
-        return@withContext probeDAO.deleteProbeByID(probeID)
+    // Function to delete a record based on a given probeName
+    suspend fun deleteProbeByName(probeName: String) = withContext(Dispatchers.IO) {
+        return@withContext probeDAO.deleteProbeByName(probeName)
+    }
+
+    // Function to delete a record based on a given probeName
+    suspend fun deleteProbeByProbeObject(probe: Probe) = withContext(Dispatchers.IO) {
+        return@withContext probeDAO.deleteProbeByProbeObject(probe)
     }
 
 }
