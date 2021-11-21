@@ -59,11 +59,9 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/addDatalayout"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/xLargeMargin"
-
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/xLargeMargin"
                 app:cardElevation="@dimen/normalElevation"
@@ -184,7 +182,6 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/normalFont" />
             </LinearLayout>
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
