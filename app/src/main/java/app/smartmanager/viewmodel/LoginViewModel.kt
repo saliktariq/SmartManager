@@ -1,4 +1,4 @@
-package app.smartmanager.ui.auth
+package app.smartmanager.viewmodel
 
 import android.net.Uri
 import androidx.lifecycle.ViewModel

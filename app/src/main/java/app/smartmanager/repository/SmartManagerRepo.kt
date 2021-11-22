@@ -1,7 +1,7 @@
 package app.smartmanager.repository
 
 import android.content.Context
-import app.smartmanager.datalayer.SmartManagerDB
+import app.smartmanager.datalayer.database.SmartManagerDB
 import app.smartmanager.datalayer.entity.*
 import app.smartmanager.helper.GetAppContext
 import kotlinx.coroutines.Dispatchers

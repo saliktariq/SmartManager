@@ -1,13 +1,13 @@
-package app.smartmanager.ui.initialsetup
+package app.smartmanager.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class ProbeViewModelFactory() : ViewModelProvider.Factory {
+class HomeScreenViewModelFactory() : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ProbeViewModel::class.java)){
-            return ProbeViewModel() as T
+        if (modelClass.isAssignableFrom(HomeScreenViewModel::class.java)){
+            return HomeScreenViewModel() as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

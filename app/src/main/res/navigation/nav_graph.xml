@@ -19,9 +19,6 @@
         <action
             android:id="@+id/action_loginFragment_to_forgetPassword"
             app:destination="@id/forgetPassword" />
-        <action
-            android:id="@+id/action_loginFragment_to_initialSettings"
-            app:destination="@id/initialSettings" />
     </fragment>
     <fragment
         android:id="@+id/homeScreen"
@@ -63,7 +60,7 @@
         android:label="RegisterNewAccount" />
     <fragment
         android:id="@+id/initialSettings"
-        android:name="app.smartmanager.ui.home.InitialSettings"
+        android:name="app.smartmanager.ui.setup.InitialSettings"
         tools:layout="@layout/initial_settings_fragment"
         android:label="InitialSettings" >
         <action
@@ -84,7 +81,7 @@
     </fragment><action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment"/><action android:id="@+id/action_global_homeScreen" app:destination="@id/homeScreen"/>
     <fragment
         android:id="@+id/probeFragment"
-        android:name="app.smartmanager.ui.initialsetup.ProbeFragment"
+        android:name="app.smartmanager.ui.setup.ProbeFragment"
         android:label="probe_fragment"
         tools:layout="@layout/probe_fragment" >
         <action

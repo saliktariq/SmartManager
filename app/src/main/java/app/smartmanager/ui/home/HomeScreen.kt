@@ -7,19 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import app.smartmanager.databinding.HomeScreenFragmentBinding
-import app.smartmanager.ui.auth.LoginViewModel
-import app.smartmanager.ui.auth.LoginViewModelFactory
-import androidx.annotation.NonNull
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import app.smartmanager.R
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-
-import com.google.android.gms.tasks.OnCompleteListener
-
-
-
+import app.smartmanager.viewmodel.HomeScreenViewModel
+import app.smartmanager.viewmodel.HomeScreenViewModelFactory
 
 
 class HomeScreen : Fragment() {

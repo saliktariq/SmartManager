@@ -1,4 +1,4 @@
-package app.smartmanager.ui.home
+package app.smartmanager.viewmodel
 
 import androidx.lifecycle.ViewModel
 

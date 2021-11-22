@@ -1,8 +1,8 @@
-package app.smartmanager
+package app.smartmanager.daoTests
 
 
 import android.util.Log
-import app.smartmanager.datalayer.SmartManagerDB
+import app.smartmanager.datalayer.database.SmartManagerDB
 import app.smartmanager.datalayer.dataaccessobjects.ProbeDAO
 import app.smartmanager.datalayer.entity.Probe
 

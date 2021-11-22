@@ -1,4 +1,4 @@
-package app.smartmanager.datalayer
+package app.smartmanager.datalayer.database
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room

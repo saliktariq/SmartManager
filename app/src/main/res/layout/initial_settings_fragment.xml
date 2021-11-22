@@ -36,7 +36,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:text="@string/first_time_setup"
+                    android:text="Setup"
                     android:textColor="@color/floralWhite"
                     android:textSize="@dimen/xlargeFont" />
             </RelativeLayout>

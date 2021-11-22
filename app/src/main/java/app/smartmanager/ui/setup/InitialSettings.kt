@@ -1,14 +1,11 @@
-package app.smartmanager.ui.home
+package app.smartmanager.ui.setup
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import app.smartmanager.R
-import app.smartmanager.databinding.HomeScreenFragmentBinding
 import app.smartmanager.databinding.InitialSettingsFragmentBinding
 
 class InitialSettings : Fragment() {
@@ -36,7 +33,7 @@ class InitialSettings : Fragment() {
     }
 
     private fun signOut(){
-        viewBinding.root.findNavController().navigate(HomeScreenDirections.actionGlobalLoginFragment())
+        viewBinding.root.findNavController().navigate(InitialSettingsDirections.actionGlobalLoginFragment())
 
 
     }
