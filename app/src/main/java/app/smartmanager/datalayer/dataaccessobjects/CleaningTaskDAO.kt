@@ -17,6 +17,6 @@ interface CleaningTaskDAO {
     suspend fun addCleaningTask(cleaningTask: CleaningTask)
 
     @Query("SELECT * from cleaningTask ORDER BY id ASC")
-    suspend fun readAllCleaningTaskData(): LiveData<List<CleaningTask>>
+    fun readAllCleaningTaskData(): LiveData<List<CleaningTask>>
 
 }

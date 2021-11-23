@@ -15,7 +15,7 @@ interface ChemicalListCOSHHDAO {
     suspend fun addChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH)
 
     @Query("SELECT * from chemicalList ORDER BY id ASC")
-    suspend fun readAllChemicalListCOSHHData(): LiveData<List<ChemicalListCOSHH>>
+    fun readAllChemicalListCOSHHData(): LiveData<List<ChemicalListCOSHH>>
 
 
 }
