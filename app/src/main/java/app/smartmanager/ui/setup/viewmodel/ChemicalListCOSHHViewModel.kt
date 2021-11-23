@@ -21,7 +21,7 @@ class ChemicalListCOSHHViewModel(application: Application) : AndroidViewModel(ap
         readAllChemicalListCOSHHData = repository.readAllChemicalListCOSHHData
     }
 
-    fun aaddChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH){
+    fun addChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH){
         viewModelScope.launch(Dispatchers.IO)  {
             repository.addChemicalListCOSHH(chemicalListCOSHH)
         }
