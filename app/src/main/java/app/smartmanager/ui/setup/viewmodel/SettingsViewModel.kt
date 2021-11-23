@@ -1,7 +1,10 @@
 package app.smartmanager.ui.setup.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 
-class SettingsViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+
+class SettingsViewModel(application: Application) : AndroidViewModel(application) {
+
+
 }
