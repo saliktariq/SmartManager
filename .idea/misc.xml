@@ -5,9 +5,13 @@
       <map>
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/activity_maps.xml" value="0.328125" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/chemical_list_coshh_fragment.xml" value="0.384963768115942" />
+        <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/chemical_list_coshh_list_item.xml" value="0.384963768115942" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/cleaning_task_fragment.xml" value="0.384963768115942" />
+        <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/cleaning_task_list_item.xml" value="0.384963768115942" />
+        <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/control_check_list_item.xml" value="0.384963768115942" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/control_checks_fragment.xml" value="0.384963768115942" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/equipment_fragment.xml" value="0.29156626506024097" />
+        <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/equipment_list_item.xml" value="0.384963768115942" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/fragment_add_chemical_list_coshh.xml" value="0.384963768115942" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/fragment_add_cleaning_task.xml" value="0.384963768115942" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/fragment_add_control_checks.xml" value="0.384963768115942" />
@@ -18,7 +22,9 @@
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/login_fragment.xml" value="0.35885416666666664" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/probe_fragment.xml" value="0.32447916666666665" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/probe_list_item.xml" value="0.221875" />
+        <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/register_new_account_fragment.xml" value="0.384963768115942" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/supplier_fragment.xml" value="0.384963768115942" />
+        <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/supplier_list_item.xml" value="0.384963768115942" />
         <entry key="..\:/Users/Salik Tariq/Documents/GitHub/SmartManager/app/src/main/res/layout/view_profile_fragment.xml" value="0.328125" />
       </map>
     </option>

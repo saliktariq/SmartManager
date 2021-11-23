@@ -44,8 +44,8 @@
 
     <!-- Defining frequency of cleaning task for cleaning task frequency spinner in fragment_add_cleaning_task layout file -->
     <string-array name="cleaningTaskFrequency">
-        <item>Daily</item>
-        <item>Weekly</item>
+        <item>Daily Task</item>
+        <item>Weekly Task</item>
     </string-array>
 
 
