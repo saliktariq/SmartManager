@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import app.smartmanager.R
-import app.smartmanager.viewmodel.UpdatePasswordViewModel
+import app.smartmanager.ui.auth.viewmodel.UpdatePasswordViewModel
 
 class UpdatePassword : Fragment() {
 

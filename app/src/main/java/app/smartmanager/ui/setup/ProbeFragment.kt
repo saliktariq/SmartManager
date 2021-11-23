@@ -21,8 +21,8 @@ import app.smartmanager.databinding.ProbeFragmentBinding
 import app.smartmanager.datalayer.entity.Probe
 import app.smartmanager.helper.GetAppContext
 import app.smartmanager.helper.ToastMaker
-import app.smartmanager.viewmodel.ProbeViewModel
-import app.smartmanager.viewmodel.ProbeViewModelFactory
+import app.smartmanager.ui.setup.viewmodel.ProbeViewModel
+import app.smartmanager.ui.setup.viewmodel.ProbeViewModelFactory
 import kotlinx.coroutines.launch
 
 

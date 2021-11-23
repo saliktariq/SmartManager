@@ -10,8 +10,8 @@ import app.smartmanager.databinding.HomeScreenFragmentBinding
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import app.smartmanager.R
-import app.smartmanager.viewmodel.HomeScreenViewModel
-import app.smartmanager.viewmodel.HomeScreenViewModelFactory
+import app.smartmanager.ui.home.viewmodel.HomeScreenViewModel
+import app.smartmanager.ui.home.viewmodel.HomeScreenViewModelFactory
 
 
 class HomeScreen : Fragment() {

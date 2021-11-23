@@ -60,7 +60,7 @@
         android:label="RegisterNewAccount" />
     <fragment
         android:id="@+id/initialSettings"
-        android:name="app.smartmanager.ui.setup.InitialSettings"
+        android:name="app.smartmanager.ui.setup.Settings"
         tools:layout="@layout/initial_settings_fragment"
         android:label="InitialSettings" >
         <action

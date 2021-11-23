@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import app.smartmanager.databinding.InitialSettingsFragmentBinding
 
-class InitialSettings : Fragment() {
+class Settings : Fragment() {
 
     private var binding: InitialSettingsFragmentBinding? = null
     private val viewBinding get() = binding!!

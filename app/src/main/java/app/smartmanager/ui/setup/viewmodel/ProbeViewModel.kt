@@ -1,4 +1,4 @@
-package app.smartmanager.viewmodel
+package app.smartmanager.ui.setup.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

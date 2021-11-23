@@ -1,6 +1,6 @@
 package app.smartmanager.ui.auth
 
-import app.smartmanager.viewmodel.LoginViewModel
+import app.smartmanager.ui.auth.viewmodel.LoginViewModel
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.Task
 import com.google.android.gms.common.api.ApiException
 import android.content.Intent
 import androidx.navigation.findNavController
-import app.smartmanager.viewmodel.LoginViewModelFactory
+import app.smartmanager.ui.auth.viewmodel.LoginViewModelFactory
 
 import com.google.android.gms.tasks.OnCompleteListener
 

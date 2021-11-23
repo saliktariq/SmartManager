@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import app.smartmanager.R
-import app.smartmanager.viewmodel.RegisterNewAccountViewModel
+import app.smartmanager.ui.auth.viewmodel.RegisterNewAccountViewModel
 
 class RegisterNewAccount : Fragment() {
 
