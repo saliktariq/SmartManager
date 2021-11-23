@@ -19,14 +19,41 @@ class Settings : Fragment() {
     ): View? {
         binding = InitialSettingsFragmentBinding.inflate(inflater, container, false)
 
+
+
+        //Setting On Click listener on Add Probe button
+        viewBinding.addNewProbeButton.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToProbeFragment())
+        }
+
+        //Setting On Click listener on Add Supplier button
+        viewBinding.addNewSupplierButton.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToSupplierFragment())
+        }
+
+        //Setting On Click listener on Add Equipment button
+        viewBinding.addNewEquipmentButton.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToEquipmentFragment())
+        }
+
+        //Setting On Click listener on Add Control Check button
+        viewBinding.addNewControlChecksButton.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToControlChecksFragment())
+        }
+
+        //Setting On Click listener on Add Cleaning Task button
+        viewBinding.addNewCleaningTaskButton.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToCleaningTaskFragment())
+        }
+
+        //Setting On Click listener on Add COSHH Chemical button
+        viewBinding.addNewChemicalButton.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToChemicalListCOSHHFragment())
+        }
+
         //Attaching singOut function to Logout button
         viewBinding.btnLogOut.setOnClickListener{
             signOut()
-        }
-
-        //Setting On Click listener on AddNewProbe button
-        viewBinding.addNewProbeButton.setOnClickListener {
-          //  viewBinding.root.findNavController().navigate(InitialSettingsDirections.actionInitialSettingsToProbeFragment())
         }
 
         return binding!!.root
