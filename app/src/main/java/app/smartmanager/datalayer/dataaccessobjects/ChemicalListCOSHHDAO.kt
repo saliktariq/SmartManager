@@ -12,7 +12,7 @@ import app.smartmanager.datalayer.entity.ChemicalListCOSHH
 interface ChemicalListCOSHHDAO {
 
     @Insert(onConflict = IGNORE)
-    suspend fun addChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH)
+    fun addChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH)
 
     @Query("SELECT * from chemicalList ORDER BY id ASC")
     fun readAllChemicalListCOSHHData(): LiveData<List<ChemicalListCOSHH>>

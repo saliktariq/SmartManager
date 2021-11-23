@@ -12,7 +12,7 @@ import app.smartmanager.datalayer.entity.ControlChecks
 interface ControlChecksDAO {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addControlChecks(controlChecks: ControlChecks)
+    fun addControlChecks(controlChecks: ControlChecks)
 
     @Query("SELECT * from controlChecks ORDER BY id ASC")
     fun readAllControlChecksData(): LiveData<List<ControlChecks>>

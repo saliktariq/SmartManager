@@ -14,7 +14,7 @@ interface CleaningTaskDAO {
 
 
     @Insert(onConflict = IGNORE)
-    suspend fun addCleaningTask(cleaningTask: CleaningTask)
+    fun addCleaningTask(cleaningTask: CleaningTask)
 
     @Query("SELECT * from cleaningTask ORDER BY id ASC")
     fun readAllCleaningTaskData(): LiveData<List<CleaningTask>>

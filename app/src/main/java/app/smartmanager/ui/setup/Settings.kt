@@ -26,14 +26,14 @@ class Settings : Fragment() {
 
         //Setting On Click listener on AddNewProbe button
         viewBinding.addNewProbeButton.setOnClickListener {
-            viewBinding.root.findNavController().navigate(InitialSettingsDirections.actionInitialSettingsToProbeFragment())
+          //  viewBinding.root.findNavController().navigate(InitialSettingsDirections.actionInitialSettingsToProbeFragment())
         }
 
         return binding!!.root
     }
 
     private fun signOut(){
-        viewBinding.root.findNavController().navigate(InitialSettingsDirections.actionGlobalLoginFragment())
+     //   viewBinding.root.findNavController().navigate(InitialSettingsDirections.actionGlobalLoginFragment())
 
 
     }

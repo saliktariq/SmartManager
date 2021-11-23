@@ -12,7 +12,7 @@ import app.smartmanager.datalayer.entity.Equipment
 interface EquipmentDAO {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addEquipment(equipment: Equipment)
+    fun addEquipment(equipment: Equipment)
 
     @Query("SELECT * from equipment ORDER BY id ASC")
     fun readAllEquipmentData(): LiveData<List<Equipment>>
