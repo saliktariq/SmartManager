@@ -3,14 +3,19 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import app.smartmanager.datalayer.dataaccessobjects.ProbeDAO
-import app.smartmanager.datalayer.entity.Probe
+import app.smartmanager.datalayer.dataaccessobjects.*
+import app.smartmanager.datalayer.entity.*
 
 // Database definition of SQLite database utilising ROOM database library
 
-@Database(entities = [Probe::class],version = 1, exportSchema = false)
+@Database(entities = [Probe::class, Supplier::class, Equipment::class, ControlChecks::class, CleaningTask::class, ChemicalListCOSHH::class ],version = 2, exportSchema = false)
 abstract class SmartManagerDB: RoomDatabase(){
     abstract val probeDAO :ProbeDAO
+    abstract val supplierDAO: SupplierDAO
+    abstract val equipmentDAO: EquipmentDAO
+    abstract val controlChecksDAO: ControlChecksDAO
+    abstract val cleaningTaskDAO: CleaningTaskDAO
+    abstract val chemicalListCOSHHDAO: ChemicalListCOSHHDAO
 
     companion object{
         @Volatile
