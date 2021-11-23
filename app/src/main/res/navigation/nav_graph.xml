@@ -69,6 +69,21 @@
         <action
             android:id="@+id/action_initialSettings_to_probeFragment"
             app:destination="@id/probeFragment" />
+        <action
+            android:id="@+id/action_initialSettings_to_supplierFragment"
+            app:destination="@id/supplierFragment" />
+        <action
+            android:id="@+id/action_initialSettings_to_equipmentFragment"
+            app:destination="@id/equipmentFragment" />
+        <action
+            android:id="@+id/action_initialSettings_to_controlChecksFragment"
+            app:destination="@id/controlChecksFragment" />
+        <action
+            android:id="@+id/action_initialSettings_to_cleaningTaskFragment"
+            app:destination="@id/cleaningTaskFragment" />
+        <action
+            android:id="@+id/action_initialSettings_to_chemicalListCOSHHFragment"
+            app:destination="@id/chemicalListCOSHHFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewProfile"
@@ -87,5 +102,110 @@
         <action
             android:id="@+id/action_probeFragment_to_initialSettings"
             app:destination="@id/initialSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/supplierFragment"
+        android:name="app.smartmanager.ui.setup.SupplierFragment"
+        android:label="supplier_fragment"
+        tools:layout="@layout/supplier_fragment" >
+        <action
+            android:id="@+id/action_supplierFragment_to_addSupplierFragment"
+            app:destination="@id/addSupplierFragment" />
+        <action
+            android:id="@+id/action_supplierFragment_to_initialSettings"
+            app:destination="@id/initialSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSupplierFragment"
+        android:name="app.smartmanager.ui.setup.viewmodel.AddSupplierFragment"
+        android:label="fragment_add_supplier"
+        tools:layout="@layout/fragment_add_supplier" >
+        <action
+            android:id="@+id/action_addSupplierFragment_to_supplierFragment"
+            app:destination="@id/supplierFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/equipmentFragment"
+        android:name="app.smartmanager.ui.setup.EquipmentFragment"
+        android:label="equipment_fragment"
+        tools:layout="@layout/equipment_fragment" >
+        <action
+            android:id="@+id/action_equipmentFragment_to_addEquipmentFragment"
+            app:destination="@id/addEquipmentFragment" />
+        <action
+            android:id="@+id/action_equipmentFragment_to_initialSettings"
+            app:destination="@id/initialSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEquipmentFragment"
+        android:name="app.smartmanager.ui.setup.viewmodel.AddEquipmentFragment"
+        android:label="fragment_add_equipment"
+        tools:layout="@layout/fragment_add_equipment" >
+        <action
+            android:id="@+id/action_addEquipmentFragment_to_equipmentFragment"
+            app:destination="@id/equipmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/controlChecksFragment"
+        android:name="app.smartmanager.ui.setup.ControlChecksFragment"
+        android:label="control_checks_fragment"
+        tools:layout="@layout/control_checks_fragment" >
+        <action
+            android:id="@+id/action_controlChecksFragment_to_addControlChecksFragment"
+            app:destination="@id/addControlChecksFragment" />
+        <action
+            android:id="@+id/action_controlChecksFragment_to_initialSettings"
+            app:destination="@id/initialSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addControlChecksFragment"
+        android:name="app.smartmanager.ui.setup.viewmodel.AddControlChecksFragment"
+        android:label="fragment_add_control_checks"
+        tools:layout="@layout/fragment_add_control_checks" >
+        <action
+            android:id="@+id/action_addControlChecksFragment_to_controlChecksFragment"
+            app:destination="@id/controlChecksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cleaningTaskFragment"
+        android:name="app.smartmanager.ui.setup.CleaningTaskFragment"
+        android:label="cleaning_task_fragment"
+        tools:layout="@layout/cleaning_task_fragment" >
+        <action
+            android:id="@+id/action_cleaningTaskFragment_to_addCleaningTaskFragment"
+            app:destination="@id/addCleaningTaskFragment" />
+        <action
+            android:id="@+id/action_cleaningTaskFragment_to_initialSettings"
+            app:destination="@id/initialSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCleaningTaskFragment"
+        android:name="app.smartmanager.ui.setup.viewmodel.AddCleaningTaskFragment"
+        android:label="fragment_add_cleaning_task"
+        tools:layout="@layout/fragment_add_cleaning_task" >
+        <action
+            android:id="@+id/action_addCleaningTaskFragment_to_cleaningTaskFragment"
+            app:destination="@id/cleaningTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chemicalListCOSHHFragment"
+        android:name="app.smartmanager.ui.setup.ChemicalListCOSHHFragment"
+        android:label="chemical_list_coshh_fragment"
+        tools:layout="@layout/chemical_list_coshh_fragment" >
+        <action
+            android:id="@+id/action_chemicalListCOSHHFragment_to_addChemicalListCOSHHFragment"
+            app:destination="@id/addChemicalListCOSHHFragment" />
+        <action
+            android:id="@+id/action_chemicalListCOSHHFragment_to_initialSettings"
+            app:destination="@id/initialSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addChemicalListCOSHHFragment"
+        android:name="app.smartmanager.ui.setup.viewmodel.AddChemicalListCOSHHFragment"
+        android:label="fragment_add_chemical_list_coshh"
+        tools:layout="@layout/fragment_add_chemical_list_coshh" >
+        <action
+            android:id="@+id/action_addChemicalListCOSHHFragment_to_chemicalListCOSHHFragment"
+            app:destination="@id/chemicalListCOSHHFragment" />
     </fragment>
 </navigation>
