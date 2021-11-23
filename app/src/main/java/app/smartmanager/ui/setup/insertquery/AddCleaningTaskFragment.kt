@@ -1,4 +1,4 @@
-package app.smartmanager.ui.setup
+package app.smartmanager.ui.setup.insertquery
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import app.smartmanager.R
 
-
-class AddChemicalListCOSHHFragment : Fragment() {
-
+class AddCleaningTaskFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -17,7 +15,7 @@ class AddChemicalListCOSHHFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_chemical_list_coshh, container, false)
+        return inflater.inflate(R.layout.fragment_add_cleaning_task, container, false)
     }
 
 }

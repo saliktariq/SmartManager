@@ -35,4 +35,18 @@
     <string name="title_activity_maps">MapsActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Defining critical control types for cricial control type spinner in fragment_add_control_checks layout file -->
+    <string-array name="criticalcontroltype">
+        <item>Opening Check</item>
+        <item>Closing Check</item>
+    </string-array>
+
+    <!-- Defining frequency of cleaning task for cleaning task frequency spinner in fragment_add_cleaning_task layout file -->
+    <string-array name="cleaningTaskFrequency">
+        <item>Daily</item>
+        <item>Weekly</item>
+    </string-array>
+
+
 </resources>

@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/floralWhite"
+android:focusable="true"
+android:focusableInTouchMode="true"
+tools:context=".ui.setup.insertquery.AddCleaningTaskFragment">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/applicationBar"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.setup.viewmodel.AddCleaningTaskFragment">
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    app:elevation="0dp"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appToolbar"
+        style="@style/ToolbarStyle"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="48dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Cleaning Tasks"
+                android:textColor="@color/floralWhite"
+                android:textSize="@dimen/xlargeFont" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>
+
+
+<ScrollView
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:fillViewport="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/applicationBar">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/cleaningTaskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:ems="12"
+            android:hint="Cleaning Task Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cleaningTaskDescription"/>
+
+        <EditText
+            android:id="@+id/cleaningTaskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="12"
+            android:hint="Task Description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cleaningTaskName"
+            app:layout_constraintBottom_toTopOf="@id/taskFrequency"/>
+
+        <Spinner
+
+            android:id="@+id/taskFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:spinnerMode="dropdown"
+            android:hint="Cleaning task frequency"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cleaningTaskDescription"
+            app:layout_constraintBottom_toTopOf="@id/btnAdd"/>
+        <!-- values to be picked up from cleaningTaskFrequency string-array-->
+
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Add Cleaning Task"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/taskFrequency"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

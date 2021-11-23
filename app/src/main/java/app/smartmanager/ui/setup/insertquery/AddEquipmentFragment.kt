@@ -1,4 +1,4 @@
-package app.smartmanager.ui.setup
+package app.smartmanager.ui.setup.insertquery
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
