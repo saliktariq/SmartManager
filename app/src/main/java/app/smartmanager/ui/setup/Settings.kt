@@ -60,7 +60,8 @@ class Settings : Fragment() {
     }
 
     private fun signOut(){
-     //   viewBinding.root.findNavController().navigate(InitialSettingsDirections.actionGlobalLoginFragment())
+
+     viewBinding.root.findNavController().navigate(SettingsDirections.actionGlobalLoginFragment())
 
 
     }
