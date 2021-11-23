@@ -15,7 +15,4 @@ interface SupplierDAO {
 
     @Query("SELECT * from supplier ORDER BY id ASC")
     fun readAllSupplierData(): LiveData<List<Supplier>>
-
-    
-
 }
