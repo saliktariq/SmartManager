@@ -5,11 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import app.smartmanager.R
 import app.smartmanager.datalayer.entity.Probe
 import app.smartmanager.datalayer.entity.Supplier
+import app.smartmanager.ui.setup.SupplierFragmentDirections
 
 class SupplierAdapter: RecyclerView.Adapter<SupplierAdapter.MyViewHolder>() {
 
@@ -29,6 +31,11 @@ class SupplierAdapter: RecyclerView.Adapter<SupplierAdapter.MyViewHolder>() {
             supplierPhone.text = data.phone
             supplierAddress.text = data.address
 
+            //Setting onClickListener on dataset so user can click it and it will navigate to Update fragment
+            supplierSingleRecord.setOnClickListener {
+                val action = SupplierFragmentDirections.actionSupplierFragmentToUpdateSupplierFragment(data)
+                itemView.findNavController().navigate(action)
+            }
         }
 
     }

@@ -231,6 +231,9 @@
         <action
             android:id="@+id/action_updateSupplierFragment_to_supplierFragment"
             app:destination="@id/supplierFragment" />
+        <argument
+            android:name="currentSupplier"
+            app:argType="app.smartmanager.datalayer.entity.Supplier" />
     </fragment>
     <fragment
         android:id="@+id/updateEquipmentFragment"

@@ -38,6 +38,12 @@ class SupplierViewModel(application: Application) : AndroidViewModel(application
         }
     }
 
+    fun updateSupplier(supplier: Supplier){
+        viewModelScope.launch(Dispatchers.IO)  {
+            repository.updateSupplier(supplier)
+        }
+    }
+
     fun insertDataSetToRoomDB(supplierName: String, supplierEmail: String?, supplierPhone: String?, supplierAddress: String?): Boolean {
 
         if(checkInputData(supplierName)){
@@ -56,9 +62,24 @@ class SupplierViewModel(application: Application) : AndroidViewModel(application
             return false
         }
 
+    }
 
+    fun updateDataSetToRoomDB(supplierID: Long, supplierName: String, supplierEmail: String?, supplierPhone: String?, supplierAddress: String?): Boolean {
+        if(checkInputData(supplierName)){
+            //Create a Supplier object
+            val supplier = Supplier(supplierID,supplierName,supplierEmail,supplierPhone,supplierAddress)
 
+            //Calling ViewModel function to update supplier object to Database
+            updateSupplier(supplier)
 
+            //Inform UI of successful entry
+            ToastMaker.showToast("Supplier updated successfully!", GetAppContext.appContext)
+            return true
+        } else {
+            //In case the input check fails
+            ToastMaker.showToast("Enter supplier name", GetAppContext.appContext)
+            return false
+        }
     }
 
     /*
