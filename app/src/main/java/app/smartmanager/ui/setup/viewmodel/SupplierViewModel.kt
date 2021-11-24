@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 
 class SupplierViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val readAllSupplierData: LiveData<List<Supplier>>
+    val readAllSupplierData: LiveData<List<Supplier>>
 
 
 
