@@ -100,6 +100,10 @@ class SmartManagerRepo private constructor(context: Context) {
         supplierDAO.updateSupplier(supplier)
     }
 
+    suspend fun deleteSupplier(supplier: Supplier){
+        supplierDAO.deleteSupplier(supplier)
+    }
+
     val readAllSupplierData: LiveData<List<Supplier>> = supplierDAO.readAllSupplierData()
 
     /*

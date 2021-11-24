@@ -15,4 +15,7 @@ interface SupplierDAO {
 
     @Update
     fun updateSupplier(supplier: Supplier)
+
+    @Delete
+    fun deleteSupplier(supplier: Supplier)
 }

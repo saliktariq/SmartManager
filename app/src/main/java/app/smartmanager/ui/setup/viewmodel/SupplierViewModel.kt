@@ -1,5 +1,6 @@
 package app.smartmanager.ui.setup.viewmodel
 
+import android.app.AlertDialog
 import android.app.Application
 import android.text.TextUtils
 import androidx.activity.result.contract.ActivityResultContracts
@@ -7,6 +8,7 @@ import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import app.smartmanager.MainActivity
 import app.smartmanager.datalayer.entity.Supplier
 import app.smartmanager.helper.GetAppContext
 import app.smartmanager.helper.ToastMaker
@@ -88,4 +90,20 @@ class SupplierViewModel(application: Application) : AndroidViewModel(application
     private fun checkInputData(supplierName: String): Boolean{
         return !(TextUtils.isEmpty(supplierName))
     }
+
+    /*
+    Function to delete supplier object
+     */
+
+
+
+    fun deleteSupplier(supplier: Supplier){
+
+        viewModelScope.launch (Dispatchers.IO)  {
+                repository.deleteSupplier(supplier)
+
+            }
+    }
+
+
 }
