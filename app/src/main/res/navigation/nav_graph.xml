@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="app.smartmanager.ui.auth.LoginFragment"
-        android:label="login_fragment"
+        android:label="Login"
         tools:layout="@layout/login_fragment" >
         <action
             android:id="@+id/action_loginFragment_to_homeScreen"
@@ -24,7 +24,7 @@
         android:id="@+id/homeScreen"
         android:name="app.smartmanager.ui.home.HomeScreen"
         tools:layout="@layout/home_screen_fragment"
-        android:label="HomeScreen" >
+        android:label="Home Screen" >
         <action
             android:id="@+id/action_homeScreen_to_initialSettings"
             app:destination="@id/initialSettings" />
@@ -36,7 +36,7 @@
         android:id="@+id/updatePassword"
         android:name="app.smartmanager.ui.auth.UpdatePassword"
         tools:layout="@layout/update_password_fragment"
-        android:label="UpdatePassword" >
+        android:label="Update Password" >
         <action
             android:id="@+id/action_updatePassword_to_homeScreen"
             app:destination="@id/homeScreen" />
@@ -48,7 +48,7 @@
         android:id="@+id/forgetPassword"
         android:name="app.smartmanager.ui.auth.ForgetPassword"
         tools:layout="@layout/forget_password_fragment"
-        android:label="ForgetPassword" >
+        android:label="Forget Password" >
         <action
             android:id="@+id/action_forgetPassword_to_updatePassword"
             app:destination="@id/updatePassword" />
@@ -57,12 +57,12 @@
         android:id="@+id/registerNewAccount"
         android:name="app.smartmanager.ui.auth.RegisterNewAccount"
         tools:layout="@layout/register_new_account_fragment"
-        android:label="RegisterNewAccount" />
+        android:label="Register New Account" />
     <fragment
         android:id="@+id/initialSettings"
         android:name="app.smartmanager.ui.setup.Settings"
         tools:layout="@layout/initial_settings_fragment"
-        android:label="InitialSettings" >
+        android:label="Settings" >
         <action
             android:id="@+id/action_initialSettings_to_homeScreen"
             app:destination="@id/homeScreen" />
@@ -89,7 +89,7 @@
         android:id="@+id/viewProfile"
         android:name="app.smartmanager.ui.auth.ViewProfile"
         tools:layout="@layout/view_profile_fragment"
-        android:label="ViewProfile" >
+        android:label="View Profile" >
         <action
             android:id="@+id/action_viewProfile_to_homeScreen"
             app:destination="@id/homeScreen" />
@@ -97,7 +97,7 @@
     <fragment
         android:id="@+id/probeFragment"
         android:name="app.smartmanager.ui.setup.ProbeFragment"
-        android:label="probe_fragment"
+        android:label="Probe Thermometer"
         tools:layout="@layout/probe_fragment" >
         <action
             android:id="@+id/action_probeFragment_to_initialSettings"
@@ -106,7 +106,7 @@
     <fragment
         android:id="@+id/supplierFragment"
         android:name="app.smartmanager.ui.setup.SupplierFragment"
-        android:label="supplier_fragment"
+        android:label="Suppliers"
         tools:layout="@layout/supplier_fragment" >
         <action
             android:id="@+id/action_supplierFragment_to_addSupplierFragment"
@@ -117,8 +117,8 @@
     </fragment>
     <fragment
         android:id="@+id/addSupplierFragment"
-        android:name="app.smartmanager.ui.setup.viewmodel.AddSupplierFragment"
-        android:label="fragment_add_supplier"
+        android:name="app.smartmanager.ui.setup.insertquery.AddSupplierFragment"
+        android:label="Add new supplier"
         tools:layout="@layout/fragment_add_supplier" >
         <action
             android:id="@+id/action_addSupplierFragment_to_supplierFragment"
@@ -127,7 +127,7 @@
     <fragment
         android:id="@+id/equipmentFragment"
         android:name="app.smartmanager.ui.setup.EquipmentFragment"
-        android:label="equipment_fragment"
+        android:label="Equipment"
         tools:layout="@layout/equipment_fragment" >
         <action
             android:id="@+id/action_equipmentFragment_to_addEquipmentFragment"
@@ -138,8 +138,8 @@
     </fragment>
     <fragment
         android:id="@+id/addEquipmentFragment"
-        android:name="app.smartmanager.ui.setup.viewmodel.AddEquipmentFragment"
-        android:label="fragment_add_equipment"
+        android:name="app.smartmanager.ui.setup.insertquery.AddEquipmentFragment"
+        android:label="Add equipment"
         tools:layout="@layout/fragment_add_equipment" >
         <action
             android:id="@+id/action_addEquipmentFragment_to_equipmentFragment"
@@ -148,7 +148,7 @@
     <fragment
         android:id="@+id/controlChecksFragment"
         android:name="app.smartmanager.ui.setup.ControlChecksFragment"
-        android:label="control_checks_fragment"
+        android:label="Control Checks"
         tools:layout="@layout/control_checks_fragment" >
         <action
             android:id="@+id/action_controlChecksFragment_to_addControlChecksFragment"
@@ -159,8 +159,8 @@
     </fragment>
     <fragment
         android:id="@+id/addControlChecksFragment"
-        android:name="app.smartmanager.ui.setup.viewmodel.AddControlChecksFragment"
-        android:label="fragment_add_control_checks"
+        android:name="app.smartmanager.ui.setup.insertquery.AddControlChecksFragment"
+        android:label="Add control checks"
         tools:layout="@layout/fragment_add_control_checks" >
         <action
             android:id="@+id/action_addControlChecksFragment_to_controlChecksFragment"
@@ -169,7 +169,7 @@
     <fragment
         android:id="@+id/cleaningTaskFragment"
         android:name="app.smartmanager.ui.setup.CleaningTaskFragment"
-        android:label="cleaning_task_fragment"
+        android:label="Cleaning Tasks"
         tools:layout="@layout/cleaning_task_fragment" >
         <action
             android:id="@+id/action_cleaningTaskFragment_to_addCleaningTaskFragment"
@@ -180,8 +180,8 @@
     </fragment>
     <fragment
         android:id="@+id/addCleaningTaskFragment"
-        android:name="app.smartmanager.ui.setup.viewmodel.AddCleaningTaskFragment"
-        android:label="fragment_add_cleaning_task"
+        android:name="app.smartmanager.ui.setup.insertquery.AddCleaningTaskFragment"
+        android:label="Add cleaning task"
         tools:layout="@layout/fragment_add_cleaning_task" >
         <action
             android:id="@+id/action_addCleaningTaskFragment_to_cleaningTaskFragment"
@@ -190,7 +190,7 @@
     <fragment
         android:id="@+id/chemicalListCOSHHFragment"
         android:name="app.smartmanager.ui.setup.ChemicalListCOSHHFragment"
-        android:label="chemical_list_coshh_fragment"
+        android:label="Chemicals List (COSHH) "
         tools:layout="@layout/chemical_list_coshh_fragment" >
         <action
             android:id="@+id/action_chemicalListCOSHHFragment_to_addChemicalListCOSHHFragment"
@@ -201,8 +201,8 @@
     </fragment>
     <fragment
         android:id="@+id/addChemicalListCOSHHFragment"
-        android:name="app.smartmanager.ui.setup.viewmodel.AddChemicalListCOSHHFragment"
-        android:label="fragment_add_chemical_list_coshh"
+        android:name="app.smartmanager.ui.setup.insertquery.AddChemicalListCOSHHFragment"
+        android:label="Add Chemical"
         tools:layout="@layout/fragment_add_chemical_list_coshh" >
         <action
             android:id="@+id/action_addChemicalListCOSHHFragment_to_chemicalListCOSHHFragment"
