@@ -22,7 +22,7 @@ class UpdateSupplierFragment : Fragment() {
         // Initialising the supplierViewModel
         supplierViewModel = ViewModelProvider(this).get(SupplierViewModel::class.java)
 
-        
+
         return fragmentView
     }
 
