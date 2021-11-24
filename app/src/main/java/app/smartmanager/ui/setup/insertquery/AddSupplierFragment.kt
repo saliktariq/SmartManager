@@ -28,10 +28,8 @@ class AddSupplierFragment : Fragment() {
         val fragmentView = inflater.inflate(R.layout.fragment_add_supplier, container, false)
 
         // Initialising the supplierViewModel
-
         supplierViewModel = ViewModelProvider(this).get(SupplierViewModel::class.java)
 
-     //   val addButton = fragmentView.findViewById<FloatingActionButton>(R.id.btnAdd)
 
         val addButton: Button = fragmentView.findViewById(R.id.btnAdd)
 
