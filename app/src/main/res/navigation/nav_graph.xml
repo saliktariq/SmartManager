@@ -114,6 +114,9 @@
         <action
             android:id="@+id/action_supplierFragment_to_initialSettings"
             app:destination="@id/initialSettings" />
+        <action
+            android:id="@+id/action_supplierFragment_to_updateSupplierFragment"
+            app:destination="@id/updateSupplierFragment" />
     </fragment>
     <fragment
         android:id="@+id/addSupplierFragment"
@@ -135,6 +138,9 @@
         <action
             android:id="@+id/action_equipmentFragment_to_initialSettings"
             app:destination="@id/initialSettings" />
+        <action
+            android:id="@+id/action_equipmentFragment_to_updateEquipmentFragment"
+            app:destination="@id/updateEquipmentFragment" />
     </fragment>
     <fragment
         android:id="@+id/addEquipmentFragment"
@@ -156,6 +162,9 @@
         <action
             android:id="@+id/action_controlChecksFragment_to_initialSettings"
             app:destination="@id/initialSettings" />
+        <action
+            android:id="@+id/action_controlChecksFragment_to_updateControlChecksFragment"
+            app:destination="@id/updateControlChecksFragment" />
     </fragment>
     <fragment
         android:id="@+id/addControlChecksFragment"
@@ -177,6 +186,9 @@
         <action
             android:id="@+id/action_cleaningTaskFragment_to_initialSettings"
             app:destination="@id/initialSettings" />
+        <action
+            android:id="@+id/action_cleaningTaskFragment_to_updateCleaningTaskFragment"
+            app:destination="@id/updateCleaningTaskFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCleaningTaskFragment"
@@ -198,6 +210,9 @@
         <action
             android:id="@+id/action_chemicalListCOSHHFragment_to_initialSettings"
             app:destination="@id/initialSettings" />
+        <action
+            android:id="@+id/action_chemicalListCOSHHFragment_to_updateChemicalListCOSHHFragment"
+            app:destination="@id/updateChemicalListCOSHHFragment" />
     </fragment>
     <fragment
         android:id="@+id/addChemicalListCOSHHFragment"
@@ -206,6 +221,51 @@
         tools:layout="@layout/fragment_add_chemical_list_coshh" >
         <action
             android:id="@+id/action_addChemicalListCOSHHFragment_to_chemicalListCOSHHFragment"
+            app:destination="@id/chemicalListCOSHHFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateSupplierFragment"
+        android:name="app.smartmanager.ui.setup.updatequery.UpdateSupplierFragment"
+        android:label="Update Suppliers List"
+        tools:layout="@layout/fragment_update_supplier" >
+        <action
+            android:id="@+id/action_updateSupplierFragment_to_supplierFragment"
+            app:destination="@id/supplierFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateEquipmentFragment"
+        android:name="app.smartmanager.ui.setup.updatequery.UpdateEquipmentFragment"
+        android:label="Update Equipment List"
+        tools:layout="@layout/fragment_update_equipment" >
+        <action
+            android:id="@+id/action_updateEquipmentFragment_to_equipmentFragment"
+            app:destination="@id/equipmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateControlChecksFragment"
+        android:name="app.smartmanager.ui.setup.updatequery.UpdateControlChecksFragment"
+        android:label="Update Control Checks"
+        tools:layout="@layout/fragment_update_control_checks" >
+        <action
+            android:id="@+id/action_updateControlChecksFragment_to_controlChecksFragment"
+            app:destination="@id/controlChecksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateCleaningTaskFragment"
+        android:name="app.smartmanager.ui.setup.updatequery.UpdateCleaningTaskFragment"
+        android:label="Update Cleaning Task"
+        tools:layout="@layout/fragment_update_cleaning_task" >
+        <action
+            android:id="@+id/action_updateCleaningTaskFragment_to_cleaningTaskFragment"
+            app:destination="@id/cleaningTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateChemicalListCOSHHFragment"
+        android:name="app.smartmanager.ui.setup.updatequery.UpdateChemicalListCOSHHFragment"
+        android:label="Update Chemical List"
+        tools:layout="@layout/fragment_update_chemical_list_coshh" >
+        <action
+            android:id="@+id/action_updateChemicalListCOSHHFragment_to_chemicalListCOSHHFragment"
             app:destination="@id/chemicalListCOSHHFragment" />
     </fragment>
 </navigation>
