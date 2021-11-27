@@ -3,12 +3,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import app.smartmanager.datalayer.dataaccessobjects.*
 import app.smartmanager.datalayer.entity.*
+import app.smartmanager.datalayer.typeconverter.DateTypeConverter
 
 // Database definition of SQLite database utilising ROOM database library
 
 @Database(entities = [Probe::class, Supplier::class, Equipment::class, ControlChecks::class, CleaningTask::class, ChemicalListCOSHH::class ],version = 2, exportSchema = false)
+@TypeConverters(DateTypeConverter::class)
 abstract class SmartManagerDB: RoomDatabase(){
     abstract val probeDAO :ProbeDAO
     abstract val supplierDAO: SupplierDAO
@@ -16,6 +19,7 @@ abstract class SmartManagerDB: RoomDatabase(){
     abstract val controlChecksDAO: ControlChecksDAO
     abstract val cleaningTaskDAO: CleaningTaskDAO
     abstract val chemicalListCOSHHDAO: ChemicalListCOSHHDAO
+    abstract val probeCalibrationRecordDAO: ProbeCalibrationRecordDAO
 
     companion object{
         @Volatile

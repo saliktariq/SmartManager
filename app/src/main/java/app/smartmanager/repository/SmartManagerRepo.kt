@@ -44,6 +44,7 @@ class SmartManagerRepo private constructor(context: Context) {
     private val controlChecksDAO = database.controlChecksDAO
     private val cleaningTaskDAO = database.cleaningTaskDAO
     private val chemicalListCOSHHDAO = database.chemicalListCOSHHDAO
+    private val probeCalibrationRecordDAO = database.probeCalibrationRecordDAO
 
 
     /*
@@ -145,4 +146,22 @@ class SmartManagerRepo private constructor(context: Context) {
 
     val readAllChemicalListCOSHHData: LiveData<List<ChemicalListCOSHH>> = chemicalListCOSHHDAO.readAllChemicalListCOSHHData()
 
+    /*
+    ******************- Repository functions related to Probe Calibration Record -******************
+     */
+
+    suspend fun addProbeCalibrationRecord(record: ProbeCalibrationRecord){
+        probeCalibrationRecordDAO.addProbeCalibrationRecord(record)
+
+    }
+
+    suspend fun updateProbeCalibrationRecord(record: ProbeCalibrationRecord){
+        probeCalibrationRecordDAO.updateProbeCalibrationRecord(record)
+            }
+
+    suspend fun deleteProbeCalibrationRecord(record: ProbeCalibrationRecord){
+        probeCalibrationRecordDAO.deleteProbeCalibrationRecord(record)
+    }
+
+    val readAllProbeCalibrationRecordData: LiveData<List<ProbeCalibrationRecord>> = probeCalibrationRecordDAO.readAllProbeCalibrationRecordData()
 }
