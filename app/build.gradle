@@ -48,6 +48,11 @@ android {
 
 dependencies {
 
+    //Dependency to use kotlinx.datetime
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.1")
+
+
+
     //Adding Android Room library to manage database
     def roomVersion = "2.3.0"
     implementation("androidx.room:room-runtime:$roomVersion")

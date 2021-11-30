@@ -19,4 +19,8 @@ interface ProbeCalibrationRecordDAO {
 
     @Delete
     fun deleteProbeCalibrationRecord(record: ProbeCalibrationRecord)
+
+    //Only to be used for testing
+    @Query("SELECT * from probe_calibration_record ORDER BY id ASC")
+    fun retrieveData(): List<ProbeCalibrationRecord>
 }
