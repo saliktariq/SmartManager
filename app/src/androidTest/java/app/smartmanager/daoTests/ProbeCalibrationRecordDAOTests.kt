@@ -61,6 +61,7 @@ class ProbeCalibrationRecordDAOTests {
             //The retrieved list only has 1 record, hence using first() function on List<Probe>
             Assert.assertEquals("Probe 1", retrievedData.first().probe)
             Log.d("DATE OBJECT", retrievedData.first().date.toString())
+            Log.d("TEMPERATURE", retrievedData.first().temperature.toString())
 
         }
 
