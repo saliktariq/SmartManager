@@ -32,4 +32,8 @@ interface ProbeDAO {
     //Query to delete a record based on a given probe object
     @Delete
     fun deleteProbeByProbeObject(probe: Probe)
+
+    //Query to retrieve names of probes to be used in ProbeCalibrationRecord
+    @Query("Select probeName from probe ORDER BY probeName DESC")
+    fun getAllProbeNames(): List<String>?
 }

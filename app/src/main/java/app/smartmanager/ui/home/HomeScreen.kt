@@ -32,18 +32,27 @@ class HomeScreen : Fragment() {
         // Variables to hold HomeScreenViewModel reference and HomeScreenViewModelFactory
         val viewModelFactory = HomeScreenViewModelFactory()
         val homeScreenViewModel = ViewModelProvider(this, viewModelFactory).get(HomeScreenViewModel::class.java)
+
+
         /*
         Retrieving the initialSetup variable to see if the application has been previously setup
         if initialSetup is 0, navigating to InitialSettings fragment
 
         Conditional navigation learnt at https://developer.android.com/guide/navigation/navigation-conditional
          */
-        if (homeScreenViewModel.initialSetup == 0) {
+//        if (homeScreenViewModel.initialSetup == 0) {
+//
+//           val navCtrl = findNavController()
+//            navCtrl.navigate(R.id.initialSettings)
+//        }
 
-           val navCtrl = findNavController()
-            navCtrl.navigate(R.id.initialSettings)
+        viewBinding.btnFoodSafetyManagement.setOnClickListener {
+            viewBinding.root.findNavController().navigate(HomeScreenDirections.actionHomeScreenToFoodSafetyManagementHomeFragment())
         }
 
+        viewBinding.btnSettings.setOnClickListener {
+            viewBinding.root.findNavController().navigate(HomeScreenDirections.actionHomeScreenToInitialSettings())
+        }
         viewBinding.btnLogOut.setOnClickListener{
             signOut()
         }

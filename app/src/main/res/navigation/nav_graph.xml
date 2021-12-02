@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_homeScreen_to_viewProfile"
             app:destination="@id/viewProfile" />
+        <action
+            android:id="@+id/action_homeScreen_to_foodSafetyManagementHomeFragment"
+            app:destination="@id/foodSafetyManagementHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/updatePassword"
@@ -270,5 +273,53 @@
         <action
             android:id="@+id/action_updateChemicalListCOSHHFragment_to_chemicalListCOSHHFragment"
             app:destination="@id/chemicalListCOSHHFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodSafetyManagementHomeFragment"
+        android:name="app.smartmanager.ui.foodsafetymanagement.FoodSafetyManagementHomeFragment"
+        android:label="Food Safety Management"
+        tools:layout="@layout/fragment_food_safety_management_home" >
+        <action
+            android:id="@+id/action_foodSafetyManagementHomeFragment_to_homeScreen"
+            app:destination="@id/homeScreen" />
+        <action
+            android:id="@+id/action_foodSafetyManagementHomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_foodSafetyManagementHomeFragment_to_probeCalibrationRecordFragment2"
+            app:destination="@id/probeCalibrationRecordFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/probeCalibrationRecordFragment2"
+        android:name="app.smartmanager.ui.foodsafetymanagement.proberecord.ProbeCalibrationRecordFragment"
+        android:label="Probe Calibration Record"
+        tools:layout="@layout/probe_calibration_record_fragment" >
+        <action
+            android:id="@+id/action_probeCalibrationRecordFragment2_to_foodSafetyManagementHomeFragment"
+            app:destination="@id/foodSafetyManagementHomeFragment" />
+        <action
+            android:id="@+id/action_probeCalibrationRecordFragment2_to_updateProbeCalibrationRecordFragment"
+            app:destination="@id/updateProbeCalibrationRecordFragment" />
+        <action
+            android:id="@+id/action_probeCalibrationRecordFragment2_to_addProbeCalibrationRecordFragment"
+            app:destination="@id/addProbeCalibrationRecordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProbeCalibrationRecordFragment"
+        android:name="app.smartmanager.ui.foodsafetymanagement.proberecord.AddProbeCalibrationRecordFragment"
+        android:label="Add Probe Calibration Record"
+        tools:layout="@layout/fragment_add_probe_calibration_record" >
+        <action
+            android:id="@+id/action_addProbeCalibrationRecordFragment_to_probeCalibrationRecordFragment2"
+            app:destination="@id/probeCalibrationRecordFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProbeCalibrationRecordFragment"
+        android:name="app.smartmanager.ui.foodsafetymanagement.proberecord.UpdateProbeCalibrationRecordFragment"
+        android:label="Update Probe Calibration Record"
+        tools:layout="@layout/fragment_update_probe_calibration_record" >
+        <action
+            android:id="@+id/action_updateProbeCalibrationRecordFragment_to_probeCalibrationRecordFragment2"
+            app:destination="@id/probeCalibrationRecordFragment2" />
     </fragment>
 </navigation>

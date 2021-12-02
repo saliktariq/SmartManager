@@ -23,12 +23,59 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <LinearLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/footerLayout"
+                android:orientation="vertical">
 
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnFoodSafetyManagement"
+                    style="@style/RegularButtonStyle"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/regularButtonHeight"
+                    android:layout_marginTop="@dimen/xLargeMargin"
+                    android:text="Food Safety Management"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnInventoryControl"
+                    style="@style/RegularButtonStyle"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/regularButtonHeight"
+                    android:layout_marginTop="@dimen/xLargeMargin"
+                    android:text="Inventory Control"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnReports"
+                    style="@style/RegularButtonStyle"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/regularButtonHeight"
+                    android:layout_marginTop="@dimen/xLargeMargin"
+                    android:text="View Reports"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSettings"
+                    style="@style/RegularButtonStyle"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/regularButtonHeight"
+                    android:layout_marginTop="@dimen/xLargeMargin"
+                    android:text="Settings"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
 
 
 
 
             <LinearLayout
+                android:id="@+id/footerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
