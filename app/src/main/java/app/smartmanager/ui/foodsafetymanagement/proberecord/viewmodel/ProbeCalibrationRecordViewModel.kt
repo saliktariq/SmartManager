@@ -15,29 +15,31 @@ import kotlinx.coroutines.launch
 
 class ProbeCalibrationRecordViewModel(application: Application) : AndroidViewModel(application) {
 
+    val getAllProbeNames: LiveData<List<String>>
+
 //    var currentTime: Date = Calendar.getInstance().time
 //    var formattedDate: String = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime)
 
-    var readAllProbeCalibrationRecordData: LiveData<List<ProbeCalibrationRecord>>
+//    var readAllProbeCalibrationRecordData: LiveData<List<ProbeCalibrationRecord>>
 
-    fun getListOfProbes(): List<String>{
-        var listOfProbes: MutableList<String> = ArrayList()
-        viewModelScope.launch(Dispatchers.IO) {
-            val retrievedList = repository.getAllProbeNames()
-
-            if (retrievedList != null) {
-               for (probeName in retrievedList){
-                        listOfProbes.add(probeName)
-                }
-
-            } else {
-                listOfProbes.add("No record")
-            }
-
-
-        }
-        return listOfProbes
-    }
+//    fun getListOfProbes(): List<String>{
+//        var listOfProbes: MutableList<String> = ArrayList()
+//        viewModelScope.launch(Dispatchers.IO) {
+//            val retrievedList = repository.getAllProbeNames()
+//
+//            if (retrievedList != null) {
+//               for (probeName in retrievedList){
+//                        listOfProbes.add(probeName)
+//                }
+//
+//            } else {
+//                listOfProbes.add("No record")
+//            }
+//
+//
+//        }
+//        return listOfProbes
+//    }
 
 
 
@@ -45,10 +47,14 @@ class ProbeCalibrationRecordViewModel(application: Application) : AndroidViewMod
     private val repository: SmartManagerRepo = SmartManagerRepo.get()
 
     init {
-        //Initialising readAllProbeCalibrationRecordData
-        readAllProbeCalibrationRecordData = repository.readAllProbeCalibrationRecordData
+
+        getAllProbeNames = repository.getAllProbeNames
 
     }
+
+
+
+
 
 
 

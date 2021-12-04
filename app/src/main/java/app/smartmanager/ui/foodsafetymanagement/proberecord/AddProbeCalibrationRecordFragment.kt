@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.Nullable
 import androidx.lifecycle.ViewModelProvider
 import app.smartmanager.R
 import app.smartmanager.ui.foodsafetymanagement.proberecord.viewmodel.ProbeCalibrationRecordViewModel
@@ -45,11 +46,15 @@ class AddProbeCalibrationRecordFragment : Fragment() {
         )
 
 
+        //Arraylist to hold values retrieved from DB for probe name
+        var probeNameDataRetrieved = ArrayList<String>()
+
+
         //Setting arrayAdapter for chooseProbeSpinner
 
         val chooseProbeAdapter = ArrayAdapter<String>(
                 this.requireActivity(),
-                android.R.layout.simple_spinner_item, probeCalibrationRecordViewModel.getListOfProbes()
+                android.R.layout.simple_spinner_item, probeNameDataRetrieved
             )
 
 
@@ -58,15 +63,23 @@ class AddProbeCalibrationRecordFragment : Fragment() {
 
         //Setting drop down view resource to adapters
         calibrationMethodAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-        chooseProbeAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        chooseProbeAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line) //check  this if not working
 
         //attaching adapters to spinners
         calibrationMethodSpinner.setAdapter(calibrationMethodAdapter)
         chooseProbeSpinner.setAdapter(chooseProbeAdapter)
 
 
+        probeCalibrationRecordViewModel.getAllProbeNames.observe(viewLifecycleOwner, { listOfProbes ->
+       
+                for (name in listOfProbes){
+                    probeNameDataRetrieved.add(name.toString())
+                }
 
 
+            chooseProbeAdapter.notifyDataSetChanged()
+
+        })
 
 
         val addButton: Button = fragmentView.findViewById(R.id.btnAddNewPCR)

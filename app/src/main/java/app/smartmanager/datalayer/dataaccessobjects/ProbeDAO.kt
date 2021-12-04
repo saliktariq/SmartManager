@@ -1,5 +1,6 @@
 package app.smartmanager.datalayer.dataaccessobjects
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -35,5 +36,5 @@ interface ProbeDAO {
 
     //Query to retrieve names of probes to be used in ProbeCalibrationRecord
     @Query("Select probeName from probe ORDER BY probeName DESC")
-    fun getAllProbeNames(): List<String>?
+    fun getAllProbeNames(): LiveData<List<String>>
 }

@@ -88,10 +88,9 @@ class SmartManagerRepo private constructor(context: Context) {
         return@withContext probeDAO.deleteProbeByProbeObject(probe)
     }
 
-    //Function  to retrieve names of probes to be used in ProbeCalibrationRecord
-    suspend fun getAllProbeNames(): List<String>? {
-        return probeDAO.getAllProbeNames()
-    }
+    //Variable to retrieve and hold  names of probes to be used in ProbeCalibrationRecord
+
+    val getAllProbeNames: LiveData<List<String>> = probeDAO.getAllProbeNames()
 
 
     /*
