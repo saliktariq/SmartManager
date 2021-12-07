@@ -71,7 +71,7 @@ class AddProbeCalibrationRecordFragment : Fragment() {
 
 
         probeCalibrationRecordViewModel.getAllProbeNames.observe(viewLifecycleOwner, { listOfProbes ->
-       
+
                 for (name in listOfProbes){
                     probeNameDataRetrieved.add(name.toString())
                 }
