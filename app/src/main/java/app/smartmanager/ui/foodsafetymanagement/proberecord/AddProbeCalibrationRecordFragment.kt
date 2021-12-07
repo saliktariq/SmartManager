@@ -1,6 +1,7 @@
 package app.smartmanager.ui.foodsafetymanagement.proberecord
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -83,6 +84,11 @@ class AddProbeCalibrationRecordFragment : Fragment() {
 
 
         val addButton: Button = fragmentView.findViewById(R.id.btnAddNewPCR)
+        
+        addButton.setOnClickListener {
+            //Testing how to retrieve selected value from spinner
+            Log.d("SPINNER TEST", chooseProbeSpinner.selectedItem.toString())
+        }
 
 
         return fragmentView

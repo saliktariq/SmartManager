@@ -20,26 +20,6 @@ class ProbeCalibrationRecordViewModel(application: Application) : AndroidViewMod
 //    var currentTime: Date = Calendar.getInstance().time
 //    var formattedDate: String = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime)
 
-//    var readAllProbeCalibrationRecordData: LiveData<List<ProbeCalibrationRecord>>
-
-//    fun getListOfProbes(): List<String>{
-//        var listOfProbes: MutableList<String> = ArrayList()
-//        viewModelScope.launch(Dispatchers.IO) {
-//            val retrievedList = repository.getAllProbeNames()
-//
-//            if (retrievedList != null) {
-//               for (probeName in retrievedList){
-//                        listOfProbes.add(probeName)
-//                }
-//
-//            } else {
-//                listOfProbes.add("No record")
-//            }
-//
-//
-//        }
-//        return listOfProbes
-//    }
 
 
 
