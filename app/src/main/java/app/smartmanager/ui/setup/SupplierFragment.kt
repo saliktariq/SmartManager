@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -26,6 +27,7 @@ class SupplierFragment : Fragment() {
         val fragmentView = inflater.inflate(R.layout.supplier_fragment, container, false)
 
         val floatingAddButton = fragmentView.findViewById<FloatingActionButton>(R.id.btnAdd)
+        val backButton = fragmentView.findViewById<Button>(R.id.btnBack)
 
 
 
@@ -49,6 +51,13 @@ class SupplierFragment : Fragment() {
             findNavController().navigate(R.id.action_supplierFragment_to_addSupplierFragment)
 
         }
+
+        // Attaching onClickListener to Back button (backButton)
+        backButton.setOnClickListener {
+            findNavController().navigate(R.id.action_supplierFragment_to_initialSettings)
+        }
+
+
 
         return fragmentView
 
