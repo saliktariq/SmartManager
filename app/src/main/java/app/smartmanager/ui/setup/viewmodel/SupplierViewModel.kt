@@ -20,12 +20,6 @@ class SupplierViewModel(application: Application) : AndroidViewModel(application
 
     val readAllSupplierData: LiveData<List<Supplier>>
 
-
-
-
-
-
-
     //Retrieve instance of SmartManager's Repository
     private val repository: SmartManagerRepo = SmartManagerRepo.get()
 
@@ -94,8 +88,6 @@ class SupplierViewModel(application: Application) : AndroidViewModel(application
     /*
     Function to delete supplier object
      */
-
-
 
     fun deleteSupplier(supplier: Supplier){
 
