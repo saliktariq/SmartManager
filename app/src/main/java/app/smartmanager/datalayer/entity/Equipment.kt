@@ -8,5 +8,5 @@ data class Equipment(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
     val name: String,
-    val temperatureControl: Boolean?
+
 )

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.smartmanager.R
+import app.smartmanager.adapters.EquipmentAdapter
 import app.smartmanager.adapters.SupplierAdapter
 import app.smartmanager.ui.setup.viewmodel.EquipmentViewModel
 import app.smartmanager.ui.setup.viewmodel.SupplierViewModel

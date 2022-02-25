@@ -43,10 +43,10 @@ class EquipmentViewModel(application: Application) : AndroidViewModel(applicatio
         }
     }
 
-    fun insertData(name: String, temperatureControl: Boolean?): Boolean{
+    fun insertData(name: String): Boolean{
         if(HelperFunctions.checkInputData(name)){
             //creating Equipment object
-            val equipment = Equipment(0,name, temperatureControl)
+            val equipment = Equipment(0,name)
 
             //Calling ViewModel function to add equipment object to database
             addEquipment(equipment)
@@ -59,9 +59,9 @@ class EquipmentViewModel(application: Application) : AndroidViewModel(applicatio
         }
     }
 
-    fun updateData(equipmentID: Long, name: String, temperatureControl: Boolean?): Boolean {
+    fun updateData(equipmentID: Long, name: String): Boolean {
         if(HelperFunctions.checkInputData(name)){
-            val equipment = Equipment(equipmentID, name, temperatureControl)
+            val equipment = Equipment(equipmentID, name)
             updateEquipment(equipment)
             ToastMaker.showToast("Equipment updated successfully", GetAppContext.appContext)
             return true

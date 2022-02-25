@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.smartmanager.R
+import app.smartmanager.adapters.ChemicalListCOSHHAdapter
 import app.smartmanager.adapters.SupplierAdapter
 import app.smartmanager.ui.setup.viewmodel.ChemicalListCOSHHViewModel
 import app.smartmanager.ui.setup.viewmodel.SupplierViewModel

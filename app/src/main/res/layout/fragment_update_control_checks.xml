@@ -59,6 +59,7 @@ tools:context=".ui.setup.updatequery.UpdateControlChecksFragment">
 
             android:id="@+id/controlType"
             android:layout_width="match_parent"
+            android:visibility="invisible"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:spinnerMode="dropdown"

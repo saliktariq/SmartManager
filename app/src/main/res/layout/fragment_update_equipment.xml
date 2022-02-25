@@ -46,6 +46,7 @@ tools:context=".ui.setup.updatequery.UpdateEquipmentFragment">
 
         <CheckBox android:id="@+id/temperatureControlRequired"
             android:layout_width="wrap_content"
+            android:visibility="invisible"
             android:layout_height="wrap_content"
             android:text="Temperature Control Required"
             app:layout_constraintEnd_toEndOf="parent"
