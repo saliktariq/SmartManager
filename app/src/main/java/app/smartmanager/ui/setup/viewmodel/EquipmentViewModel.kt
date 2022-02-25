@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class EquipmentViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val readAllEquipmentData: LiveData<List<Equipment>>
+    val readAllEquipmentData: LiveData<List<Equipment>>
 
     //Retrieve instance of SmartManager's Repository
     private val repository: SmartManagerRepo = SmartManagerRepo.get()

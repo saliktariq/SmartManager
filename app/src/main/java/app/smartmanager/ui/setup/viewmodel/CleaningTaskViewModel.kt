@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class CleaningTaskViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val readAllCleaningTaskData: LiveData<List<CleaningTask>>
+    val readAllCleaningTaskData: LiveData<List<CleaningTask>>
 
     //Retrieve instance of SmartManager's Repository
     private val repository: SmartManagerRepo = SmartManagerRepo.get()

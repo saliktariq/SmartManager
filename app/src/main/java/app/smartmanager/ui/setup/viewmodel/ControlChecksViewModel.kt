@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 
 class ControlChecksViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val readAllControlChecksData: LiveData<List<ControlChecks>>
+    val readAllControlChecksData: LiveData<List<ControlChecks>>
 
     //Retrieve instance of SmartManager's Repository
     private val repository: SmartManagerRepo = SmartManagerRepo.get()

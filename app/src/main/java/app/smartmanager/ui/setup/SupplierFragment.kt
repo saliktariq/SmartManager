@@ -56,9 +56,6 @@ class SupplierFragment : Fragment() {
         backButton.setOnClickListener {
             findNavController().navigate(R.id.action_supplierFragment_to_initialSettings)
         }
-
-
-
         return fragmentView
 
     }

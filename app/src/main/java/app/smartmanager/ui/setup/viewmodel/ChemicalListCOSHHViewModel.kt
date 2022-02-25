@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class ChemicalListCOSHHViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val readAllChemicalListCOSHHData: LiveData<List<ChemicalListCOSHH>>
+    val readAllChemicalListCOSHHData: LiveData<List<ChemicalListCOSHH>>
 
     //Retrieve instance of SmartManager's Repository
     private val repository: SmartManagerRepo = SmartManagerRepo.get()
