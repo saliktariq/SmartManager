@@ -246,6 +246,9 @@
         <action
             android:id="@+id/action_updateEquipmentFragment_to_equipmentFragment"
             app:destination="@id/equipmentFragment" />
+        <argument
+            android:name="currentRecord"
+            app:argType="app.smartmanager.datalayer.entity.Equipment" />
     </fragment>
     <fragment
         android:id="@+id/updateControlChecksFragment"
@@ -255,6 +258,9 @@
         <action
             android:id="@+id/action_updateControlChecksFragment_to_controlChecksFragment"
             app:destination="@id/controlChecksFragment" />
+        <argument
+            android:name="currentRecord"
+            app:argType="app.smartmanager.datalayer.entity.ControlChecks" />
     </fragment>
     <fragment
         android:id="@+id/updateCleaningTaskFragment"
@@ -264,6 +270,9 @@
         <action
             android:id="@+id/action_updateCleaningTaskFragment_to_cleaningTaskFragment"
             app:destination="@id/cleaningTaskFragment" />
+        <argument
+            android:name="currentRecord"
+            app:argType="app.smartmanager.datalayer.entity.CleaningTask" />
     </fragment>
     <fragment
         android:id="@+id/updateChemicalListCOSHHFragment"
@@ -273,6 +282,9 @@
         <action
             android:id="@+id/action_updateChemicalListCOSHHFragment_to_chemicalListCOSHHFragment"
             app:destination="@id/chemicalListCOSHHFragment" />
+        <argument
+            android:name="currentRecord"
+            app:argType="app.smartmanager.datalayer.entity.ChemicalListCOSHH" />
     </fragment>
     <fragment
         android:id="@+id/foodSafetyManagementHomeFragment"
