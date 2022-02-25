@@ -1,11 +1,9 @@
 package app.smartmanager.datalayer.dataaccessobjects
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import app.smartmanager.datalayer.entity.ControlChecks
+import app.smartmanager.datalayer.entity.Supplier
 
 
 @Dao
@@ -16,4 +14,10 @@ interface ControlChecksDAO {
 
     @Query("SELECT * from controlChecks ORDER BY id ASC")
     fun readAllControlChecksData(): LiveData<List<ControlChecks>>
+
+    @Update
+    fun updateControlChecks(controlChecks: ControlChecks)
+
+    @Delete
+    fun deleteControlChecks(controlChecks: ControlChecks)
 }

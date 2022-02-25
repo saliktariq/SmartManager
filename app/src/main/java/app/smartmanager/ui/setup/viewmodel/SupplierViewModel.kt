@@ -40,6 +40,18 @@ class SupplierViewModel(application: Application) : AndroidViewModel(application
         }
     }
 
+    /*
+Function to delete supplier object
+ */
+
+    fun deleteSupplier(supplier: Supplier){
+
+        viewModelScope.launch (Dispatchers.IO)  {
+            repository.deleteSupplier(supplier)
+
+        }
+    }
+
     fun insertDataSetToRoomDB(supplierName: String, supplierEmail: String?, supplierPhone: String?, supplierAddress: String?): Boolean {
 
         if(checkInputData(supplierName)){
@@ -85,17 +97,7 @@ class SupplierViewModel(application: Application) : AndroidViewModel(application
         return !(TextUtils.isEmpty(supplierName))
     }
 
-    /*
-    Function to delete supplier object
-     */
 
-    fun deleteSupplier(supplier: Supplier){
-
-        viewModelScope.launch (Dispatchers.IO)  {
-                repository.deleteSupplier(supplier)
-
-            }
-    }
 
 
 }

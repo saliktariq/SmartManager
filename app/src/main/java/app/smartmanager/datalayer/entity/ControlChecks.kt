@@ -8,6 +8,6 @@ data class ControlChecks(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
     val name: String,
-    val description: String,
-    val type: String
+    val description: String?
+
 )

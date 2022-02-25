@@ -1,11 +1,9 @@
 package app.smartmanager.datalayer.dataaccessobjects
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import app.smartmanager.datalayer.entity.Equipment
+import app.smartmanager.datalayer.entity.Supplier
 
 
 @Dao
@@ -16,4 +14,10 @@ interface EquipmentDAO {
 
     @Query("SELECT * from equipment ORDER BY id ASC")
     fun readAllEquipmentData(): LiveData<List<Equipment>>
+
+    @Update
+    fun updateEquipment(equipment: Equipment)
+
+    @Delete
+    fun deleteEquipment(equipment: Equipment)
 }
