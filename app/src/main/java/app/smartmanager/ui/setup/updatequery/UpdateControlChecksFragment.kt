@@ -39,6 +39,7 @@ class UpdateControlChecksFragment : Fragment() {
 
         //Populating the Fragment fields with received arguments
         fragmentView.findViewById<EditText>(R.id.controlName).setText(args.currentRecord.name).toString()
+        fragmentView.findViewById<EditText>(R.id.controlDescription).setText(args.currentRecord.description).toString()
 
 
 

@@ -55,7 +55,7 @@ tools:context=".ui.setup.updatequery.UpdateCleaningTaskFragment">
             app:layout_constraintTop_toBottomOf="@id/cleaningTaskName"
             app:layout_constraintBottom_toTopOf="@id/taskFrequency"/>
 
-        <Spinner
+        <EditText
 
             android:id="@+id/taskFrequency"
             android:layout_width="match_parent"
