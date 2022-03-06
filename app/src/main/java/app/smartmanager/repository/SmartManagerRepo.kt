@@ -145,64 +145,67 @@ class SmartManagerRepo private constructor(context: Context) {
         controlChecksDAO.deleteControlChecks(controlChecks)
     }
 
-        val readAllControlChecksData: LiveData<List<ControlChecks>> =
-            controlChecksDAO.readAllControlChecksData()
+    val readAllControlChecksData: LiveData<List<ControlChecks>> =
+        controlChecksDAO.readAllControlChecksData()
 
-        /*
-    ******************- Repository functions related to CleaningTask Entity -******************
-     */
+    /*
+******************- Repository functions related to CleaningTask Entity -******************
+ */
 
-        suspend fun addCleaningTask(cleaningTask: CleaningTask) {
-            cleaningTaskDAO.addCleaningTask(cleaningTask)
-        }
-
-        suspend fun updateCleaningTask(cleaningTask: CleaningTask){
-            cleaningTaskDAO.updateCleaningTask(cleaningTask)
-        }
-
-        suspend fun deleteCleaningTask(cleaningTask: CleaningTask){
-            cleaningTaskDAO.deleteCleaningTask(cleaningTask)
-        }
-
-        val readAllCleaningTaskData: LiveData<List<CleaningTask>> =
-            cleaningTaskDAO.readAllCleaningTaskData()
-
-        /*
-    ******************- Repository functions related to ChemicalListCOSHH Entity -******************
-     */
-
-        suspend fun addChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH) {
-            chemicalListCOSHHDAO.addChemicalListCOSHH(chemicalListCOSHH)
-        }
-
-        suspend fun updateChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH){
-            chemicalListCOSHHDAO.updateChemicalListCOSHH(chemicalListCOSHH)
-        }
-
-        suspend fun deleteChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH){
-            chemicalListCOSHHDAO.deleteChemicalListCOSHH(chemicalListCOSHH)
-        }
-
-        val readAllChemicalListCOSHHData: LiveData<List<ChemicalListCOSHH>> =
-            chemicalListCOSHHDAO.readAllChemicalListCOSHHData()
-
-        /*
-    ******************- Repository functions related to Probe Calibration Record -******************
-     */
-
-        suspend fun addProbeCalibrationRecord(record: ProbeCalibrationRecord) {
-            probeCalibrationRecordDAO.addProbeCalibrationRecord(record)
-
-        }
-
-        suspend fun updateProbeCalibrationRecord(record: ProbeCalibrationRecord) {
-            probeCalibrationRecordDAO.updateProbeCalibrationRecord(record)
-        }
-
-        suspend fun deleteProbeCalibrationRecord(record: ProbeCalibrationRecord) {
-            probeCalibrationRecordDAO.deleteProbeCalibrationRecord(record)
-        }
-
-        val readAllProbeCalibrationRecordData: LiveData<List<ProbeCalibrationRecord>> =
-            probeCalibrationRecordDAO.readAllProbeCalibrationRecordData()
+    suspend fun addCleaningTask(cleaningTask: CleaningTask) {
+        cleaningTaskDAO.addCleaningTask(cleaningTask)
     }
+
+    suspend fun updateCleaningTask(cleaningTask: CleaningTask) {
+        cleaningTaskDAO.updateCleaningTask(cleaningTask)
+    }
+
+    suspend fun deleteCleaningTask(cleaningTask: CleaningTask) {
+        cleaningTaskDAO.deleteCleaningTask(cleaningTask)
+    }
+
+    val readAllCleaningTaskData: LiveData<List<CleaningTask>> =
+        cleaningTaskDAO.readAllCleaningTaskData()
+
+    /*
+******************- Repository functions related to ChemicalListCOSHH Entity -******************
+ */
+
+    suspend fun addChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH) {
+        chemicalListCOSHHDAO.addChemicalListCOSHH(chemicalListCOSHH)
+    }
+
+    suspend fun updateChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH) {
+        chemicalListCOSHHDAO.updateChemicalListCOSHH(chemicalListCOSHH)
+    }
+
+    suspend fun deleteChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH) {
+        chemicalListCOSHHDAO.deleteChemicalListCOSHH(chemicalListCOSHH)
+    }
+
+    val readAllChemicalListCOSHHData: LiveData<List<ChemicalListCOSHH>> =
+        chemicalListCOSHHDAO.readAllChemicalListCOSHHData()
+
+    /*
+******************- Repository functions related to Probe Calibration Record -******************
+ */
+
+    suspend fun addProbeCalibrationRecord(record: ProbeCalibrationRecord) {
+        probeCalibrationRecordDAO.addProbeCalibrationRecord(record)
+
+    }
+
+    suspend fun updateProbeCalibrationRecord(record: ProbeCalibrationRecord) {
+        probeCalibrationRecordDAO.updateProbeCalibrationRecord(record)
+    }
+
+    suspend fun deleteProbeCalibrationRecord(record: ProbeCalibrationRecord) {
+        probeCalibrationRecordDAO.deleteProbeCalibrationRecord(record)
+    }
+
+    val readAllProbeCalibrationRecordData: LiveData<List<ProbeCalibrationRecord>> =
+        probeCalibrationRecordDAO.readAllProbeCalibrationRecordData()
+
+
+
+}
