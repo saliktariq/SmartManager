@@ -71,16 +71,13 @@ class AddProbeCalibrationRecordFragment : Fragment() {
         chooseProbeSpinner.setAdapter(chooseProbeAdapter)
 
 
-        probeCalibrationRecordViewModel.getAllProbeNames.observe(viewLifecycleOwner, { listOfProbes ->
+        probeCalibrationRecordViewModel.getAllProbeNames.observe(viewLifecycleOwner) { listOfProbes ->
 
-                for (name in listOfProbes){
-                    probeNameDataRetrieved.add(name.toString())
-                }
-
-
+            for (name in listOfProbes) {
+                probeNameDataRetrieved.add(name.toString())
+            }
             chooseProbeAdapter.notifyDataSetChanged()
-
-        })
+        }
 
 
         val addButton: Button = fragmentView.findViewById(R.id.btnAddNewPCR)

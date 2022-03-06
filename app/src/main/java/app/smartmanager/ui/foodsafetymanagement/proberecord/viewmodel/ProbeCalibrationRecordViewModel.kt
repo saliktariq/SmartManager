@@ -20,6 +20,7 @@ import java.util.*
 class ProbeCalibrationRecordViewModel(application: Application) : AndroidViewModel(application) {
 
     val getAllProbeCalibrationRecords: LiveData<List<ProbeCalibrationRecord>>
+    val getAllProbeNames: LiveData<List<String>>
 
 //    var currentTime: Date = Calendar.getInstance().time
 //    var formattedDate: String = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime)
@@ -31,6 +32,7 @@ class ProbeCalibrationRecordViewModel(application: Application) : AndroidViewMod
     init {
         //Initialising getAllProbeNames
         getAllProbeCalibrationRecords = repository.readAllProbeCalibrationRecordData
+        getAllProbeNames = repository.getAllProbeNames
     }
 
     fun addProbeCalibrationRecord(record: ProbeCalibrationRecord) {
@@ -113,4 +115,3 @@ class ProbeCalibrationRecordViewModel(application: Application) : AndroidViewMod
 
 
 
-}
