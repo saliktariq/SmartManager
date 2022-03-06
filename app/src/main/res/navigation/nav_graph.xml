@@ -333,5 +333,8 @@
         <action
             android:id="@+id/action_updateProbeCalibrationRecordFragment_to_probeCalibrationRecordFragment2"
             app:destination="@id/probeCalibrationRecordFragment2" />
+        <argument
+            android:name="currentRecord"
+            app:argType="app.smartmanager.datalayer.entity.ProbeCalibrationRecord" />
     </fragment>
 </navigation>

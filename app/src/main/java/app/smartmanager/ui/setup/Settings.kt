@@ -51,6 +51,11 @@ class Settings : Fragment() {
             viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToChemicalListCOSHHFragment())
         }
 
+        //Setting OnClickListener to btnBack
+        viewBinding.btnBack.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToHomeScreen())
+        }
+
         //Attaching singOut function to Logout button
         viewBinding.btnLogOut.setOnClickListener{
             signOut()

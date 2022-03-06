@@ -191,6 +191,8 @@
 
 
 
+
+
             <LinearLayout
                 android:id="@+id/bottomLinearLayout"
                 android:layout_width="match_parent"
@@ -200,6 +202,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnBack"
+                    style="@style/Theme.MaterialComponents.Light"
+                    android:layout_width="250dp"
+                    android:layout_height="@dimen/regularButtonHeight"
+                    android:layout_marginTop="@dimen/xLargeMargin"
+                    android:layout_marginBottom="@dimen/xLargeMargin"
+                    android:text="Back to Home"
+                    android:textColor="@color/colorPrimaryDark" />
+
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnLogOut"

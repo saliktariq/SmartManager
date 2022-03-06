@@ -28,7 +28,7 @@ tools:context=".ui.foodsafetymanagement.proberecord.UpdateProbeCalibrationRecord
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp">
 
-        <androidx.appcompat.widget.AppCompatSpinner
+        <TextView
             android:id="@+id/spinner_probeNamePCR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,12 +61,12 @@ tools:context=".ui.foodsafetymanagement.proberecord.UpdateProbeCalibrationRecord
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_probeTemperature"
-            app:layout_constraintBottom_toTopOf="@id/btnAddNewPCR"/>
+            app:layout_constraintBottom_toTopOf="@id/btnUpdatePCR"/>
 
 
 
         <Button
-            android:id="@+id/btnAddNewPCR"
+            android:id="@+id/btnUpdatePCR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"

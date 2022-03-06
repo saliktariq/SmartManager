@@ -44,7 +44,7 @@
             android:layout_width="250dp"
             android:layout_height="@dimen/regularButtonHeight"
             android:layout_marginTop="@dimen/xLargeMargin"
-            android:text="Add Probe Calibration Record"
+            android:text="Probe Calibration Record"
             android:textColor="@color/colorPrimaryDark" />
 
 
