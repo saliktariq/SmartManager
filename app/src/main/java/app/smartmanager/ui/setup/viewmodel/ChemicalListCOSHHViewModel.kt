@@ -21,7 +21,7 @@ class ChemicalListCOSHHViewModel(application: Application) : AndroidViewModel(ap
     private val repository: SmartManagerRepo = SmartManagerRepo.get()
 
     init {
-        //Initialising readAllSupplierData
+        //Initialising readAllChemicalListCOSHHData
         readAllChemicalListCOSHHData = repository.readAllChemicalListCOSHHData
     }
 
@@ -63,7 +63,7 @@ class ChemicalListCOSHHViewModel(application: Application) : AndroidViewModel(ap
             //creating ChemicalListCOSHH object
             val chemicalListCOSHH = ChemicalListCOSHH(chemicalListCOSHHID,name, purpose,concentration,notes)
 
-            //Calling ViewModel function to add ChemicalListCOSHH object to database
+            //Calling ViewModel function to update ChemicalListCOSHH object in database
             updateChemicalListCOSHH(chemicalListCOSHH)
             ToastMaker.showToast("Chemical updated successfully", GetAppContext.appContext)
             return true

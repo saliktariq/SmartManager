@@ -10,7 +10,7 @@ import kotlinx.parcelize.Parcelize
 data class InventoryItem (
     @PrimaryKey(autoGenerate = true)
     val id: Long,
-    val supplier: String?,
     val name: String,
+    val supplier: String?,
     val quantityPerUnit: Int?
 ) : Parcelable
