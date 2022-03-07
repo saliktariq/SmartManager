@@ -24,18 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/addProbeTickMark"
-                android:visibility="gone"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="@dimen/normalMargin"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/ic_assignment_turned_in_black_24dp"
-                app:layout_constraintEnd_toStartOf="@id/addNewProbeButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addNewProbeButton"
@@ -46,23 +35,10 @@
                 android:text="@string/setup_new_probe_thermometer"
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/addProbeTickMark"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/addNewSupplierTickMark"
-                android:visibility="gone"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="@dimen/normalMargin"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/ic_assignment_turned_in_black_24dp"
-                app:layout_constraintEnd_toStartOf="@id/addNewSupplierButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/addProbeTickMark"
 
-                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addNewSupplierButton"
@@ -73,23 +49,10 @@
                 android:text="@string/add_new_supplier"
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/addNewSupplierTickMark"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/addNewProbeButton" />
 
-            <ImageView
-                android:id="@+id/addNewEquipmentTickMark"
-                android:layout_width="30dp"
-                android:visibility="gone"
-                android:layout_height="30dp"
-                android:layout_marginStart="@dimen/normalMargin"
-                android:layout_marginTop="@dimen/imageInVerticalStack"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/ic_assignment_turned_in_black_24dp"
-                app:layout_constraintEnd_toStartOf="@id/addNewEquipmentButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/addNewSupplierTickMark"
 
-                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addNewEquipmentButton"
@@ -100,23 +63,9 @@
                 android:text="Add Equipment"
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/addNewEquipmentTickMark"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/addNewSupplierButton" />
 
-            <ImageView
-                android:id="@+id/addNewControlChecksTickMark"
-                android:layout_width="30dp"
-                android:visibility="gone"
-                android:layout_height="30dp"
-                android:layout_marginStart="@dimen/normalMargin"
-                android:layout_marginTop="@dimen/imageInVerticalStack"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/ic_assignment_turned_in_black_24dp"
-                app:layout_constraintEnd_toStartOf="@id/addNewControlChecksButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/addNewEquipmentTickMark"
-
-                />
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -128,23 +77,10 @@
                 android:text="Add Control Check"
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/addNewControlChecksTickMark"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/addNewEquipmentButton" />
 
-            <ImageView
-                android:id="@+id/addNewCleaningTaskTickMark"
-                android:layout_width="30dp"
-                android:visibility="gone"
-                android:layout_height="30dp"
-                android:layout_marginStart="@dimen/normalMargin"
-                android:layout_marginTop="@dimen/imageInVerticalStack"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/ic_assignment_turned_in_black_24dp"
-                app:layout_constraintEnd_toStartOf="@id/addNewCleaningTaskButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/addNewControlChecksTickMark"
 
-                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addNewCleaningTaskButton"
@@ -155,24 +91,9 @@
                 android:text="Add Cleaning Task"
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/addNewCleaningTaskTickMark"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/addNewControlChecksButton" />
 
-
-            <ImageView
-                android:id="@+id/addNewChemicalTickMark"
-                android:layout_width="30dp"
-                android:visibility="gone"
-                android:layout_height="30dp"
-                android:layout_marginStart="@dimen/normalMargin"
-                android:layout_marginTop="@dimen/imageInVerticalStack"
-                android:layout_marginEnd="4dp"
-                android:background="@drawable/ic_assignment_turned_in_black_24dp"
-                app:layout_constraintEnd_toStartOf="@id/addNewChemicalButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/addNewCleaningTaskTickMark"
-
-                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addNewChemicalButton"
@@ -183,16 +104,32 @@
                 android:text="Add COSHH Chemical"
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/addNewChemicalTickMark"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/addNewCleaningTaskButton" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addProductList"
+                style="@style/RegularButtonStyle"
+                android:layout_width="250dp"
+                android:layout_height="@dimen/regularButtonHeight"
+                android:layout_marginTop="@dimen/xLargeMargin"
+                android:text="Add Products"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addNewChemicalButton"/>
 
-
-
-
-
-
-
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addCookedProductList"
+                style="@style/RegularButtonStyle"
+                android:layout_width="250dp"
+                android:layout_height="@dimen/regularButtonHeight"
+                android:layout_marginTop="@dimen/xLargeMargin"
+                android:text="Add Cooked Product List"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addProductList" />
             <LinearLayout
                 android:id="@+id/bottomLinearLayout"
                 android:layout_width="match_parent"
@@ -239,7 +176,6 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/normalFont" />
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
