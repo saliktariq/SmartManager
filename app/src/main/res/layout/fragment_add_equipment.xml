@@ -41,20 +41,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/temperatureControlRequired"/>
+                app:layout_constraintBottom_toTopOf="@id/btnAdd"/>
 
 
 
-            <CheckBox android:id="@+id/temperatureControlRequired"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-                android:visibility="invisible"
-            android:text="Temperature Control Required"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/equipmentName"
-                app:layout_constraintBottom_toTopOf="@id/btnAdd"
-            />
+
 
             <Button
                 android:id="@+id/btnAdd"
@@ -64,7 +55,7 @@
                 android:text="Add New Equipment"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/temperatureControlRequired"
+                app:layout_constraintTop_toBottomOf="@id/equipmentName"
                 />
 
 
