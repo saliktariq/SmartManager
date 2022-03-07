@@ -87,6 +87,12 @@
         <action
             android:id="@+id/action_initialSettings_to_chemicalListCOSHHFragment"
             app:destination="@id/chemicalListCOSHHFragment" />
+        <action
+            android:id="@+id/action_initialSettings_to_inventoryItemFragment"
+            app:destination="@id/inventoryItemFragment" />
+        <action
+            android:id="@+id/action_initialSettings_to_cookedProductItemFragment"
+            app:destination="@id/cookedProductItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewProfile"
@@ -336,5 +342,77 @@
         <argument
             android:name="currentRecord"
             app:argType="app.smartmanager.datalayer.entity.ProbeCalibrationRecord" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryItemFragment"
+        android:name="app.smartmanager.ui.setup.InventoryItemFragment"
+        android:label="inventory_item_fragment"
+        tools:layout="@layout/inventory_item_fragment" >
+        <action
+            android:id="@+id/action_inventoryItemFragment_to_addInventoryItemFragment"
+            app:destination="@id/addInventoryItemFragment" />
+        <action
+            android:id="@+id/action_inventoryItemFragment_to_updateInventoryItemFragment"
+            app:destination="@id/updateInventoryItemFragment" />
+        <action
+            android:id="@+id/action_inventoryItemFragment_to_initialSettings"
+            app:destination="@id/initialSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addInventoryItemFragment"
+        android:name="app.smartmanager.ui.setup.insertquery.AddInventoryItemFragment"
+        android:label="fragment_add_inventory_item"
+        tools:layout="@layout/fragment_add_inventory_item" >
+        <action
+            android:id="@+id/action_addInventoryItemFragment_to_inventoryItemFragment"
+            app:destination="@id/inventoryItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateInventoryItemFragment"
+        android:name="app.smartmanager.ui.setup.updatequery.UpdateInventoryItemFragment"
+        android:label="fragment_update_inventory_item"
+        tools:layout="@layout/fragment_update_inventory_item" >
+        <action
+            android:id="@+id/action_updateInventoryItemFragment_to_inventoryItemFragment"
+            app:destination="@id/inventoryItemFragment" />
+        <argument
+            android:name="currentRecord"
+            app:argType="app.smartmanager.datalayer.entity.InventoryItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookedProductItemFragment"
+        android:name="app.smartmanager.ui.setup.CookedProductItemFragment"
+        android:label="cooked_product_item_fragment"
+        tools:layout="@layout/cooked_product_item_fragment" >
+        <action
+            android:id="@+id/action_cookedProductItemFragment_to_addCookedProductItemFragment"
+            app:destination="@id/addCookedProductItemFragment" />
+        <action
+            android:id="@+id/action_cookedProductItemFragment_to_updateCookedProductItemFragment"
+            app:destination="@id/updateCookedProductItemFragment" />
+        <action
+            android:id="@+id/action_cookedProductItemFragment_to_initialSettings"
+            app:destination="@id/initialSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCookedProductItemFragment"
+        android:name="app.smartmanager.ui.setup.insertquery.AddCookedProductItemFragment"
+        android:label="fragment_add_cooked_product_item"
+        tools:layout="@layout/fragment_add_cooked_product_item" >
+        <action
+            android:id="@+id/action_addCookedProductItemFragment_to_cookedProductItemFragment"
+            app:destination="@id/cookedProductItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateCookedProductItemFragment"
+        android:name="app.smartmanager.ui.setup.updatequery.UpdateCookedProductItemFragment"
+        android:label="fragment_update_cooked_product_item"
+        tools:layout="@layout/fragment_update_cooked_product_item" >
+        <action
+            android:id="@+id/action_updateCookedProductItemFragment_to_cookedProductItemFragment"
+            app:destination="@id/cookedProductItemFragment" />
+        <argument
+            android:name="currentRecord"
+            app:argType="app.smartmanager.datalayer.entity.CookedProductItem" />
     </fragment>
 </navigation>
