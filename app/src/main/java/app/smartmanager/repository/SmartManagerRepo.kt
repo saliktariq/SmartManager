@@ -45,6 +45,8 @@ class SmartManagerRepo private constructor(context: Context) {
     private val cleaningTaskDAO = database.cleaningTaskDAO
     private val chemicalListCOSHHDAO = database.chemicalListCOSHHDAO
     private val probeCalibrationRecordDAO = database.probeCalibrationRecordDAO
+    private val cookedProductItemDAO = database.cookedProductItemDAO
+    private val inventoryItemDAO = database.inventoryItemDAO
 
 
     /*
@@ -207,5 +209,44 @@ class SmartManagerRepo private constructor(context: Context) {
         probeCalibrationRecordDAO.readAllProbeCalibrationRecordData()
 
 
+    /*
+******************- Repository functions related to CookedProductItem -******************
+*/
 
+    suspend fun addCookedProductItemRecord(record: CookedProductItem) {
+        cookedProductItemDAO.addCookedProductItemRecord(record)
+
+    }
+
+    suspend fun updateCookedProductItemRecord(record: CookedProductItem) {
+        cookedProductItemDAO.updateCookedProductItemRecord(record)
+    }
+
+    suspend fun deleteCookedProductItemRecord(record: CookedProductItem) {
+        cookedProductItemDAO.deleteCookedProductItemRecord(record)
+    }
+
+    val readAllCookedProductItemRecordData: LiveData<List<CookedProductItem>> =
+        cookedProductItemDAO.readAllCookedProductItemData()
+
+
+    /*
+******************- Repository functions related to InventoryItem -******************
+*/
+
+    suspend fun addInventoryItemRecord(record: InventoryItem) {
+        inventoryItemDAO.addInventoryItemRecord(record)
+
+    }
+
+    suspend fun updateInventoryItemRecord(record: InventoryItem) {
+        inventoryItemDAO.updateInventoryItemRecord(record)
+    }
+
+    suspend fun deleteInventoryItemRecord(record: InventoryItem) {
+        inventoryItemDAO.deleteInventoryItemRecord(record)
+    }
+
+    val readAllInventoryItemRecordData: LiveData<List<InventoryItem>> =
+        inventoryItemDAO.readAllInventoryItemData()
 }
