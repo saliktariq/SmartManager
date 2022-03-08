@@ -1,60 +1,127 @@
 package app.smartmanager.ui.setup.updatequery
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import androidx.appcompat.widget.AppCompatSpinner
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import app.smartmanager.R
+import app.smartmanager.helper.GetAppContext
+import app.smartmanager.helper.ToastMaker
+import app.smartmanager.ui.setup.viewmodel.InventoryItemViewModel
+import kotlin.properties.Delegates
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [UpdateInventoryItemFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class UpdateInventoryItemFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var inventoryItemViewModel: InventoryItemViewModel
+    private val args by navArgs<UpdateInventoryItemFragmentArgs>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    //Variables to hold fragment data
+    var id by Delegates.notNull<Long>()
+    lateinit var name: String
+    var supplier: String? = null
+    var quantityPerUnit: Int? = 0
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_update_inventory_item, container, false)
+
+        val fragmentView = inflater.inflate(R.layout.fragment_update_inventory_item, container, false)
+        //Initialising the viewmodel
+        inventoryItemViewModel = ViewModelProvider(this).get(InventoryItemViewModel::class.java)
+
+        //Defining the spinner  variable to access spinner on the UI
+        val relatedSupplierSpinner: AppCompatSpinner = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier)
+
+        //Arraylist to hold values of supplierlist
+        var relatedSupplierListRetrieved = ArrayList<String?>()
+
+        //Setting arrayAdapter for relatedSupplierListRetrieved
+        val chooseSupplierAdapter = ArrayAdapter<String>(
+            this.requireActivity(), android.R.layout.simple_spinner_item,relatedSupplierListRetrieved
+        )
+
+        //Setting dropdown view resource for adapter
+        chooseSupplierAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+
+        //Attaching adapter to spinner
+        relatedSupplierSpinner.setAdapter(chooseSupplierAdapter)
+
+        inventoryItemViewModel.readSupplierName.observe(viewLifecycleOwner){
+                listOfSuppliers ->
+            for (name in listOfSuppliers){
+                relatedSupplierListRetrieved.add(name)
+            }
+
+            chooseSupplierAdapter.notifyDataSetChanged()
+        }
+
+        //Populating the fragment fields with received arguments
+        fragmentView.findViewById<EditText>(R.id.productName).setText(args.currentRecord.name)
+        fragmentView.findViewById<EditText>(R.id.quantityPerUnit).setText(args.currentRecord.quantityPerUnit.toString())
+
+        val resourceID =  resources.getIdentifier(args.currentRecord.supplier,null,requireContext().packageName)
+        fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).setSelection(resourceID)
+
+        val updateButton: Button = fragmentView.findViewById(R.id.btnUpdate)
+
+        updateButton.setOnClickListener {
+            //Setting the variables introduced earlier to hold updated data
+            id = args.currentRecord.id
+            name = fragmentView.findViewById<EditText>(R.id.productName).text.toString()
+            supplier =  fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem.toString()
+            quantityPerUnit = fragmentView.findViewById<EditText>(R.id.quantityPerUnit).toString().toInt()
+
+            val updateData = inventoryItemViewModel.updateData(id,name,supplier,quantityPerUnit)
+
+            if(updateData){
+                findNavController().navigate(R.id.action_updateInventoryItemFragment_to_inventoryItemFragment)
+            }
+
+            //Adding menu to update cooked product item fragment
+            setHasOptionsMenu(true)
+
+
+        }
+
+
+        return fragmentView
+    }
+    //Inflating the menu layout in supplier fragment
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        //   super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.delete_option, menu)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment UpdateInventoryItemFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            UpdateInventoryItemFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.optionDelete){
+            val deleteAlert = AlertDialog.Builder(requireContext())
+            deleteAlert.setPositiveButton("Yes"){_, _ ->
+
+                inventoryItemViewModel.deleteInventoryItemRecord(args.currentRecord)
+                ToastMaker.showToast("${args.currentRecord.name} deleted!", GetAppContext.appContext)
+
+                findNavController().navigate(R.id.action_updateInventoryItemFragment_to_inventoryItemFragment)
+
             }
+
+            deleteAlert.setNegativeButton("No"){_, _ ->
+
+            }
+            deleteAlert.setTitle("Delete ${args.currentRecord.name}?")
+            deleteAlert.setMessage("Please confirm that you want to delete ${args.currentRecord.name}")
+
+            deleteAlert.create().show()
+
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
