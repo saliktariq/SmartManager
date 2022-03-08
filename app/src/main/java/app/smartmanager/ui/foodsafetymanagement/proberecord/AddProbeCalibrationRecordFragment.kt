@@ -85,10 +85,10 @@ class AddProbeCalibrationRecordFragment : Fragment() {
             chooseProbeAdapter.notifyDataSetChanged()
         }
 
-        //Creating simple date object
-        // Used this link to learn to create this object https://stackoverflow.com/questions/47006254/how-to-get-current-local-date-and-time-in-kotlin
-        val dateTimeFormatObject = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-        val currentDateTime = dateTimeFormatObject.format(Date())
+//        //Creating simple date object
+//        // Used this link to learn to create this object https://stackoverflow.com/questions/47006254/how-to-get-current-local-date-and-time-in-kotlin
+//        val dateTimeFormatObject = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+//        val currentDateTime = dateTimeFormatObject.format(Date())
 
 
         val addButton: Button = fragmentView.findViewById(R.id.btnAddNewPCR)

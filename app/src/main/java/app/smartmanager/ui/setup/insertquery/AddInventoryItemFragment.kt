@@ -5,56 +5,70 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import androidx.appcompat.widget.AppCompatSpinner
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import app.smartmanager.R
+import app.smartmanager.ui.setup.viewmodel.InventoryItemViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AddInventoryItemFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddInventoryItemFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var inventoryItemViewModel: InventoryItemViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_inventory_item, container, false)
+        val fragmentView = inflater.inflate(R.layout.fragment_add_inventory_item, container, false)
+
+        //Initialising the viewmodel
+        inventoryItemViewModel = ViewModelProvider(this).get(InventoryItemViewModel::class.java)
+
+        //Defining the spinner  variable to access spinner on the UI
+        val relatedSupplierSpinner: AppCompatSpinner = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier)
+
+        //Arraylist to hold values of supplierlist
+        var relatedSupplierListRetrieved = ArrayList<String?>()
+
+        //Setting arrayAdapter for relatedSupplierListRetrieved
+        val chooseSupplierAdapter = ArrayAdapter<String>(
+            this.requireActivity(), android.R.layout.simple_spinner_item,relatedSupplierListRetrieved
+        )
+
+        //Setting dropdown view resource for adapter
+        chooseSupplierAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+
+        //Attaching adapter to spinner
+        relatedSupplierSpinner.setAdapter(chooseSupplierAdapter)
+
+        inventoryItemViewModel.readSupplierName.observe(viewLifecycleOwner){
+            listOfSuppliers ->
+            for (name in listOfSuppliers){
+                relatedSupplierListRetrieved.add(name)
+            }
+
+            chooseSupplierAdapter.notifyDataSetChanged()
+        }
+
+        val addButton: Button = fragmentView.findViewById<Button>(R.id.btnAdd)
+
+        addButton.setOnClickListener {
+            val productName: String = fragmentView.findViewById<EditText>(R.id.productName).text.toString()
+            val quantityPerUnit: Int = fragmentView.findViewById<EditText>(R.id.quantityPerUnit).text.toString().toInt()
+            val relatedSupplier: String = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem.toString()
+
+            val insertDate = inventoryItemViewModel.insertData(productName,relatedSupplier,quantityPerUnit)
+
+            if(insertDate){
+                findNavController().navigate(R.id.action_addInventoryItemFragment_to_inventoryItemFragment)
+            }
+        }
+
+        return fragmentView
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AddInventoryItemFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AddInventoryItemFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

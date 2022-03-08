@@ -15,13 +15,15 @@ import kotlinx.coroutines.launch
 class CookedProductItemViewModel(application: Application) : AndroidViewModel(application) {
 
     val readAllCookedProductItemRecordData: LiveData<List<CookedProductItem>>
+    val readInventoryItemName: LiveData<List<String>>
 
     //Retrieve instance of SmartManager's Repository
     private val repository: SmartManagerRepo = SmartManagerRepo.get()
 
     init {
-        //Initialising readAllCookedProductItemData
+        //Initialising readAllCookedProductItemData and readInventoryItemName
         readAllCookedProductItemRecordData = repository.readAllCookedProductItemRecordData
+        readInventoryItemName = repository.readInventoryItemName
     }
 
     fun addCookedProductItemRecord(record: CookedProductItem) {

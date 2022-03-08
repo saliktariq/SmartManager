@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 class InventoryItemViewModel(application: Application) : AndroidViewModel(application) {
 
     val readAllInventoryItemRecordData: LiveData<List<InventoryItem>>
+    val readSupplierName: LiveData<List<String>>
 
     //Retrieve instance of SmartManager's Repository
     private val repository: SmartManagerRepo = SmartManagerRepo.get()
@@ -22,6 +23,7 @@ class InventoryItemViewModel(application: Application) : AndroidViewModel(applic
     init {
         //Initialising readAllCookedProductItemData
         readAllInventoryItemRecordData = repository.readAllInventoryItemRecordData
+        readSupplierName = repository.readSupplierName
     }
 
     fun addInventoryItemRecord(record: InventoryItem) {

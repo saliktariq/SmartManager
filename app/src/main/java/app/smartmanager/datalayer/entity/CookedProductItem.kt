@@ -12,5 +12,5 @@ data class CookedProductItem (
     val id: Long,
     val name: String,
     val quantityPerCookingBatch: Int?,
-    val relatedProduct: String?
+    val relatedInventoryItem: String?
 ) : Parcelable

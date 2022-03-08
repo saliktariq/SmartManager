@@ -18,4 +18,8 @@ interface SupplierDAO {
 
     @Delete
     fun deleteSupplier(supplier: Supplier)
+
+    //Query to retrieve all supplier names to be used by other classes
+    @Query("Select name from supplier ORDER BY id ASC")
+    fun readSupplierName(): LiveData<List<String>>
 }

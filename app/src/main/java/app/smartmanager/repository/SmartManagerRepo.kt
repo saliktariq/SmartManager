@@ -114,6 +114,9 @@ class SmartManagerRepo private constructor(context: Context) {
 
     val readAllSupplierData: LiveData<List<Supplier>> = supplierDAO.readAllSupplierData()
 
+    //Variable to retrieve only names of suppliers
+    val readSupplierName: LiveData<List<String>> = supplierDAO.readSupplierName()
+
     /*
     ******************- Repository functions related to Equipment Entity -******************
      */
@@ -249,4 +252,12 @@ class SmartManagerRepo private constructor(context: Context) {
 
     val readAllInventoryItemRecordData: LiveData<List<InventoryItem>> =
         inventoryItemDAO.readAllInventoryItemData()
+
+
+    //Variable to retrieve only the list of names of inventory items to be used by other classes
+    val readInventoryItemName: LiveData<List<String>> =
+        inventoryItemDAO.readInventoryItemName()
+
+
+
 }
