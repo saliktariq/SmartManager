@@ -10,7 +10,7 @@ import app.smartmanager.datalayer.typeconverter.DateTypeConverter
 
 // Database definition of SQLite database utilising ROOM database library
 
-@Database(entities = [Probe::class, Supplier::class, Equipment::class, ControlChecks::class, CleaningTask::class, ChemicalListCOSHH::class, ProbeCalibrationRecord::class, CookedProductItem::class, InventoryItem::class  ],version = 5, exportSchema = false)
+@Database(entities = [Probe::class, Supplier::class, Equipment::class, ControlChecks::class, CleaningTask::class, ChemicalListCOSHH::class, ProbeCalibrationRecord::class, CookedProductItem::class, InventoryItem::class  ],version = 6, exportSchema = false)
 @TypeConverters(DateTypeConverter::class)
 abstract class SmartManagerDB: RoomDatabase(){
     abstract val probeDAO :ProbeDAO

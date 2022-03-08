@@ -1,6 +1,7 @@
 package app.smartmanager.ui.setup.viewmodel
 
 import android.app.Application
+import androidx.constraintlayout.solver.widgets.Helper
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
@@ -51,9 +52,9 @@ class InventoryItemViewModel(application: Application) : AndroidViewModel(applic
     fun insertData(
         name: String,
         supplier: String?,
-        quantityPerUnit: Int?
+        quantityPerUnit: Int
     ): Boolean {
-        if(HelperFunctions.checkInputData(name)){
+        if(HelperFunctions.checkInputData(name) && HelperFunctions.isNumber(quantityPerUnit.toString())){
             //creating InventoryItem object
             val inventoryItem = InventoryItem(0,name,supplier,quantityPerUnit)
 
@@ -62,7 +63,7 @@ class InventoryItemViewModel(application: Application) : AndroidViewModel(applic
             ToastMaker.showToast("Inventory item added successfully", GetAppContext.appContext)
             return true
         } else {
-            ToastMaker.showToast("Enter item name", GetAppContext.appContext)
+            ToastMaker.showToast("Enter item name and numeric quantity", GetAppContext.appContext)
             return false
         }
     }
@@ -71,9 +72,9 @@ class InventoryItemViewModel(application: Application) : AndroidViewModel(applic
         id: Long,
         name: String,
         supplier: String?,
-        quantityPerUnit: Int?
+        quantityPerUnit: Int
     ): Boolean {
-        if(HelperFunctions.checkInputData(name)){
+        if(HelperFunctions.checkInputData(name) && HelperFunctions.isNumber(quantityPerUnit.toString())){
             //creating InventoryItem object
             val inventoryItem = InventoryItem(id,name,supplier,quantityPerUnit)
 
@@ -82,7 +83,7 @@ class InventoryItemViewModel(application: Application) : AndroidViewModel(applic
             ToastMaker.showToast("Inventory item updated successfully", GetAppContext.appContext)
             return true
         } else {
-            ToastMaker.showToast("Enter item name", GetAppContext.appContext)
+            ToastMaker.showToast("Enter item name and numeric quantity", GetAppContext.appContext)
             return false
         }
     }

@@ -59,9 +59,10 @@ class UpdateControlChecksFragment : Fragment() {
                 //If updateData operation is successful navigate back to ControlChecks Fragment
                 findNavController().navigate(R.id.action_updateControlChecksFragment_to_controlChecksFragment)
             }
-            // Adding menu to Update Supplier View
-            setHasOptionsMenu(true)
+
         }
+        // Adding menu to Update Supplier View
+        setHasOptionsMenu(true)
 
         return fragmentView
     }

@@ -11,6 +11,6 @@ data class CookedProductItem (
     @PrimaryKey(autoGenerate = true)
     val id: Long,
     val name: String,
-    val quantityPerCookingBatch: Int?,
+    val quantityPerCookingBatch: Int,
     val relatedInventoryItem: String?
 ) : Parcelable

@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import app.smartmanager.R
 import app.smartmanager.helper.GetAppContext
+import app.smartmanager.helper.HelperFunctions
 import app.smartmanager.helper.ToastMaker
 import app.smartmanager.ui.setup.viewmodel.CookedProductItemViewModel
 import java.util.ArrayList
@@ -27,7 +28,7 @@ class UpdateCookedProductItemFragment : Fragment() {
     //Variables to hold fragment data
     var id by Delegates.notNull<Long>()
     lateinit var name: String
-    var quantityPerCookingBatch : Int? = 0
+    var quantityPerCookingBatch : Int = 0
     var relatedInventoryItem: String? = null
 
     override fun onCreateView(
@@ -43,7 +44,7 @@ class UpdateCookedProductItemFragment : Fragment() {
         cookedProductItemViewModel = ViewModelProvider(this).get(CookedProductItemViewModel::class.java)
 
         //Defining spinner variable to access spinner on the UI
-        val relatedProductSpinner: AppCompatSpinner = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedProduct)
+        val relatedProductSpinner: AppCompatSpinner = fragmentView.findViewById<AppCompatSpinner>(R.id.updateRelatedProduct)
 
         //Arraylist to hold values of related inventory (product) items from the DB
         var relatedProductInventoryItemsRetrieved = ArrayList<String?>()
@@ -71,15 +72,17 @@ class UpdateCookedProductItemFragment : Fragment() {
 
         //Populating the Fragment fields with received arguments
         fragmentView.findViewById<EditText>(R.id.updateCookedProductName).setText(args.currentRecord.name)
-        args.currentRecord.quantityPerCookingBatch?.let {
-            fragmentView.findViewById<EditText>(R.id.updateQuantityPerCookingBatch).setText(
-                it
-            )
+        if(args.currentRecord.quantityPerCookingBatch!=null){
+            fragmentView.findViewById<EditText>(R.id.updateQuantityPerCookingBatch).setText(args.currentRecord.quantityPerCookingBatch.toString())
         }
 
-        val resourceID =  resources.getIdentifier(args.currentRecord.relatedInventoryItem,null,requireContext().packageName)
+if (args.currentRecord.relatedInventoryItem!=null){
+    val resourceID =  resources.getIdentifier(args.currentRecord.relatedInventoryItem,null,requireContext().packageName)
 
-        fragmentView.findViewById<AppCompatSpinner>(R.id.updateRelatedProduct).setSelection(resourceID)
+    fragmentView.findViewById<AppCompatSpinner>(R.id.updateRelatedProduct).setSelection(resourceID)
+}
+
+
 
         val updateButton: Button = fragmentView.findViewById<Button>(R.id.btnUpdate)
 
@@ -87,19 +90,31 @@ class UpdateCookedProductItemFragment : Fragment() {
             //Setting the variables introduced to hold updated data
             id = args.currentRecord.id
             name = fragmentView.findViewById<EditText>(R.id.updateCookedProductName).text.toString()
-            quantityPerCookingBatch = fragmentView.findViewById<EditText>(R.id.updateQuantityPerCookingBatch).toString().toInt()
-            relatedInventoryItem = fragmentView.findViewById<AppCompatSpinner>(R.id.updateRelatedProduct).selectedItem.toString()
+            if(fragmentView.findViewById<EditText>(R.id.updateQuantityPerCookingBatch).toString()
+                    .isNotEmpty()
+            ){
+                if(HelperFunctions.isNumber(fragmentView.findViewById<EditText>(R.id.updateQuantityPerCookingBatch).toString())){
+                    quantityPerCookingBatch = fragmentView.findViewById<EditText>(R.id.updateQuantityPerCookingBatch).toString().toInt()
+                }
 
-            val updateData = cookedProductItemViewModel.updateData(id,name,quantityPerCookingBatch,relatedInventoryItem)
-            if(updateData){
-                findNavController().navigate(R.id.action_updateCookedProductItemFragment_to_cookedProductItemFragment)
+            }
+                if (fragmentView.findViewById<AppCompatSpinner>(R.id.updateRelatedProduct).selectedItem.toString().length>0){
+                    relatedInventoryItem = fragmentView.findViewById<AppCompatSpinner>(R.id.updateRelatedProduct).selectedItem.toString()
+
+                }
+
+                val updateData = cookedProductItemViewModel.updateData(id,name,quantityPerCookingBatch,relatedInventoryItem)
+                if(updateData){
+                    findNavController().navigate(R.id.action_updateCookedProductItemFragment_to_cookedProductItemFragment)
+                }
             }
 
-            //Adding menu to update cooked product item fragment
-            setHasOptionsMenu(true)
-        }
 
 
+
+
+        //Adding menu to update cooked product item fragment
+        setHasOptionsMenu(true)
 
         return fragmentView
     }

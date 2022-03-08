@@ -66,9 +66,11 @@ class UpdateChemicalListCOSHHFragment : Fragment() {
                 //If updateData operation is successful navigate back to ChemicalListCOSHH Fragment
                 findNavController().navigate(R.id.action_updateChemicalListCOSHHFragment_to_chemicalListCOSHHFragment)
             }
-            // Adding menu to Update Supplier View
-            setHasOptionsMenu(true)
+
         }
+
+        // Adding menu to Update Supplier View
+        setHasOptionsMenu(true)
         return fragmentView
     }
     //Inflating the menu layout in supplier fragment

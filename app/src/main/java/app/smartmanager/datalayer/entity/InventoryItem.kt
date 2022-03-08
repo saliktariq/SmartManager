@@ -12,5 +12,5 @@ data class InventoryItem (
     val id: Long,
     val name: String,
     val supplier: String?,
-    val quantityPerUnit: Int?
+    val quantityPerUnit: Int
 ) : Parcelable

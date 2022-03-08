@@ -26,7 +26,7 @@ RecyclerView.Adapter<CookedProductItemAdapter.MyViewHolder>(){
         fun bind(data: CookedProductItem){
             cookedProductName.text = data.name
             quantityPerCookingBatch.text = data.quantityPerCookingBatch.toString()
-            relatedProduct.text = data.relatedProduct
+            relatedProduct.text = data.relatedInventoryItem
 
             //Implementing onClickListener to navigate to relevant update fragment
             cookedProductItemSingleRecord.setOnClickListener {

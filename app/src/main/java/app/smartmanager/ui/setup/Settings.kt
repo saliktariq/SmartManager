@@ -50,11 +50,20 @@ class Settings : Fragment() {
         viewBinding.addNewChemicalButton.setOnClickListener {
             viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToChemicalListCOSHHFragment())
         }
+        //Setting On Click listener on Add Inventory Item button
+        viewBinding.addProductList.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToInventoryItemFragment())
+        }
+        //Setting On Click listener on Add Cooked Product Item button
+        viewBinding.addCookedProductList.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToCookedProductItemFragment())
+        }
 
         //Setting OnClickListener to btnBack
         viewBinding.btnBack.setOnClickListener {
             viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToHomeScreen())
         }
+
 
         //Attaching singOut function to Logout button
         viewBinding.btnLogOut.setOnClickListener{

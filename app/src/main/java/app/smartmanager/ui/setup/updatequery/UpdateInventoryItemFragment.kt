@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import app.smartmanager.R
 import app.smartmanager.helper.GetAppContext
+import app.smartmanager.helper.HelperFunctions
 import app.smartmanager.helper.ToastMaker
 import app.smartmanager.ui.setup.viewmodel.InventoryItemViewModel
 import kotlin.properties.Delegates
@@ -26,7 +27,7 @@ class UpdateInventoryItemFragment : Fragment() {
     var id by Delegates.notNull<Long>()
     lateinit var name: String
     var supplier: String? = null
-    var quantityPerUnit: Int? = 0
+    var quantityPerUnit: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,8 +69,11 @@ class UpdateInventoryItemFragment : Fragment() {
         fragmentView.findViewById<EditText>(R.id.productName).setText(args.currentRecord.name)
         fragmentView.findViewById<EditText>(R.id.quantityPerUnit).setText(args.currentRecord.quantityPerUnit.toString())
 
-        val resourceID =  resources.getIdentifier(args.currentRecord.supplier,null,requireContext().packageName)
-        fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).setSelection(resourceID)
+        if(args.currentRecord.supplier != null) {
+            val resourceID =  resources.getIdentifier(args.currentRecord.supplier,null,requireContext().packageName)
+            fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).setSelection(resourceID)
+        }
+
 
         val updateButton: Button = fragmentView.findViewById(R.id.btnUpdate)
 
@@ -77,8 +81,15 @@ class UpdateInventoryItemFragment : Fragment() {
             //Setting the variables introduced earlier to hold updated data
             id = args.currentRecord.id
             name = fragmentView.findViewById<EditText>(R.id.productName).text.toString()
-            supplier =  fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem.toString()
-            quantityPerUnit = fragmentView.findViewById<EditText>(R.id.quantityPerUnit).toString().toInt()
+
+            if(fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem != null){
+                supplier = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem.toString()
+            }
+//            supplier =  fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem.toString()
+            if(HelperFunctions.isNumber(fragmentView.findViewById<EditText>(R.id.quantityPerUnit).text.toString())){
+                quantityPerUnit = fragmentView.findViewById<EditText>(R.id.quantityPerUnit).text.toString().toInt()
+            }
+//            quantityPerUnit = fragmentView.findViewById<EditText>(R.id.quantityPerUnit).toString().toInt()
 
             val updateData = inventoryItemViewModel.updateData(id,name,supplier,quantityPerUnit)
 
@@ -86,13 +97,13 @@ class UpdateInventoryItemFragment : Fragment() {
                 findNavController().navigate(R.id.action_updateInventoryItemFragment_to_inventoryItemFragment)
             }
 
-            //Adding menu to update cooked product item fragment
-            setHasOptionsMenu(true)
+
 
 
         }
 
-
+        //Adding menu to update cooked product item fragment
+        setHasOptionsMenu(true)
         return fragmentView
     }
     //Inflating the menu layout in supplier fragment

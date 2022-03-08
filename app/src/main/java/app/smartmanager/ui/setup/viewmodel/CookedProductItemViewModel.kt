@@ -50,10 +50,10 @@ class CookedProductItemViewModel(application: Application) : AndroidViewModel(ap
 
     fun insertData(
         name: String,
-        quantityPerCookingBatch: Int?,
+        quantityPerCookingBatch: Int,
         relatedProduct: String?
     ): Boolean {
-        if (HelperFunctions.checkInputData(name)) {
+        if (HelperFunctions.checkInputData(name)  && HelperFunctions.isNumber(quantityPerCookingBatch.toString())) {
             //creating CookedProductItem object
             val cookedProductItem =
                 CookedProductItem(0, name, quantityPerCookingBatch, relatedProduct)
@@ -63,7 +63,7 @@ class CookedProductItemViewModel(application: Application) : AndroidViewModel(ap
             ToastMaker.showToast("Cooked Product item added successfully", GetAppContext.appContext)
             return true
         } else {
-            ToastMaker.showToast("Enter cooked product item name", GetAppContext.appContext)
+            ToastMaker.showToast("Enter cooked product item name and quantity per batch", GetAppContext.appContext)
             return false
         }
     }
@@ -71,10 +71,10 @@ class CookedProductItemViewModel(application: Application) : AndroidViewModel(ap
         fun updateData(
             id: Long,
             name: String,
-            quantityPerCookingBatch: Int?,
+            quantityPerCookingBatch: Int,
             relatedProduct: String?
         ): Boolean{
-            if(HelperFunctions.checkInputData(name)){
+            if(HelperFunctions.checkInputData(name)  && HelperFunctions.isNumber(quantityPerCookingBatch.toString())) {
                 //creating CookedProductItem object
                 val cookedProductItem = CookedProductItem(id,name, quantityPerCookingBatch,relatedProduct)
 
@@ -83,7 +83,7 @@ class CookedProductItemViewModel(application: Application) : AndroidViewModel(ap
                 ToastMaker.showToast("Cooked Product item updated successfully", GetAppContext.appContext)
                 return true
             } else {
-                ToastMaker.showToast("Enter cooked product item name", GetAppContext.appContext)
+                ToastMaker.showToast("Enter cooked product item name and quantity per batch", GetAppContext.appContext)
                 return false
             }
 

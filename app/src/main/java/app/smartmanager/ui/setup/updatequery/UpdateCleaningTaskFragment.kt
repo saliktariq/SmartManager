@@ -66,9 +66,10 @@ class UpdateCleaningTaskFragment : Fragment() {
                 //If updateData operation is successful navigate back to CleaningTask Fragment
                 findNavController().navigate(R.id.action_updateCleaningTaskFragment_to_cleaningTaskFragment)
             }
-            // Adding menu to Update Supplier View
-            setHasOptionsMenu(true)
+
         }
+        // Adding menu to Update Supplier View
+        setHasOptionsMenu(true)
         return fragmentView
     }
     //Inflating the menu layout in supplier fragment

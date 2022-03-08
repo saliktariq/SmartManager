@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import java.text.SimpleDateFormat
 import java.util.*
 import app.smartmanager.R
+import app.smartmanager.helper.HelperFunctions
 import app.smartmanager.ui.setup.viewmodel.CookedProductItemViewModel
 
 
@@ -60,8 +61,23 @@ class AddCookedProductItemFragment : Fragment() {
 
         addButton.setOnClickListener {
             val cookedProductName: String = fragmentView.findViewById<EditText>(R.id.cookedProductName).text.toString()
-            val quantityPerCookingBatch: Int = fragmentView.findViewById<EditText>(R.id.quantityPerCookingBatch).text.toString().toInt()
-            val relatedProduct: String = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedProduct).selectedItem.toString()
+            var quantityPerCookingBatch: Int = 0
+            if (fragmentView.findViewById<EditText>(R.id.quantityPerCookingBatch).text.toString()
+                    .isNotEmpty()
+            ){ if(HelperFunctions.isNumber(fragmentView.findViewById<EditText>(R.id.quantityPerCookingBatch).text.toString())){
+                quantityPerCookingBatch = fragmentView.findViewById<EditText>(R.id.quantityPerCookingBatch).text.toString().toInt()
+            }
+
+            }
+            var relatedProduct: String? = null
+            if (fragmentView.findViewById<AppCompatSpinner>(R.id.relatedProduct).selectedItem.toString()
+                    .isNotEmpty()
+            ){
+                    relatedProduct = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedProduct).selectedItem.toString()
+
+
+            }
+
             val insertData = cookedProductItemViewModel.insertData(cookedProductName, quantityPerCookingBatch,relatedProduct)
 
             if(insertData){

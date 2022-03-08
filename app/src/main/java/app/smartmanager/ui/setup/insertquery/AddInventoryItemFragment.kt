@@ -9,9 +9,11 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.widget.AppCompatSpinner
+import androidx.constraintlayout.solver.widgets.Helper
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import app.smartmanager.R
+import app.smartmanager.helper.HelperFunctions
 import app.smartmanager.ui.setup.viewmodel.InventoryItemViewModel
 
 
@@ -58,8 +60,16 @@ class AddInventoryItemFragment : Fragment() {
 
         addButton.setOnClickListener {
             val productName: String = fragmentView.findViewById<EditText>(R.id.productName).text.toString()
-            val quantityPerUnit: Int = fragmentView.findViewById<EditText>(R.id.quantityPerUnit).text.toString().toInt()
-            val relatedSupplier: String = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem.toString()
+            var quantityPerUnit: Int = 0
+            if(HelperFunctions.isNumber(fragmentView.findViewById<EditText>(R.id.quantityPerUnit).text.toString())){
+                quantityPerUnit = fragmentView.findViewById<EditText>(R.id.quantityPerUnit).text.toString().toInt()
+            }
+
+            var relatedSupplier: String? = null
+            if(fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem != null){
+                relatedSupplier = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier).selectedItem.toString()
+            }
+
 
             val insertDate = inventoryItemViewModel.insertData(productName,relatedSupplier,quantityPerUnit)
 

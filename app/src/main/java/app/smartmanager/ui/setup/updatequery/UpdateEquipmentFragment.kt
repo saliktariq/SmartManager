@@ -58,9 +58,10 @@ class UpdateEquipmentFragment : Fragment() {
                 //If updateData operation is successful navigate back to Equipment Fragment
                 findNavController().navigate(R.id.action_updateEquipmentFragment_to_equipmentFragment)
             }
-            // Adding menu to Update Supplier View
-            setHasOptionsMenu(true)
+
         }
+        // Adding menu to Update Supplier View
+        setHasOptionsMenu(true)
         return fragmentView
     }
     //Inflating the menu layout in supplier fragment
