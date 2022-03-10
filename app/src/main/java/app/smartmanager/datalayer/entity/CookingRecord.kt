@@ -10,7 +10,7 @@ import java.util.*
 
 @Parcelize
 @Entity(tableName = "cooking_record")
-data class Cooking(
+data class CookingRecord(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
     val cooked_product_name: String,
