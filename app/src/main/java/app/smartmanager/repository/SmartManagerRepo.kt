@@ -49,6 +49,7 @@ class SmartManagerRepo private constructor(context: Context) {
     private val inventoryItemDAO = database.inventoryItemDAO
 
 
+
     /*
     ******************- Repository functions related to Probe Entity -******************
      */
@@ -258,6 +259,32 @@ class SmartManagerRepo private constructor(context: Context) {
     val readInventoryItemName: LiveData<List<String>> =
         inventoryItemDAO.readInventoryItemName()
 
+    /*
+******************- Repository functions related to CleaningRecord -******************
+*/
 
+    /*
+******************- Repository functions related to EquipmentTemperatureRecord -******************
+*/
+
+    /*
+******************- Repository functions related to CookedProductTemperatureRecord -******************
+*/
+
+    /*
+******************- Repository functions related to CookingRecord -******************
+*/
+
+    /*
+******************- Repository functions related to DailyInventoryRecord -******************
+*/
+
+    /*
+******************- Repository functions related to DeliveryRecord -******************
+*/
+
+    /*
+******************- Repository functions related to FoodWasteRecord -******************
+*/
 
 }

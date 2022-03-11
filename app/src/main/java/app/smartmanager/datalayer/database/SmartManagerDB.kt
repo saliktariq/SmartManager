@@ -1,4 +1,5 @@
 package app.smartmanager.datalayer.database
+
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
@@ -10,10 +11,16 @@ import app.smartmanager.datalayer.typeconverter.DateTypeConverter
 
 // Database definition of SQLite database utilising ROOM database library
 
-@Database(entities = [Probe::class, Supplier::class, Equipment::class, ControlChecks::class, CleaningTask::class, ChemicalListCOSHH::class, ProbeCalibrationRecord::class, CookedProductItem::class, InventoryItem::class  ],version = 6, exportSchema = false)
+@Database(
+    entities = [Probe::class, Supplier::class, Equipment::class, ControlChecks::class, CleaningTask::class, ChemicalListCOSHH::class,
+        ProbeCalibrationRecord::class, CookedProductItem::class, InventoryItem::class, CleaningRecord::class, EquipmentTemperatureRecord::class,
+               CookedProductTemperatureRecord::class, CookingRecord::class, DailyInventoryRecord::class, DeliveryRecord::class, FoodWasteRecord::class],
+    version = 7,
+    exportSchema = false
+)
 @TypeConverters(DateTypeConverter::class)
-abstract class SmartManagerDB: RoomDatabase(){
-    abstract val probeDAO :ProbeDAO
+abstract class SmartManagerDB : RoomDatabase() {
+    abstract val probeDAO: ProbeDAO
     abstract val supplierDAO: SupplierDAO
     abstract val equipmentDAO: EquipmentDAO
     abstract val controlChecksDAO: ControlChecksDAO
@@ -22,15 +29,22 @@ abstract class SmartManagerDB: RoomDatabase(){
     abstract val probeCalibrationRecordDAO: ProbeCalibrationRecordDAO
     abstract val cookedProductItemDAO: CookedProductItemDAO
     abstract val inventoryItemDAO: InventoryItemDAO
+    abstract val cleaningRecordDAO: CleaningRecordDAO
+    abstract val equipmentTemperatureRecordDAO: EquipmentTemperatureRecordDAO
+    abstract val cookedProductTemperatureRecordDAO: CookedProductTemperatureRecordDAO
+    abstract val cookingRecordDAO: CookingRecordDAO
+    abstract val dailyInventoryRecordDAO: DailyInventoryRecordDAO
+    abstract val deliveryRecordDAO: DeliveryRecordDAO
+    abstract val foodWasteRecordDAO: FoodWasteRecordDAO
 
-    companion object{
+    companion object {
         @Volatile
         private var INSTANCE: SmartManagerDB? = null
 
         fun getInstance(context: Context): SmartManagerDB {
-            synchronized(this){
+            synchronized(this) {
                 var instance = INSTANCE
-                if(instance == null){
+                if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         SmartManagerDB::class.java,
