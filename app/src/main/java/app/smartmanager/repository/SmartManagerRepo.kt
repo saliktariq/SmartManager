@@ -47,7 +47,13 @@ class SmartManagerRepo private constructor(context: Context) {
     private val probeCalibrationRecordDAO = database.probeCalibrationRecordDAO
     private val cookedProductItemDAO = database.cookedProductItemDAO
     private val inventoryItemDAO = database.inventoryItemDAO
-
+    private val cleaningRecordDAO = database.cleaningRecordDAO
+    private val equipmentTemperatureRecordDAO = database.equipmentTemperatureRecordDAO
+    private val cookedProductTemperatureRecordDAO = database.cookedProductTemperatureRecordDAO
+    private val cookingRecordDAO = database.cookingRecordDAO
+    private val dailyInventoryRecordDAO = database.dailyInventoryRecordDAO
+    private val deliveryRecordDAO = database.deliveryRecordDAO
+    private val foodWasteRecordDAO = database.foodWasteRecordDAO
 
 
     /*
@@ -263,28 +269,127 @@ class SmartManagerRepo private constructor(context: Context) {
 ******************- Repository functions related to CleaningRecord -******************
 */
 
+    suspend fun addCleaningRecord(cleaningRecord: CleaningRecord){
+        cleaningRecordDAO.addCleaningRecord(cleaningRecord)
+    }
+
+    suspend fun updateCleaningRecord(cleaningRecord: CleaningRecord){
+        cleaningRecordDAO.updateCleaningRecord(cleaningRecord)
+    }
+
+    suspend fun deleteCleaningRecord(cleaningRecord: CleaningRecord){
+        cleaningRecordDAO.deleteCleaningRecord(cleaningRecord)
+    }
+
+    val readAllCleaningRecordData: LiveData<List<CleaningRecord>> =
+        cleaningRecordDAO.readAllCleaningRecordData()
+
     /*
 ******************- Repository functions related to EquipmentTemperatureRecord -******************
 */
+    suspend fun addEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord){
+        equipmentTemperatureRecordDAO.addEquipmentTemperatureRecord(equipmentTemperatureRecord)
+    }
+
+    suspend fun updateEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord){
+        equipmentTemperatureRecordDAO.updateEquipmentTemperatureRecord(equipmentTemperatureRecord)
+    }
+
+    suspend fun deleteEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord){
+        equipmentTemperatureRecordDAO.deleteEquipmentTemperatureRecord(equipmentTemperatureRecord)
+    }
+
+    val readAllEquipmentTemperatureRecordData: LiveData<List<EquipmentTemperatureRecord>> =
+        equipmentTemperatureRecordDAO.readAllEquipmentTemperatureRecordData()
 
     /*
 ******************- Repository functions related to CookedProductTemperatureRecord -******************
 */
+    suspend fun addCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord){
+        cookedProductTemperatureRecordDAO.addCookedProductTemperatureRecord(cookedProductTemperatureRecord)
+    }
+
+    suspend fun updateCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord){
+        cookedProductTemperatureRecordDAO.updateCookedProductTemperatureRecord(cookedProductTemperatureRecord)
+    }
+
+    suspend fun deleteCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord){
+        cookedProductTemperatureRecordDAO.deleteCookedProductTemperatureRecord(cookedProductTemperatureRecord)
+    }
+
+    val readAllCookedProductTemperatureRecordData: LiveData<List<CookedProductTemperatureRecord>> =
+        cookedProductTemperatureRecordDAO.readAllCookedProductTemperatureRecordData()
 
     /*
 ******************- Repository functions related to CookingRecord -******************
 */
 
+    suspend fun addCookingRecord(cookingRecord: CookingRecord){
+        cookingRecordDAO.addCookingRecord(cookingRecord)
+    }
+
+    suspend fun updateCookingRecord(cookingRecord: CookingRecord){
+        cookingRecordDAO.updateCookingRecord(cookingRecord)
+    }
+
+    suspend fun deleteCookingRecord(cookingRecord: CookingRecord){
+        cookingRecordDAO.deleteCookingRecord(cookingRecord)
+    }
+
+    val readAllCookingRecordData: LiveData<List<CookingRecord>> =
+        cookingRecordDAO.readAllCookingRecordData()
+
     /*
 ******************- Repository functions related to DailyInventoryRecord -******************
 */
 
+    suspend fun addDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord){
+        dailyInventoryRecordDAO.addDailyInventoryRecord(dailyInventoryRecord)
+    }
+
+    suspend fun updateDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord){
+        dailyInventoryRecordDAO.updateDailyInventoryRecord(dailyInventoryRecord)
+    }
+
+    suspend fun deleteDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord){
+        dailyInventoryRecordDAO.deleteDailyInventoryRecord(dailyInventoryRecord)
+    }
+
+    val readAllDailyInventoryRecordData: LiveData<List<DailyInventoryRecord>> =
+        dailyInventoryRecordDAO.readAllDailyInventoryRecordData()
     /*
 ******************- Repository functions related to DeliveryRecord -******************
 */
+    suspend fun addDeliveryRecord(deliveryRecord: DeliveryRecord){
+        deliveryRecordDAO.addDeliveryRecord(deliveryRecord)
+    }
 
+    suspend fun updateDeliveryRecord(deliveryRecord: DeliveryRecord){
+        deliveryRecordDAO.updateDeliveryRecord(deliveryRecord)
+    }
+
+    suspend fun deleteDeliveryRecord(deliveryRecord: DeliveryRecord){
+        deliveryRecordDAO.deleteDeliveryRecord(deliveryRecord)
+    }
+
+    val readAllDeliveryRecordData: LiveData<List<DeliveryRecord>> =
+        deliveryRecordDAO.readAllDeliveryRecordData()
     /*
 ******************- Repository functions related to FoodWasteRecord -******************
 */
+    suspend fun addFoodWasteRecord(foodWasteRecord: FoodWasteRecord){
+        foodWasteRecordDAO.addFoodWasteRecord(foodWasteRecord)
+    }
+
+    suspend fun updateFoodWasteRecord(foodWasteRecord: FoodWasteRecord){
+        foodWasteRecordDAO.updateFoodWasteRecord(foodWasteRecord)
+    }
+
+    suspend fun deleteFoodWasteRecord(foodWasteRecord: FoodWasteRecord){
+        foodWasteRecordDAO.deleteFoodWasteRecord(foodWasteRecord)
+    }
+
+    val readAllFoodWasteRecordData: LiveData<List<FoodWasteRecord>> =
+        foodWasteRecordDAO.readAllFoodWasteRecordData()
 
 }
