@@ -21,7 +21,7 @@ class CookedProductTemperatureFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.probe_temperature_fragment, container, false)
+        return inflater.inflate(R.layout.cooked_product_temperature_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
