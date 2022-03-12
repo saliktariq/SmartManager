@@ -85,7 +85,7 @@
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnAddData"
                         style="@style/RegularButtonStyle"
-                        android:layout_width="96dp"
+                        android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_gravity="right"
                         android:background="@color/colorAccent"
