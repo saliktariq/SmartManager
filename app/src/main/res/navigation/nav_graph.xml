@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_homeScreen_to_foodSafetyManagementHomeFragment"
             app:destination="@id/foodSafetyManagementHomeFragment" />
+        <action
+            android:id="@+id/action_homeScreen_to_inventoryManagementHomeFragment"
+            app:destination="@id/inventoryManagementHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/updatePassword"
@@ -306,6 +309,15 @@
         <action
             android:id="@+id/action_foodSafetyManagementHomeFragment_to_probeCalibrationRecordFragment2"
             app:destination="@id/probeCalibrationRecordFragment2" />
+        <action
+            android:id="@+id/action_foodSafetyManagementHomeFragment_to_cleaningRecordFragment"
+            app:destination="@id/cleaningRecordFragment" />
+        <action
+            android:id="@+id/action_foodSafetyManagementHomeFragment_to_equipmentTemperatureFragment"
+            app:destination="@id/equipmentTemperatureFragment" />
+        <action
+            android:id="@+id/action_foodSafetyManagementHomeFragment_to_cookedProductTemperatureFragment"
+            app:destination="@id/cookedProductTemperatureFragment" />
     </fragment>
     <fragment
         android:id="@+id/probeCalibrationRecordFragment2"
@@ -414,5 +426,89 @@
         <argument
             android:name="currentRecord"
             app:argType="app.smartmanager.datalayer.entity.CookedProductItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/cleaningRecordFragment"
+        android:name="app.smartmanager.ui.foodsafetymanagement.cleaningrecord.CleaningRecordFragment"
+        android:label="cleaning_record_fragment"
+        tools:layout="@layout/cleaning_record_fragment" >
+        <action
+            android:id="@+id/action_cleaningRecordFragment_to_foodSafetyManagementHomeFragment"
+            app:destination="@id/foodSafetyManagementHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/equipmentTemperatureFragment"
+        android:name="app.smartmanager.ui.foodsafetymanagement.equipmenttemperature.EquipmentTemperatureFragment"
+        android:label="equipment_temperature_fragment"
+        tools:layout="@layout/equipment_temperature_fragment" >
+        <action
+            android:id="@+id/action_equipmentTemperatureFragment_to_foodSafetyManagementHomeFragment"
+            app:destination="@id/foodSafetyManagementHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookedProductTemperatureFragment"
+        android:name="app.smartmanager.ui.foodsafetymanagement.producttemperature.CookedProductTemperatureFragment"
+        android:label="cooked_product_temperature_fragment"
+        tools:layout="@layout/cooked_product_temperature_fragment" >
+        <action
+            android:id="@+id/action_cookedProductTemperatureFragment_to_foodSafetyManagementHomeFragment"
+            app:destination="@id/foodSafetyManagementHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryManagementHomeFragment"
+        android:name="app.smartmanager.ui.inventorymanagement.InventoryManagementHomeFragment"
+        android:label="fragment_inventory_management_home"
+        tools:layout="@layout/fragment_inventory_management_home" >
+        <action
+            android:id="@+id/action_inventoryManagementHomeFragment_to_homeScreen"
+            app:destination="@id/homeScreen" />
+        <action
+            android:id="@+id/action_inventoryManagementHomeFragment_to_cookingRecordFragment"
+            app:destination="@id/cookingRecordFragment" />
+        <action
+            android:id="@+id/action_inventoryManagementHomeFragment_to_dailyInventoryFragment"
+            app:destination="@id/dailyInventoryFragment" />
+        <action
+            android:id="@+id/action_inventoryManagementHomeFragment_to_deliveryRecordFragment"
+            app:destination="@id/deliveryRecordFragment" />
+        <action
+            android:id="@+id/action_inventoryManagementHomeFragment_to_foodWasteRecordFragment"
+            app:destination="@id/foodWasteRecordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookingRecordFragment"
+        android:name="app.smartmanager.ui.inventorymanagement.cookingrecord.CookingRecordFragment"
+        android:label="cooking_record_fragment"
+        tools:layout="@layout/cooking_record_fragment" >
+        <action
+            android:id="@+id/action_cookingRecordFragment_to_inventoryManagementHomeFragment"
+            app:destination="@id/inventoryManagementHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dailyInventoryFragment"
+        android:name="app.smartmanager.ui.inventorymanagement.dailyinventory.DailyInventoryFragment"
+        android:label="daily_inventory_fragment"
+        tools:layout="@layout/daily_inventory_fragment" >
+        <action
+            android:id="@+id/action_dailyInventoryFragment_to_inventoryManagementHomeFragment"
+            app:destination="@id/inventoryManagementHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deliveryRecordFragment"
+        android:name="app.smartmanager.ui.inventorymanagement.deliveryrecord.DeliveryRecordFragment"
+        android:label="delivery_record_fragment"
+        tools:layout="@layout/delivery_record_fragment" >
+        <action
+            android:id="@+id/action_deliveryRecordFragment_to_inventoryManagementHomeFragment"
+            app:destination="@id/inventoryManagementHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodWasteRecordFragment"
+        android:name="app.smartmanager.ui.inventorymanagement.foodwastagerecord.FoodWasteRecordFragment"
+        android:label="food_waste_record_fragment"
+        tools:layout="@layout/food_waste_record_fragment" >
+        <action
+            android:id="@+id/action_foodWasteRecordFragment_to_inventoryManagementHomeFragment"
+            app:destination="@id/inventoryManagementHomeFragment" />
     </fragment>
 </navigation>
