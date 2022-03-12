@@ -65,7 +65,7 @@ android:focusableInTouchMode="true">
                     android:textSize="@dimen/largeFont" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/equipmentName"
+                    android:id="@+id/select_equipment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="Equipment"/>
@@ -90,7 +90,7 @@ android:focusableInTouchMode="true">
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/temperature"
+                        android:id="@+id/equipment_temperature"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#CFE1F3"

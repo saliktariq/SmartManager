@@ -65,7 +65,7 @@ android:focusableInTouchMode="true">
                     android:textSize="@dimen/largeFont" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/cookedProduct"
+                    android:id="@+id/cookedProductItem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="Cleaning Task"/>
@@ -90,7 +90,7 @@ android:focusableInTouchMode="true">
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/temperature"
+                        android:id="@+id/cooked_temperature"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#CFE1F3"
