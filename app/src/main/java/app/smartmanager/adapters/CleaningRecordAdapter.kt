@@ -38,15 +38,15 @@ class CleaningRecordAdapter(val listener: CleaningRecordClickListenter) : Recycl
 
     class MyViewHolder(view: View, val listener: CleaningRecordClickListenter) : RecyclerView.ViewHolder(view) {
 
-        val taskName = view.findViewById<TextView>(R.id.taskName)
-        val cleaningCompletionDate = view.findViewById<TextView>(R.id.cleaningCompletionDate)
-        val deleteCleaningTask = view.findViewById<Button>(R.id.deleteCleaningTask)
+        val taskName: TextView = view.findViewById<TextView>(R.id.taskName)
+        val cleaningCompletionDate: TextView = view.findViewById<TextView>(R.id.cleaningCompletionDate)
+        val deleteCleaningTask: Button = view.findViewById<Button>(R.id.deleteCleaningTask)
         fun bind(data: CleaningRecord) {
             taskName.text = data.task_name
             cleaningCompletionDate.text = data.timestamp.toString()
 
             deleteCleaningTask.setOnClickListener {
-                listener.onDeleteProbeClickListener(data)
+                listener.onDeleteCleaningRecordClickListener(data)
 
             }
 
@@ -57,7 +57,7 @@ class CleaningRecordAdapter(val listener: CleaningRecordClickListenter) : Recycl
 
 
     interface CleaningRecordClickListenter{
-        fun onDeleteProbeClickListener(cleaningRecord: CleaningRecord)
+        fun onDeleteCleaningRecordClickListener(cleaningRecord: CleaningRecord)
 
     }
 
