@@ -97,7 +97,7 @@ class DailyInventoryFragment: Fragment(), DailyInventoryRecordAdapter.DailyInven
         var quantity: TextInputEditText =  fragmentView.findViewById<TextInputEditText>(R.id.inventory_quantity)
 
         btnAddData.setOnClickListener {
-            if (HelperFunctions.noNullMinLengthOne(productNameSpinner.selectedItem.toString()) && (HelperFunctions.isNumber(quantity.text.toString()) )) {
+            if (HelperFunctions.noNullMinLengthOne(productNameSpinner.selectedItem?.toString()) && (HelperFunctions.isNumber(quantity.text.toString()) )) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     dailyInventoryViewModel.addDailyInventoryRecord(
                         DailyInventoryRecord(

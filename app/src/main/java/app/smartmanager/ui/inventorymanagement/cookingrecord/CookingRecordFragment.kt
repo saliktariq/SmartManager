@@ -96,7 +96,7 @@ class CookingRecordFragment : Fragment(), CookingRecordAdapter.CookingRecordClic
 
         btnAddData.setOnClickListener {
 
-            if (HelperFunctions.noNullMinLengthOne(cookedProductSpinner.selectedItem.toString()) && (HelperFunctions.isNumber(quantity.text.toString()) )) {
+            if (HelperFunctions.noNullMinLengthOne(cookedProductSpinner.selectedItem?.toString()) && (HelperFunctions.isNumber(quantity.text.toString()) )) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     cookingRecordViewModel.addCookingRecord(
                         CookingRecord(

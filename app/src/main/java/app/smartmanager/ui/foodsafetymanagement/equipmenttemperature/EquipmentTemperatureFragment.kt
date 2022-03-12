@@ -98,7 +98,7 @@ class EquipmentTemperatureFragment : Fragment(), EquipmentTemperatureRecordAdapt
 
         btnAddData.setOnClickListener {
 
-            if (HelperFunctions.noNullMinLengthOne(equipmentNameSpinner.selectedItem.toString()) && (HelperFunctions.isNumber(temperature.text.toString()) )) {
+            if (HelperFunctions.noNullMinLengthOne(equipmentNameSpinner.selectedItem?.toString()) && (HelperFunctions.isNumber(temperature.text.toString()) )) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     equipmentTemperatureViewModel.addEquipmentTemperatureRecord(
                         EquipmentTemperatureRecord(

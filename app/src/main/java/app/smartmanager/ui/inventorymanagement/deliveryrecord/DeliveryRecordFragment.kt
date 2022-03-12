@@ -112,8 +112,8 @@ class DeliveryRecordFragment : Fragment(), DeliveryRecordAdapter.DeliveryRecordC
         val temperature: TextInputEditText = fragmentView.findViewById(R.id.temperature)
 
         btnAddData.setOnClickListener {
-            if (HelperFunctions.noNullMinLengthOne(productNameSpinner.selectedItem.toString()) && HelperFunctions.noNullMinLengthOne(
-                    supplierNameSpinner.selectedItem.toString()
+            if (HelperFunctions.noNullMinLengthOne(productNameSpinner.selectedItem?.toString()) && HelperFunctions.noNullMinLengthOne(
+                    supplierNameSpinner.selectedItem?.toString()
                 ) && HelperFunctions.isNumber(quantity.text.toString()) && HelperFunctions.isNumber(
                     temperature.text.toString()
                 )

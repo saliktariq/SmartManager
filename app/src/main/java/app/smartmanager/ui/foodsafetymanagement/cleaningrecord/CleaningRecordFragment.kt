@@ -97,7 +97,7 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
 
 
         btnAddData.setOnClickListener {
-            if (HelperFunctions.noNullMinLengthOne(cleaningTaskNameSpinner.selectedItem.toString())) {
+            if (HelperFunctions.noNullMinLengthOne(cleaningTaskNameSpinner.selectedItem?.toString())) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     cleaningRecordViewModel.addCleaningRecord(
                         CleaningRecord(

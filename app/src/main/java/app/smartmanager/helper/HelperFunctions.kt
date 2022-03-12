@@ -23,8 +23,12 @@ Function to check if not-null fields are not empty
             }
         }
 
-        fun noNullMinLengthOne(string: String): Boolean {
-            return (string.length > 0)
+        fun noNullMinLengthOne(string: String?): Boolean {
+            if (string.isNullOrBlank()){
+                return false
+            } else {
+                return (string.length>0)
+            }
         }
 
         fun isFloat(number: String): Boolean {

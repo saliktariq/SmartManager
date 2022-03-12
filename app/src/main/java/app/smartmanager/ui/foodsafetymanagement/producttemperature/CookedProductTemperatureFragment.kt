@@ -96,7 +96,7 @@ class CookedProductTemperatureFragment : Fragment(), CookedProductTemperatureRec
 
         btnAddData.setOnClickListener {
 
-            if (HelperFunctions.noNullMinLengthOne(cookedProductSpinner.selectedItem.toString()) && (HelperFunctions.isNumber(cookedTemperature.text.toString()) )) {
+            if (HelperFunctions.noNullMinLengthOne(cookedProductSpinner.selectedItem?.toString()) && (HelperFunctions.isNumber(cookedTemperature.text.toString()) )) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     cookedProductTemperatureViewModel.addCookedProductTemperatureRecord(
                         CookedProductTemperatureRecord(
