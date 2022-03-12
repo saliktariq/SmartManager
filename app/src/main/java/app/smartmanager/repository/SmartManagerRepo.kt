@@ -361,8 +361,10 @@ class SmartManagerRepo private constructor(context: Context) {
         cookingRecordDAO.deleteCookingRecord(cookingRecord)
     }
 
-    val readAllCookingRecordData: List<CookingRecord> =
-        cookingRecordDAO.readAllCookingRecordData()
+    suspend fun readAllCookingRecordData(): List<CookingRecord> = withContext(Dispatchers.IO)
+    {
+        return@withContext cookingRecordDAO.readAllCookingRecordData()
+      }
 
     /*
 ******************- Repository functions related to DailyInventoryRecord -******************
@@ -380,8 +382,10 @@ class SmartManagerRepo private constructor(context: Context) {
         dailyInventoryRecordDAO.deleteDailyInventoryRecord(dailyInventoryRecord)
     }
 
-    val readAllDailyInventoryRecordData: List<DailyInventoryRecord> =
-        dailyInventoryRecordDAO.readAllDailyInventoryRecordData()
+    suspend fun readAllDailyInventoryRecordData(): List<DailyInventoryRecord> = withContext(Dispatchers.IO){
+        return@withContext dailyInventoryRecordDAO.readAllDailyInventoryRecordData()
+    }
+
     /*
 ******************- Repository functions related to DeliveryRecord -******************
 */
@@ -397,8 +401,10 @@ class SmartManagerRepo private constructor(context: Context) {
         deliveryRecordDAO.deleteDeliveryRecord(deliveryRecord)
     }
 
-    val readAllDeliveryRecordData: List<DeliveryRecord> =
-        deliveryRecordDAO.readAllDeliveryRecordData()
+    suspend fun readAllDeliveryRecordData(): List<DeliveryRecord> = withContext(Dispatchers.IO){
+        return@withContext deliveryRecordDAO.readAllDeliveryRecordData()
+    }
+
     /*
 ******************- Repository functions related to FoodWasteRecord -******************
 */
@@ -414,7 +420,9 @@ class SmartManagerRepo private constructor(context: Context) {
         foodWasteRecordDAO.deleteFoodWasteRecord(foodWasteRecord)
     }
 //    val readAllFoodWasteRecordData: LiveData<List<FoodWasteRecord>> =
-    val readAllFoodWasteRecordData: List<FoodWasteRecord> =
-        foodWasteRecordDAO.readAllFoodWasteRecordData()
+    suspend fun readAllFoodWasteRecordData(): List<FoodWasteRecord> = withContext(Dispatchers.IO){
+        return@withContext foodWasteRecordDAO.readAllFoodWasteRecordData()
+}
+
 
 }

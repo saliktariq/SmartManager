@@ -37,7 +37,7 @@ class FoodWasteRecordViewModel(application: Application) : AndroidViewModel(appl
     suspend fun getAllData(){
         val run = viewModelScope.launch {
             // Variable to hold all data retrieved
-            val list = repository.readAllFoodWasteRecordData
+            val list = repository.readAllFoodWasteRecordData()
             allData.postValue(list)
         }
         run.join()

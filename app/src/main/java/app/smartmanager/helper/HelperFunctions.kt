@@ -9,7 +9,7 @@ class HelperFunctions {
         /*
 Function to check if not-null fields are not empty
 */
-        fun checkInputData(dataToCheck: String): Boolean{
+        fun checkInputData(dataToCheck: String?): Boolean{
             return !(TextUtils.isEmpty(dataToCheck))
         }
 

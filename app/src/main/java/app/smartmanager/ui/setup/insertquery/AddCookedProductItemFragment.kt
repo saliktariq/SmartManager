@@ -69,20 +69,16 @@ class AddCookedProductItemFragment : Fragment() {
             }
 
             }
-            var relatedProduct: String? = null
-            if (fragmentView.findViewById<AppCompatSpinner>(R.id.relatedProduct).selectedItem.toString()
-                    .isNotEmpty()
-            ){
-                    relatedProduct = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedProduct).selectedItem.toString()
+            var relatedProduct: String? = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedProduct).selectedItem?.toString()
 
 
-            }
+                val insertData = cookedProductItemViewModel.insertData(cookedProductName, quantityPerCookingBatch,relatedProduct)
 
-            val insertData = cookedProductItemViewModel.insertData(cookedProductName, quantityPerCookingBatch,relatedProduct)
+                if(insertData){
+                    findNavController().navigate(R.id.action_addCookedProductItemFragment_to_cookedProductItemFragment)
+                }
 
-            if(insertData){
-                findNavController().navigate(R.id.action_addCookedProductItemFragment_to_cookedProductItemFragment)
-            }
+
 
         }
 

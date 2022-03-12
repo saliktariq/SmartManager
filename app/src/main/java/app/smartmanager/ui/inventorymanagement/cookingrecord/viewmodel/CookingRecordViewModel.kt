@@ -38,7 +38,7 @@ class CookingRecordViewModel (application: Application) : AndroidViewModel(appli
     suspend fun getAllData(){
         val run = viewModelScope.launch {
             // Variable to hold all data retrieved
-            val list = repository.readAllCookingRecordData
+            val list = repository.readAllCookingRecordData()
             allData.postValue(list)
         }
         run.join()

@@ -31,7 +31,7 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
 
     private lateinit var cleaningRecordList: RecyclerView
     lateinit var recyclerViewAdapter: CleaningRecordAdapter
-    lateinit  var cleaningRecordViewModel: CleaningRecordViewModel
+    lateinit var cleaningRecordViewModel: CleaningRecordViewModel
 
 
     override fun onCreateView(
@@ -42,7 +42,6 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
 
         //Initialising the recycleView list
         cleaningRecordList = fragmentView.findViewById(R.id.showDatalayout)
-
 
         //Setting layout for recycleView list
         cleaningRecordList.apply {
@@ -81,12 +80,11 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
 
         cleaningRecordViewModel = ViewModelProvider(this).get(CleaningRecordViewModel::class.java)
 
-        cleaningRecordViewModel.listAllTasks.observe(viewLifecycleOwner){listOfTasks ->
-            for (name in listOfTasks){
+        cleaningRecordViewModel.listAllTasks.observe(viewLifecycleOwner) { listOfTasks ->
+            for (name in listOfTasks) {
                 cleaningTaskNameDataRetrieved.add(name.toString())
             }
             chooseCleaningTaskNameAdapter.notifyDataSetChanged()
-
         }
 
         cleaningRecordViewModel.getAllDataObserver().observe(viewLifecycleOwner, Observer {
@@ -94,16 +92,21 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
             recyclerViewAdapter.notifyDataSetChanged()
         })
 
-        val btnAddData: AppCompatButton = fragmentView.findViewById<AppCompatButton>(R.id.btnAddData)
+        val btnAddData: AppCompatButton =
+            fragmentView.findViewById<AppCompatButton>(R.id.btnAddData)
 
 
         btnAddData.setOnClickListener {
-            if(HelperFunctions.noNullMinLengthOne(cleaningTaskNameSpinner.selectedItem.toString())){
-                viewLifecycleOwner.lifecycleScope.launch{
-                    cleaningRecordViewModel.addCleaningRecord(CleaningRecord(0,cleaningTaskNameSpinner.selectedItem.toString(),
-                        Calendar.getInstance().time))
+            if (HelperFunctions.noNullMinLengthOne(cleaningTaskNameSpinner.selectedItem.toString())) {
+                viewLifecycleOwner.lifecycleScope.launch {
+                    cleaningRecordViewModel.addCleaningRecord(
+                        CleaningRecord(
+                            0, cleaningTaskNameSpinner.selectedItem.toString(),
+                            Calendar.getInstance().time
+                        )
+                    )
                 }
-                ToastMaker.showToast("Success! Record added!",GetAppContext.appContext)
+                ToastMaker.showToast("Success! Record added!", GetAppContext.appContext)
             } else {
                 ToastMaker.showToast("Error: Enter valid data", GetAppContext.appContext)
             }
@@ -112,7 +115,8 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
         val btnBack: AppCompatButton = fragmentView.findViewById<AppCompatButton>(R.id.btnBack)
 
         btnBack.setOnClickListener {
-            fragmentView.findNavController().navigate(R.id.action_cleaningRecordFragment_to_foodSafetyManagementHomeFragment)
+            fragmentView.findNavController()
+                .navigate(R.id.action_cleaningRecordFragment_to_foodSafetyManagementHomeFragment)
         }
 
 
@@ -122,12 +126,12 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
     }
 
     override fun onDeleteCleaningRecordClickListener(cleaningRecord: CleaningRecord) {
-        var cleaningRecordViewModel = ViewModelProvider(this).get(CleaningRecordViewModel::class.java)
+        var cleaningRecordViewModel =
+            ViewModelProvider(this).get(CleaningRecordViewModel::class.java)
 
-            cleaningRecordViewModel
-                .deleteCleaningRecord(cleaningRecord)
-        }
-
+        cleaningRecordViewModel
+            .deleteCleaningRecord(cleaningRecord)
+    }
 
 
 }
