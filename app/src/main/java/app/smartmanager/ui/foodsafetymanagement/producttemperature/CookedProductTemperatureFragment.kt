@@ -7,15 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import app.smartmanager.R
-import app.smartmanager.ui.foodsafetymanagement.producttemperature.viewmodel.ProductTemperatureViewModel
+import app.smartmanager.ui.foodsafetymanagement.producttemperature.viewmodel.CookedProductTemperatureViewModel
 
-class ProductTemperatureFragment : Fragment() {
+class CookedProductTemperatureFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ProductTemperatureFragment()
+        fun newInstance() = CookedProductTemperatureFragment()
     }
 
-    private lateinit var viewModel: ProductTemperatureViewModel
+    private lateinit var viewModelCooked: CookedProductTemperatureViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,7 @@ class ProductTemperatureFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProductTemperatureViewModel::class.java)
+        viewModelCooked = ViewModelProvider(this).get(CookedProductTemperatureViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
