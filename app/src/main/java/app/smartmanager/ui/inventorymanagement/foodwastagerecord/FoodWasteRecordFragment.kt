@@ -98,7 +98,6 @@ class FoodWasteRecordFragment : Fragment(), FoodWasteRecordAdapter.FoodWasteReco
         val btnAddData: AppCompatButton =
             fragmentView.findViewById<AppCompatButton>(R.id.btnAddData)
         var quantity: TextInputEditText =  fragmentView.findViewById<TextInputEditText>(R.id.waste_quantity)
-        Log.v("Value of variable quantity" + quantity.text.toString(), quantity.text.toString())
 
         btnAddData.setOnClickListener {
 
