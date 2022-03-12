@@ -23,4 +23,7 @@ interface CleaningTaskDAO {
     @Delete
     fun deleteCleaningTask(cleaningTask: CleaningTask)
 
+    @Query("SELECT name from cleaningTask ORDER BY id ASC")
+    fun listAllTasks(): LiveData<List<String>>
+
 }

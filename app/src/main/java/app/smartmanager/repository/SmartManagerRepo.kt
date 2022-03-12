@@ -179,6 +179,9 @@ class SmartManagerRepo private constructor(context: Context) {
     val readAllCleaningTaskData: LiveData<List<CleaningTask>> =
         cleaningTaskDAO.readAllCleaningTaskData()
 
+    val listAllTasks: LiveData<List<String>> =
+        cleaningTaskDAO.listAllTasks()
+
     /*
 ******************- Repository functions related to ChemicalListCOSHH Entity -******************
  */
@@ -283,6 +286,12 @@ class SmartManagerRepo private constructor(context: Context) {
 
     val readAllCleaningRecordData: LiveData<List<CleaningRecord>> =
         cleaningRecordDAO.readAllCleaningRecordData()
+
+
+    // Function to retrieve all data from table 'probe' in a List<Probe>
+    suspend fun getAllCleaningRecordData(): List<CleaningRecord>? = withContext(Dispatchers.IO) {
+        return@withContext cleaningRecordDAO.getAllCleaningRecordData()
+    }
 
     /*
 ******************- Repository functions related to EquipmentTemperatureRecord -******************

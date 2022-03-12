@@ -15,7 +15,7 @@ import app.smartmanager.datalayer.typeconverter.DateTypeConverter
     entities = [Probe::class, Supplier::class, Equipment::class, ControlChecks::class, CleaningTask::class, ChemicalListCOSHH::class,
         ProbeCalibrationRecord::class, CookedProductItem::class, InventoryItem::class, CleaningRecord::class, EquipmentTemperatureRecord::class,
                CookedProductTemperatureRecord::class, CookingRecord::class, DailyInventoryRecord::class, DeliveryRecord::class, FoodWasteRecord::class],
-    version = 7,
+    version = 1,
     exportSchema = false
 )
 @TypeConverters(DateTypeConverter::class)
