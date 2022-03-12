@@ -101,7 +101,6 @@ class FoodWasteRecordFragment : Fragment(), FoodWasteRecordAdapter.FoodWasteReco
 
         btnAddData.setOnClickListener {
 
-ToastMaker.showToast(quantity.text.toString(),GetAppContext.appContext )
             if (HelperFunctions.noNullMinLengthOne(cookedProductSpinner.selectedItem.toString()) && (HelperFunctions.isNumber(quantity.text.toString()) )) {
                 viewLifecycleOwner.lifecycleScope.launch {
                     foodWasteRecordViewModel.addFoodWasteRecord(
@@ -123,9 +122,6 @@ ToastMaker.showToast(quantity.text.toString(),GetAppContext.appContext )
             fragmentView.findNavController()
                 .navigate(R.id.action_foodWasteRecordFragment_to_inventoryManagementHomeFragment)
         }
-
-
-
         return fragmentView
     }
 
