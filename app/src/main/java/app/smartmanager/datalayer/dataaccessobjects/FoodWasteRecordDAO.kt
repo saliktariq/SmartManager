@@ -10,7 +10,8 @@ interface FoodWasteRecordDAO {
     fun addFoodWasteRecord(foodWasteRecord: FoodWasteRecord)
 
     @Query("SELECT * from food_waste_record ORDER BY id ASC")
-    fun readAllFoodWasteRecordData(): LiveData<List<FoodWasteRecord>>
+//    fun readAllFoodWasteRecordData(): LiveData<List<FoodWasteRecord>>
+    fun readAllFoodWasteRecordData(): List<FoodWasteRecord>
 
     @Update
     fun updateFoodWasteRecord(foodWasteRecord: FoodWasteRecord)

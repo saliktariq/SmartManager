@@ -12,7 +12,7 @@ interface EquipmentDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addEquipment(equipment: Equipment)
 
-    @Query("SELECT * from equipment ORDER BY id ASC")
+    @Query("SELECT * from equipment ORDER BY id DESC")
     fun readAllEquipmentData(): LiveData<List<Equipment>>
 
     @Update
@@ -20,4 +20,7 @@ interface EquipmentDAO {
 
     @Delete
     fun deleteEquipment(equipment: Equipment)
+
+    @Query("SELECT name from equipment ORDER BY id ASC")
+    fun listAllEquipment(): LiveData<List<String>>
 }

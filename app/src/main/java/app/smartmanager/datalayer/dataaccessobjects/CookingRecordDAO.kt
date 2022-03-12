@@ -10,7 +10,7 @@ interface CookingRecordDAO {
     fun addCookingRecord(cookingRecord: CookingRecord)
 
     @Query("SELECT * from cooking_record ORDER BY id ASC")
-    fun readAllCookingRecordData(): LiveData<List<CookingRecord>>
+    fun readAllCookingRecordData(): List<CookingRecord>
 
     @Update
     fun updateCookingRecord(cookingRecord: CookingRecord)

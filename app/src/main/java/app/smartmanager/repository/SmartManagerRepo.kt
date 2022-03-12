@@ -142,6 +142,9 @@ class SmartManagerRepo private constructor(context: Context) {
 
     val readAllEquipmentData: LiveData<List<Equipment>> = equipmentDAO.readAllEquipmentData()
 
+    val listAllEquipment: LiveData<List<String>> =
+        equipmentDAO.listAllEquipment()
+
     /*
     ******************- Repository functions related to ControlChecks Entity -******************
      */
@@ -242,6 +245,9 @@ class SmartManagerRepo private constructor(context: Context) {
     val readAllCookedProductItemRecordData: LiveData<List<CookedProductItem>> =
         cookedProductItemDAO.readAllCookedProductItemData()
 
+    val listAllCookedProductItem: LiveData<List<String>> =
+        cookedProductItemDAO.listAllCookedProductItem()
+
 
     /*
 ******************- Repository functions related to InventoryItem -******************
@@ -311,6 +317,12 @@ class SmartManagerRepo private constructor(context: Context) {
     val readAllEquipmentTemperatureRecordData: LiveData<List<EquipmentTemperatureRecord>> =
         equipmentTemperatureRecordDAO.readAllEquipmentTemperatureRecordData()
 
+
+    // Function to retrieve all data from table 'probe' in a List<Probe>
+    suspend fun getAllEquipmentTemperatureRecordData(): List<EquipmentTemperatureRecord>? = withContext(Dispatchers.IO) {
+        return@withContext equipmentTemperatureRecordDAO.getAllEquipmentTemperatureRecordData()
+    }
+
     /*
 ******************- Repository functions related to CookedProductTemperatureRecord -******************
 */
@@ -329,6 +341,10 @@ class SmartManagerRepo private constructor(context: Context) {
     val readAllCookedProductTemperatureRecordData: LiveData<List<CookedProductTemperatureRecord>> =
         cookedProductTemperatureRecordDAO.readAllCookedProductTemperatureRecordData()
 
+    suspend fun getAllCookedProductTemperatureRecordData(): List<CookedProductTemperatureRecord>? = withContext(Dispatchers.IO){
+        return@withContext cookedProductTemperatureRecordDAO.getAllCookedProductTemperatureRecordData()
+    }
+
     /*
 ******************- Repository functions related to CookingRecord -******************
 */
@@ -345,7 +361,7 @@ class SmartManagerRepo private constructor(context: Context) {
         cookingRecordDAO.deleteCookingRecord(cookingRecord)
     }
 
-    val readAllCookingRecordData: LiveData<List<CookingRecord>> =
+    val readAllCookingRecordData: List<CookingRecord> =
         cookingRecordDAO.readAllCookingRecordData()
 
     /*
@@ -364,7 +380,7 @@ class SmartManagerRepo private constructor(context: Context) {
         dailyInventoryRecordDAO.deleteDailyInventoryRecord(dailyInventoryRecord)
     }
 
-    val readAllDailyInventoryRecordData: LiveData<List<DailyInventoryRecord>> =
+    val readAllDailyInventoryRecordData: List<DailyInventoryRecord> =
         dailyInventoryRecordDAO.readAllDailyInventoryRecordData()
     /*
 ******************- Repository functions related to DeliveryRecord -******************
@@ -381,7 +397,7 @@ class SmartManagerRepo private constructor(context: Context) {
         deliveryRecordDAO.deleteDeliveryRecord(deliveryRecord)
     }
 
-    val readAllDeliveryRecordData: LiveData<List<DeliveryRecord>> =
+    val readAllDeliveryRecordData: List<DeliveryRecord> =
         deliveryRecordDAO.readAllDeliveryRecordData()
     /*
 ******************- Repository functions related to FoodWasteRecord -******************
@@ -397,8 +413,8 @@ class SmartManagerRepo private constructor(context: Context) {
     suspend fun deleteFoodWasteRecord(foodWasteRecord: FoodWasteRecord){
         foodWasteRecordDAO.deleteFoodWasteRecord(foodWasteRecord)
     }
-
-    val readAllFoodWasteRecordData: LiveData<List<FoodWasteRecord>> =
+//    val readAllFoodWasteRecordData: LiveData<List<FoodWasteRecord>> =
+    val readAllFoodWasteRecordData: List<FoodWasteRecord> =
         foodWasteRecordDAO.readAllFoodWasteRecordData()
 
 }

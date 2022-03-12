@@ -9,8 +9,9 @@ interface DailyInventoryRecordDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord)
 
-    @Query("SELECT * from daily_inventory_record ORDER BY id ASC")
-    fun readAllDailyInventoryRecordData(): LiveData<List<DailyInventoryRecord>>
+    @Query("SELECT * from daily_inventory_record ORDER BY id DESC")
+    fun readAllDailyInventoryRecordData(): List<DailyInventoryRecord>
+//    fun readAllDailyInventoryRecordData(): LiveData<List<DailyInventoryRecord>>
 
     @Update
     fun updateDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord)

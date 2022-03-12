@@ -10,8 +10,8 @@ interface DeliveryRecordDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addDeliveryRecord(deliveryRecord: DeliveryRecord)
 
-    @Query("SELECT * from delivery_record ORDER BY id ASC")
-    fun readAllDeliveryRecordData(): LiveData<List<DeliveryRecord>>
+    @Query("SELECT * from delivery_record ORDER BY id DESC")
+    fun readAllDeliveryRecordData(): List<DeliveryRecord>
 
     @Update
     fun updateDeliveryRecord(deliveryRecord: DeliveryRecord)

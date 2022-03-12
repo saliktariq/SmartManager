@@ -9,9 +9,6 @@ import kotlinx.coroutines.launch
 
 class CleaningRecordViewModel(application: Application) : AndroidViewModel(application){
 
-    //Variable to hold fragment data
-    var taskName: String = ""
-
     //Variable to hold Mutable LiveData retrieved from DB
     var allData: MutableLiveData<List<CleaningRecord>>
 
@@ -41,7 +38,6 @@ class CleaningRecordViewModel(application: Application) : AndroidViewModel(appli
             allData.postValue(list)
         }
         run.join()
-
     }
 
     //Function to delete a single record by giving that object as input to the function

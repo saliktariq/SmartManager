@@ -9,7 +9,7 @@ interface CookedProductItemDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addCookedProductItemRecord(record: CookedProductItem)
 
-    @Query("Select * from cooked_product_item ORDER BY id ASC")
+    @Query("Select * from cooked_product_item ORDER BY id DESC")
     fun readAllCookedProductItemData(): LiveData<List<CookedProductItem>>
 
     @Update
@@ -17,5 +17,8 @@ interface CookedProductItemDAO {
 
     @Delete
     fun deleteCookedProductItemRecord(record: CookedProductItem)
+
+    @Query("Select name from cooked_product_item ORDER BY id DESC")
+    fun listAllCookedProductItem(): LiveData<List<String>>
 
 }

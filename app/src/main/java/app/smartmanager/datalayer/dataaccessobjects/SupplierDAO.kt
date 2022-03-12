@@ -10,7 +10,7 @@ interface SupplierDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addSupplier(supplier: Supplier)
 
-    @Query("SELECT * from supplier ORDER BY id ASC")
+    @Query("SELECT * from supplier ORDER BY id DESC")
     fun readAllSupplierData(): LiveData<List<Supplier>>
 
     @Update
@@ -20,6 +20,6 @@ interface SupplierDAO {
     fun deleteSupplier(supplier: Supplier)
 
     //Query to retrieve all supplier names to be used by other classes
-    @Query("Select name from supplier ORDER BY id ASC")
+    @Query("Select name from supplier ORDER BY id DESC")
     fun readSupplierName(): LiveData<List<String>>
 }
