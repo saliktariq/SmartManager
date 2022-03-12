@@ -433,7 +433,7 @@
     <fragment
         android:id="@+id/cleaningRecordFragment"
         android:name="app.smartmanager.ui.foodsafetymanagement.cleaningrecord.CleaningRecordFragment"
-        android:label="cleaning_record_fragment"
+        android:label="Cleaning Record"
         tools:layout="@layout/cleaning_record_fragment" >
         <action
             android:id="@+id/action_cleaningRecordFragment_to_foodSafetyManagementHomeFragment"
@@ -442,7 +442,7 @@
     <fragment
         android:id="@+id/equipmentTemperatureFragment"
         android:name="app.smartmanager.ui.foodsafetymanagement.equipmenttemperature.EquipmentTemperatureFragment"
-        android:label="equipment_temperature_fragment"
+        android:label="Equipment Temperature"
         tools:layout="@layout/equipment_temperature_fragment" >
         <action
             android:id="@+id/action_equipmentTemperatureFragment_to_foodSafetyManagementHomeFragment"
@@ -451,7 +451,7 @@
     <fragment
         android:id="@+id/cookedProductTemperatureFragment"
         android:name="app.smartmanager.ui.foodsafetymanagement.producttemperature.CookedProductTemperatureFragment"
-        android:label="cooked_product_temperature_fragment"
+        android:label="Cooked Food Temperature"
         tools:layout="@layout/cooked_product_temperature_fragment" >
         <action
             android:id="@+id/action_cookedProductTemperatureFragment_to_foodSafetyManagementHomeFragment"
@@ -460,7 +460,7 @@
     <fragment
         android:id="@+id/inventoryManagementHomeFragment"
         android:name="app.smartmanager.ui.inventorymanagement.InventoryManagementHomeFragment"
-        android:label="fragment_inventory_management_home"
+        android:label="Inventory Management Home"
         tools:layout="@layout/fragment_inventory_management_home" >
         <action
             android:id="@+id/action_inventoryManagementHomeFragment_to_homeScreen"
@@ -481,7 +481,7 @@
     <fragment
         android:id="@+id/cookingRecordFragment"
         android:name="app.smartmanager.ui.inventorymanagement.cookingrecord.CookingRecordFragment"
-        android:label="cooking_record_fragment"
+        android:label="Cooking Record"
         tools:layout="@layout/cooking_record_fragment" >
         <action
             android:id="@+id/action_cookingRecordFragment_to_inventoryManagementHomeFragment"
@@ -490,7 +490,7 @@
     <fragment
         android:id="@+id/dailyInventoryFragment"
         android:name="app.smartmanager.ui.inventorymanagement.dailyinventory.DailyInventoryFragment"
-        android:label="daily_inventory_fragment"
+        android:label="Daily Inventory"
         tools:layout="@layout/daily_inventory_fragment" >
         <action
             android:id="@+id/action_dailyInventoryFragment_to_inventoryManagementHomeFragment"
@@ -499,7 +499,7 @@
     <fragment
         android:id="@+id/deliveryRecordFragment"
         android:name="app.smartmanager.ui.inventorymanagement.deliveryrecord.DeliveryRecordFragment"
-        android:label="delivery_record_fragment"
+        android:label="Delivery Record"
         tools:layout="@layout/delivery_record_fragment" >
         <action
             android:id="@+id/action_deliveryRecordFragment_to_inventoryManagementHomeFragment"
@@ -508,7 +508,7 @@
     <fragment
         android:id="@+id/foodWasteRecordFragment"
         android:name="app.smartmanager.ui.inventorymanagement.foodwastagerecord.FoodWasteRecordFragment"
-        android:label="food_waste_record_fragment"
+        android:label="Food Wastage"
         tools:layout="@layout/food_waste_record_fragment" >
         <action
             android:id="@+id/action_foodWasteRecordFragment_to_inventoryManagementHomeFragment"
@@ -517,7 +517,7 @@
     <fragment
         android:id="@+id/reportsHomeFragment"
         android:name="app.smartmanager.ui.reports.ReportsHomeFragment"
-        android:label="fragment_reports_home"
+        android:label="Reports Home"
         tools:layout="@layout/fragment_reports_home" >
         <action
             android:id="@+id/action_reportsHomeFragment_to_homeScreen"
