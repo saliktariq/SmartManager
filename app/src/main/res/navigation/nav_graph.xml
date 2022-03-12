@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_homeScreen_to_inventoryManagementHomeFragment"
             app:destination="@id/inventoryManagementHomeFragment" />
+        <action
+            android:id="@+id/action_homeScreen_to_reportsHomeFragment"
+            app:destination="@id/reportsHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/updatePassword"
@@ -510,5 +513,14 @@
         <action
             android:id="@+id/action_foodWasteRecordFragment_to_inventoryManagementHomeFragment"
             app:destination="@id/inventoryManagementHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportsHomeFragment"
+        android:name="app.smartmanager.ui.reports.ReportsHomeFragment"
+        android:label="fragment_reports_home"
+        tools:layout="@layout/fragment_reports_home" >
+        <action
+            android:id="@+id/action_reportsHomeFragment_to_homeScreen"
+            app:destination="@id/homeScreen" />
     </fragment>
 </navigation>

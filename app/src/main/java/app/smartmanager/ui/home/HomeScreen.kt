@@ -50,6 +50,14 @@ class HomeScreen : Fragment() {
             viewBinding.root.findNavController().navigate(HomeScreenDirections.actionHomeScreenToFoodSafetyManagementHomeFragment())
         }
 
+        viewBinding.btnInventoryControl.setOnClickListener {
+            viewBinding.root.findNavController().navigate(HomeScreenDirections.actionHomeScreenToInventoryManagementHomeFragment())
+        }
+
+        viewBinding.btnReports.setOnClickListener {
+            viewBinding.root.findNavController().navigate(HomeScreenDirections.actionHomeScreenToReportsHomeFragment())
+        }
+
         viewBinding.btnSettings.setOnClickListener {
             viewBinding.root.findNavController().navigate(HomeScreenDirections.actionHomeScreenToInitialSettings())
         }
