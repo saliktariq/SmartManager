@@ -68,7 +68,13 @@
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cleaning_record_fragment.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cleaning_record_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cleaning_report_list_item.xml" value="0.1" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cooked_product_temperature_report_list_item.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cooking_report_list_item.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/daily_inventory_report_list_item.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/delivery_report_list_item.xml" value="0.1" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/equipment_temperature_report_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/food_safety_management_reports_fragment.xml" value="0.4" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/food_waste_report_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/forget_password_fragment.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_add_control_checks.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_add_inventory_item.xml" value="0.2630208333333333" />
@@ -82,6 +88,8 @@
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/initial_settings_fragment.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/inventory_item_fragment.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/login_fragment.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/probe_calibration_record_list_item.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/probe_calibration_report_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/probe_fragment.xml" value="0.2630208333333333" />
       </map>
     </option>
