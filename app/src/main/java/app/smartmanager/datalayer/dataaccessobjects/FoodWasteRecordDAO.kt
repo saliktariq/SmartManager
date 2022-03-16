@@ -2,14 +2,16 @@ package app.smartmanager.datalayer.dataaccessobjects
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import app.smartmanager.datalayer.entity.DailyInventoryRecord
 import app.smartmanager.datalayer.entity.FoodWasteRecord
+import java.util.*
 
 @Dao
 interface FoodWasteRecordDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addFoodWasteRecord(foodWasteRecord: FoodWasteRecord)
 
-    @Query("SELECT * from food_waste_record ORDER BY id ASC")
+    @Query("SELECT * from food_waste_record ORDER BY id DESC")
 //    fun readAllFoodWasteRecordData(): LiveData<List<FoodWasteRecord>>
     fun readAllFoodWasteRecordData(): List<FoodWasteRecord>
 
@@ -18,4 +20,8 @@ interface FoodWasteRecordDAO {
 
     @Delete
     fun deleteFoodWasteRecord(foodWasteRecord: FoodWasteRecord)
+
+    //Query to retrieve data for x days
+    @Query("SELECT * FROM food_waste_record WHERE timestamp >= :oldDate")
+    fun generateReport(oldDate: Date): List<FoodWasteRecord>
 }

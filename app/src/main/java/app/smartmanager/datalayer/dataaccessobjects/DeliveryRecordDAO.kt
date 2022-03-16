@@ -2,7 +2,9 @@ package app.smartmanager.datalayer.dataaccessobjects
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import app.smartmanager.datalayer.entity.DailyInventoryRecord
 import app.smartmanager.datalayer.entity.DeliveryRecord
+import java.util.*
 
 
 @Dao
@@ -18,4 +20,8 @@ interface DeliveryRecordDAO {
 
     @Delete
     fun deleteDeliveryRecord(deliveryRecord: DeliveryRecord)
+
+    //Query to retrieve data for x days
+    @Query("SELECT * FROM delivery_record WHERE timestamp >= :oldDate")
+    fun generateReport(oldDate: Date): List<DeliveryRecord>
 }

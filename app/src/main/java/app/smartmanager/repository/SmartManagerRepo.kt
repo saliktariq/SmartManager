@@ -223,6 +223,10 @@ class SmartManagerRepo private constructor(context: Context) {
     val readAllProbeCalibrationRecordData: LiveData<List<ProbeCalibrationRecord>> =
         probeCalibrationRecordDAO.readAllProbeCalibrationRecordData()
 
+    //Function to retrieve data for x old days - used for Reports
+    suspend fun generateProbeCalibrationReport(oldDate: Date): List<ProbeCalibrationRecord>{
+        return probeCalibrationRecordDAO.generateReport(oldDate)
+    }
 
     /*
 ******************- Repository functions related to CookedProductItem -******************
@@ -302,15 +306,6 @@ class SmartManagerRepo private constructor(context: Context) {
     suspend fun  cleaningReport(oldDate: Date): List<CleaningRecord>{
         return cleaningRecordDAO.cleaningReport(oldDate)
     }
-
-//    //Function to retrieve data for x old days - used for Reports
-//    suspend fun  cleaningReportWeekly(oldDate: Date): LiveData<List<CleaningRecord>>{
-//        return cleaningRecordDAO.cleaningReportWeekly(oldDate)
-//    }
-
-//    val cleaningReportWeekly: LiveData<List<CleaningRecord>> =
-//         cleaningRecordDAO.cleaningReportWeekly()
-
     /*
 ******************- Repository functions related to EquipmentTemperatureRecord -******************
 */
@@ -329,8 +324,12 @@ class SmartManagerRepo private constructor(context: Context) {
     val readAllEquipmentTemperatureRecordData: LiveData<List<EquipmentTemperatureRecord>> =
         equipmentTemperatureRecordDAO.readAllEquipmentTemperatureRecordData()
 
+    //Function to retrieve data for x old days - used for Reports
+    suspend fun generateEquipmentTemperatureReport(oldDate: Date): List<EquipmentTemperatureRecord>{
+        return equipmentTemperatureRecordDAO.generateReport(oldDate)
+    }
 
-    // Function to retrieve all data from table 'probe' in a List<Probe>
+
     suspend fun getAllEquipmentTemperatureRecordData(): List<EquipmentTemperatureRecord>? = withContext(Dispatchers.IO) {
         return@withContext equipmentTemperatureRecordDAO.getAllEquipmentTemperatureRecordData()
     }
@@ -357,6 +356,11 @@ class SmartManagerRepo private constructor(context: Context) {
         return@withContext cookedProductTemperatureRecordDAO.getAllCookedProductTemperatureRecordData()
     }
 
+    //Function to retrieve data for x old days - used for Reports
+    suspend fun generateCookedProductTemperatureReport(oldDate: Date): List<CookedProductTemperatureRecord>{
+        return cookedProductTemperatureRecordDAO.generateReport(oldDate)
+    }
+
     /*
 ******************- Repository functions related to CookingRecord -******************
 */
@@ -378,6 +382,11 @@ class SmartManagerRepo private constructor(context: Context) {
         return@withContext cookingRecordDAO.readAllCookingRecordData()
       }
 
+    //Function to retrieve data for x old days - used for Reports
+    suspend fun generateCookingRecordReport(oldDate: Date): List<CookingRecord>{
+        return cookingRecordDAO.generateReport(oldDate)
+    }
+
     /*
 ******************- Repository functions related to DailyInventoryRecord -******************
 */
@@ -396,6 +405,11 @@ class SmartManagerRepo private constructor(context: Context) {
 
     suspend fun readAllDailyInventoryRecordData(): List<DailyInventoryRecord> = withContext(Dispatchers.IO){
         return@withContext dailyInventoryRecordDAO.readAllDailyInventoryRecordData()
+    }
+
+    //Function to retrieve data for x old days - used for Reports
+    suspend fun generateInventoryReport(oldDate: Date): List<DailyInventoryRecord>{
+        return dailyInventoryRecordDAO.generateReport(oldDate)
     }
 
     /*
@@ -417,6 +431,10 @@ class SmartManagerRepo private constructor(context: Context) {
         return@withContext deliveryRecordDAO.readAllDeliveryRecordData()
     }
 
+    //Function to retrieve data for x old days - used for Reports
+    suspend fun generateDeliveryRecordReport(oldDate: Date): List<DeliveryRecord>{
+        return deliveryRecordDAO.generateReport(oldDate)
+    }
     /*
 ******************- Repository functions related to FoodWasteRecord -******************
 */
@@ -435,6 +453,11 @@ class SmartManagerRepo private constructor(context: Context) {
     suspend fun readAllFoodWasteRecordData(): List<FoodWasteRecord> = withContext(Dispatchers.IO){
         return@withContext foodWasteRecordDAO.readAllFoodWasteRecordData()
 }
+
+    //Function to retrieve data for x old days - used for Reports
+    suspend fun generateFoodWasteReport(oldDate: Date): List<FoodWasteRecord>{
+        return foodWasteRecordDAO.generateReport(oldDate)
+    }
 
 
 }
