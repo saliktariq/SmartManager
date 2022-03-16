@@ -7,13 +7,14 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import app.smartmanager.R
+import app.smartmanager.datalayer.entity.CleaningRecord
 import app.smartmanager.datalayer.entity.EquipmentTemperatureRecord
 
 
 
 class EquipmentTemperatureReportsAdapter() : RecyclerView.Adapter<EquipmentTemperatureReportsAdapter.MyViewHolder>() {
 
-    var equipmentTemperatureRecord = ArrayList<EquipmentTemperatureRecord>()
+    var equipmentTemperatureRecord = emptyList<EquipmentTemperatureRecord>()
 
     fun setEquipmentTemperatureRecordData(data: ArrayList<EquipmentTemperatureRecord>){
         this.equipmentTemperatureRecord = data
@@ -28,6 +29,13 @@ class EquipmentTemperatureReportsAdapter() : RecyclerView.Adapter<EquipmentTempe
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         holder.bind(equipmentTemperatureRecord[position])
+    }
+    fun setDataSet(equipmentTemperatureRecord: List<EquipmentTemperatureRecord>){
+        this.equipmentTemperatureRecord = equipmentTemperatureRecord
+
+        //Notify UI about dataset change
+        notifyDataSetChanged()
+
     }
 
     override fun getItemCount(): Int {

@@ -1,14 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/floralWhite"
+android:focusable="true"
+android:focusableInTouchMode="true"
+android:orientation="vertical"
+tools:context=".ui.reports.InventoryReportsFragment">
+
+
+<TextView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.reports.InventoryReportsFragment">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="@dimen/normalMargin"
+    android:text="Cooked Food Reports"
+    android:textSize="@dimen/largeFont"
+    android:textStyle="bold" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cooking_report_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Daily" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cooking_report_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Weekly" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cooking_report_monthly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Monthly" />
+</LinearLayout>
+
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="@dimen/normalMargin"
+    android:text="Inventory Reports"
+    android:textSize="@dimen/largeFont"
+    android:textStyle="bold" />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/inventory_report_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Daily" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/inventory_report_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Weekly" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/inventory_report_monthly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Monthly" />
+</LinearLayout>
+
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="@dimen/normalMargin"
+    android:text="Delivery Reports"
+    android:textSize="@dimen/largeFont"
+    android:textStyle="bold" />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delivery_report_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Daily" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delivery_report_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Weekly" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delivery_report_monthly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Monthly" />
+</LinearLayout>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="@dimen/normalMargin"
+    android:text="Food Wastage Reports"
+    android:textSize="@dimen/largeFont"
+    android:textStyle="bold" />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/food_waste_report_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Daily" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/food_waste_report_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Weekly" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/food_waste_report_monthly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Monthly" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
 
-</FrameLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reportCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xLargeMargin"
+            android:layout_marginTop="@dimen/normalMargin"
+            android:layout_marginEnd="@dimen/xLargeMargin"
+            app:cardElevation="@dimen/normalElevation">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/showReportView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </ScrollView>
+</LinearLayout>
+
+</LinearLayout>

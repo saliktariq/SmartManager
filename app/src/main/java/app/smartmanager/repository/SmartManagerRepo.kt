@@ -326,7 +326,7 @@ class SmartManagerRepo private constructor(context: Context) {
 
     //Function to retrieve data for x old days - used for Reports
     suspend fun generateEquipmentTemperatureReport(oldDate: Date): List<EquipmentTemperatureRecord>{
-        return equipmentTemperatureRecordDAO.generateReport(oldDate)
+        return equipmentTemperatureRecordDAO.generateEquipmentTemperatureReport(oldDate)
     }
 
 
