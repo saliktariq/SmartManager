@@ -12,7 +12,10 @@ class ReportsViewModel (application: Application) : AndroidViewModel(application
 
     //Variable to hold Mutable LiveData retrieved from DB
 //    val cleaningReportWeekly: LiveData<List<CleaningRecord>>
+    lateinit var cleaningReportDaily: List<CleaningRecord>
     lateinit var cleaningReportWeekly: List<CleaningRecord>
+    lateinit var cleaningReportMonthly: List<CleaningRecord>
+
 
 
     //Retrieve instance of repository
@@ -20,28 +23,13 @@ class ReportsViewModel (application: Application) : AndroidViewModel(application
 
     init{
         val weekAgo = HelperFunctions.getOldDate(7)
+        val dayAgo = HelperFunctions.getOldDate(1)
+        val monthAgo = HelperFunctions.getOldDate(30)
         viewModelScope.launch(Dispatchers.IO) {
-
+            cleaningReportDaily = repository.cleaningReport(dayAgo)
             cleaningReportWeekly = repository.cleaningReport(weekAgo)
-
+            cleaningReportMonthly = repository.cleaningReport(monthAgo)
         }
     }
 
-
-
-//    fun probeCalibrationReport(timeInterval: Int){
-//
-//    }
-//
-//    fun donenessTestReport(timeInterval: Int) {
-//
-//    }
-//
-//    fun equipmentTemperatureReport(timeInterval: Int) {
-//
-//    }
-//
-//    fun cleaningReport(timeInterval: Int) {
-//
-//    }
 }

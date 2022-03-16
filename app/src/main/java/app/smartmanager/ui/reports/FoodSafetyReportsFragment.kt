@@ -20,16 +20,6 @@ import java.util.*
 
 class FoodSafetyReportsFragment : Fragment() {
 
-    /**
-     * Using constants to select option
-     * Daily = 1
-     * Weekly = 2
-     * Monthly = 3
-     */
-    val DAILY: Int = 1
-    val WEEKLY: Int = 2
-    val MONTHLY: Int = 3
-
     private lateinit var reportsViewModel: ReportsViewModel
 
     override fun onCreateView(
@@ -39,6 +29,8 @@ class FoodSafetyReportsFragment : Fragment() {
         val fragmentView =  inflater.inflate(R.layout.food_safety_management_reports_fragment, container, false)
 
         reportsViewModel = ViewModelProvider(this).get(ReportsViewModel::class.java)
+        val cleaningAdapter = CleaningReportsAdapter()
+        val recyclerView = fragmentView.findViewById<RecyclerView>(R.id.showReportView)
 
         val probeCalibrationDailyButton: AppCompatButton = fragmentView.findViewById(R.id.probe_report_daily)
         val probeCalibrationWeeklyButton: AppCompatButton = fragmentView.findViewById(R.id.probe_report_weekly)
@@ -68,19 +60,30 @@ class FoodSafetyReportsFragment : Fragment() {
         }
 
         cleaningReportDailyButton.setOnClickListener {
+            //Implementing recyclerview
+            recyclerView.adapter = cleaningAdapter
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            cleaningAdapter.setDataSet(reportsViewModel.cleaningReportDaily)
+            ToastMaker.showToast("Daily Report Loaded",GetAppContext.appContext)
+
         }
         cleaningReportWeeklyButton.setOnClickListener {
             //Implementing recyclerview
-            val adapter = CleaningReportsAdapter()
-            val recyclerView = fragmentView.findViewById<RecyclerView>(R.id.showReportView)
-            recyclerView.adapter = adapter
+            recyclerView.adapter = cleaningAdapter
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            adapter.setDataSet(reportsViewModel.cleaningReportWeekly)
+            cleaningAdapter.setDataSet(reportsViewModel.cleaningReportWeekly)
+            ToastMaker.showToast("Weekly Report Loaded",GetAppContext.appContext)
+
 //            reportsViewModel.cleaningReportWeekly.observe(viewLifecycleOwner, Observer { data ->
 //                adapter.setDataSet(data)
 //            })
         }
         cleaningReportMonthlyButton.setOnClickListener {
+            //Implementing recyclerview
+            recyclerView.adapter = cleaningAdapter
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            cleaningAdapter.setDataSet(reportsViewModel.cleaningReportMonthly)
+            ToastMaker.showToast("Monthly Report Loaded",GetAppContext.appContext)
         }
 
         equipmentTemperatureDailyButton.setOnClickListener {

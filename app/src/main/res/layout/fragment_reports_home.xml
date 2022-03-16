@@ -74,6 +74,7 @@ tools:context=".ui.reports.ReportsHomeFragment">
             android:id="@+id/footerLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/xxLargeMargin"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,21 +90,7 @@ tools:context=".ui.reports.ReportsHomeFragment">
                 style="@style/RegularButtonStyle"
                 android:text="@string/logout"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/RegularFontStyle"
-                android:fontFamily="@font/roboto_medium"
-                android:layout_margin="@dimen/xLargeMargin"
-                android:text="@string/any_issues_with_the_application" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnContactAdmin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/largeMargin"
-                android:text="@string/contact_support"
-                android:layout_marginBottom="@dimen/xLargeMargin"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/normalFont" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,8 +17,7 @@ import app.smartmanager.datalayer.entity.CookedProductTemperatureRecord
 import app.smartmanager.datalayer.entity.EquipmentTemperatureRecord
 
 
-class ReportsHomeFragment : Fragment(), CleaningRecordAdapter.CleaningRecordClickListenter, EquipmentTemperatureRecordAdapter.EquipmentTemperatureRecordClickListener,
-    CookedProductTemperatureRecordAdapter.CookedProductTemperatureRecordClickListener
+class ReportsHomeFragment : Fragment()
 {
 
 
@@ -32,6 +31,7 @@ class ReportsHomeFragment : Fragment(), CleaningRecordAdapter.CleaningRecordClic
         val foodSafetyReportsButton: AppCompatButton = fragmentView.findViewById<AppCompatButton>(R.id.btnFoodSafetyReports)
         val inventoryReportsButton: AppCompatButton = fragmentView.findViewById(R.id.btnInventoryReports)
         val backToHomeButton: AppCompatButton = fragmentView.findViewById(R.id.btnbackToHome)
+        val signOutButton: AppCompatButton = fragmentView.findViewById(R.id.btnLogOut)
 
         foodSafetyReportsButton.setOnClickListener {
             findNavController().navigate(R.id.action_reportsHomeFragment_to_foodSafetyReportsFragment)
@@ -45,22 +45,16 @@ class ReportsHomeFragment : Fragment(), CleaningRecordAdapter.CleaningRecordClic
             findNavController().navigate(R.id.action_reportsHomeFragment_to_homeScreen)
         }
 
+        signOutButton.setOnClickListener {
+            findNavController().navigate(R.id.action_global_loginFragment)
+        }
+
+
 
 
         return fragmentView
     }
 
-    override fun onDeleteCleaningRecordClickListener(cleaningRecord: CleaningRecord) {
-        TODO("Implementation not required in this class")
-    }
-
-    override fun onDeleteEquipmentTemperatureRecordClickListener(equipmentTemperatureRecord: EquipmentTemperatureRecord) {
-        TODO("Implementation not required in this class")
-    }
-
-    override fun onDeleteCookedProductTemperatureRecordClickListener(cookedProductTemperatureRecord: CookedProductTemperatureRecord) {
-        TODO("Implementation not required in this class")
-    }
 
 
 }
