@@ -1,4 +1,4 @@
-package app.smartmanager.ui.auth
+package app.smartmanager.ui.authentication
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,26 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import app.smartmanager.R
-import app.smartmanager.ui.auth.viewmodel.ForgetPasswordViewModel
+import app.smartmanager.ui.authentication.viewmodel.RegisterNewAccountViewModel
 
-class ForgetPassword : Fragment() {
+class RegisterNewAccount : Fragment() {
 
     companion object {
-        fun newInstance() = ForgetPassword()
+        fun newInstance() = RegisterNewAccount()
     }
 
-    private lateinit var viewModel: ForgetPasswordViewModel
+    private lateinit var viewModel: RegisterNewAccountViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.forget_password_fragment, container, false)
+        return inflater.inflate(R.layout.register_new_account_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ForgetPasswordViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(RegisterNewAccountViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

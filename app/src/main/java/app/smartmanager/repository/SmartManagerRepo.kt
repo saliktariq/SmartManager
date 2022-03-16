@@ -461,9 +461,7 @@ class SmartManagerRepo private constructor(context: Context) {
     }
 
 //    ******************- Repository functions related to Authentication -******************
-
-
-    /*
+/*
 Following code is from my own work that I carried out
 during university project making 'Archelon App'.
  */

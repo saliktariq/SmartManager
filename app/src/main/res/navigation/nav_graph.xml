@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="app.smartmanager.ui.auth.LoginFragment"
+        android:name="app.smartmanager.ui.authentication.LoginFragment"
         android:label="Login"
         tools:layout="@layout/login_fragment" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/updatePassword"
-        android:name="app.smartmanager.ui.auth.UpdatePassword"
+        android:name="app.smartmanager.ui.authentication.UpdatePassword"
         tools:layout="@layout/update_password_fragment"
         android:label="Update Password" >
         <action
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgetPassword"
-        android:name="app.smartmanager.ui.auth.ForgetPassword"
+        android:name="app.smartmanager.ui.authentication.ForgetPassword"
         tools:layout="@layout/forget_password_fragment"
         android:label="Forget Password" >
         <action
@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerNewAccount"
-        android:name="app.smartmanager.ui.auth.RegisterNewAccount"
+        android:name="app.smartmanager.ui.authentication.RegisterNewAccount"
         tools:layout="@layout/register_new_account_fragment"
         android:label="Register New Account" />
     <fragment
@@ -102,7 +102,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewProfile"
-        android:name="app.smartmanager.ui.auth.ViewProfile"
+        android:name="app.smartmanager.ui.authentication.ViewProfile"
         tools:layout="@layout/view_profile_fragment"
         android:label="View Profile" >
         <action

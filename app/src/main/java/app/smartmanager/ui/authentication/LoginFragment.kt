@@ -1,6 +1,6 @@
-package app.smartmanager.ui.auth
+package app.smartmanager.ui.authentication
 
-import app.smartmanager.ui.auth.viewmodel.LoginViewModel
+import app.smartmanager.ui.authentication.viewmodel.LoginViewModel
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,18 +19,21 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.common.api.ApiException
 import android.content.Intent
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import app.smartmanager.ui.auth.viewmodel.LoginViewModelFactory
+import androidx.navigation.fragment.findNavController
+import app.smartmanager.R
+import app.smartmanager.helper.ToastMaker
+import app.smartmanager.ui.authentication.viewmodel.LoginViewModelFactory
 
 import com.google.android.gms.tasks.OnCompleteListener
-
-
-
-
-
+import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.launch
 
 /*
-Note: Google Sign-In integration learnt at: https://developers.google.com/identity/sign-in/android/start-integrating
+Kindly note: Google Sign-In integration learnt at: https://developers.google.com/identity/sign-in/android/start-integrating
 Parts of google integration code is adapted from the above guide from Google
  */
 
@@ -43,14 +46,11 @@ class LoginFragment : Fragment() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var account: GoogleSignInAccount
 
-
-
+    lateinit var loginViewModel: LoginViewModel
 
     companion object {
         // A constant to produce result on onActivityResult
         const val GOOGLE_CONSTANT = 2021
-
-
     }
 
     override fun onCreateView(
@@ -59,10 +59,23 @@ class LoginFragment : Fragment() {
     ): View? {
         binding = LoginFragmentBinding.inflate(inflater, container, false)
 
+        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        val usernameField: TextInputEditText = viewBinding.username
+        val passwordField: TextInputEditText = viewBinding.password
+        val loginButton: AppCompatButton = viewBinding.buttonLogin
+        val signUpButton: AppCompatTextView = viewBinding.btnSignUp
+        val forgetPasswordButton: AppCompatTextView = viewBinding.btnForgetPassword
+
+        signUpButton.setOnClickListener{
+            findNavController().navigate(R.id.action_loginFragment_to_registerNewAccount)
+        }
+
+        forgetPasswordButton.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgetPassword)
+        }
+
+
         viewBinding.signInButton.setSize(SignInButton.SIZE_WIDE)
-
-
-
 
         // Building GoogleSignInClient object based on options specified in getGSO() function
         googleSignInClient = GoogleSignIn.getClient(requireContext(), getGSO())
@@ -72,6 +85,31 @@ class LoginFragment : Fragment() {
         viewBinding.signInButton.setOnClickListener {
             //onclickListener triggers signIn() method
            signIn()
+        }
+
+        //Login button onClickListener to process login requests
+        loginButton.setOnClickListener {
+            loginViewModel.uid = usernameField.text.toString()
+            loginViewModel.pwd = passwordField.text.toString()
+            viewLifecycleOwner.lifecycleScope.launch {
+                val fetchData = viewLifecycleOwner.lifecycleScope.launch {
+                    loginViewModel.login(loginViewModel.uid, loginViewModel.pwd)
+                }
+                //Fetch login data
+                fetchData.join()
+                if (loginViewModel.authenticated) {
+                    viewModelStore.clear() //Clearing viewModel
+                    viewBinding.root.findNavController()
+                        .navigate(LoginFragmentDirections.actionLoginFragmentToHomeScreen())
+                } else {
+                    ToastMaker.showToast("Invalid credentials!", context)
+                    //Resetting the variables so they don't hold bad data (Strings)
+                    loginViewModel.uid = ""
+                    loginViewModel.pwd = ""
+                }
+            }
+
+
         }
 
 
@@ -162,14 +200,6 @@ class LoginFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-//        val account = GoogleSignIn.getLastSignedInAccount(context)
-//        /*Checking if GoogleSignIn object if null or a user is already signed in
-//        Value is null if no user is already signed in and getLastSignedInAccount function  will return GoogleSignInAccount object */
-//        if(account != null){
-//            //If an account is already signed in, navigate to HomeScreen fragment
-//            viewBinding.root.findNavController()
-//                .navigate(LoginFragmentDirections.actionGlobalHomeScreen())
-//        }
     }
 
     override fun onDestroyView() {

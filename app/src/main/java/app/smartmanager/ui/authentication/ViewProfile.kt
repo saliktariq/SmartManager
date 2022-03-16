@@ -1,4 +1,4 @@
-package app.smartmanager.ui.auth
+package app.smartmanager.ui.authentication
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,26 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import app.smartmanager.R
-import app.smartmanager.ui.auth.viewmodel.UpdatePasswordViewModel
+import app.smartmanager.ui.authentication.viewmodel.ViewProfileViewModel
 
-class UpdatePassword : Fragment() {
+class ViewProfile : Fragment() {
 
     companion object {
-        fun newInstance() = UpdatePassword()
+        fun newInstance() = ViewProfile()
     }
 
-    private lateinit var viewModel: UpdatePasswordViewModel
+    private lateinit var viewModel: ViewProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.update_password_fragment, container, false)
+        return inflater.inflate(R.layout.view_profile_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(UpdatePasswordViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ViewProfileViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
