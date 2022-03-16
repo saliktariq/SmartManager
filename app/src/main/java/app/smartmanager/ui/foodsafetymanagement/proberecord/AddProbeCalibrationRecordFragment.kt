@@ -102,7 +102,6 @@ class AddProbeCalibrationRecordFragment : Fragment() {
             val calibrationMethod: String =
                 fragmentView.findViewById<AppCompatSpinner>(R.id.spinner_probeCalibrationMethod).selectedItem.toString()
             val date: Date = Calendar.getInstance().time
-
             val insertData = probeCalibrationRecordViewModel.insertData(probe, temperature, calibrationMethod, date)
 
             if(insertData){

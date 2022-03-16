@@ -1,6 +1,7 @@
 package app.smartmanager.helper
 
 import android.text.TextUtils
+import java.util.*
 
 class HelperFunctions {
 
@@ -37,6 +38,13 @@ Function to check if not-null fields are not empty
                 null -> false
                 else -> true
             }
+        }
+
+        fun getOldDate(tMinusXDays: Int): Date {
+            val calendar = Calendar.getInstance()
+            calendar.add(Calendar.DAY_OF_YEAR, -tMinusXDays)
+
+            return calendar.time
         }
     }
 

@@ -2,17 +2,16 @@ package app.smartmanager.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
 import app.smartmanager.datalayer.dataaccessobjects.*
 import app.smartmanager.datalayer.database.SmartManagerDB
 import app.smartmanager.datalayer.entity.*
 import app.smartmanager.helper.GetAppContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.util.*
 
 class SmartManagerRepo private constructor(context: Context) {
+
 
     /*
     DECLARATION:
@@ -76,7 +75,7 @@ class SmartManagerRepo private constructor(context: Context) {
         return@withContext probeDAO.getAllProbeData()
     }
 
-    // Function to retrieve data related to a probe based on given probeName
+//     Function to retrieve data related to a probe based on given probeName
     suspend fun getProbeByName(probeName: String): Probe? = withContext(Dispatchers.IO) {
         return@withContext probeDAO.getProbeByName(probeName)
     }
@@ -298,6 +297,19 @@ class SmartManagerRepo private constructor(context: Context) {
     suspend fun getAllCleaningRecordData(): List<CleaningRecord>? = withContext(Dispatchers.IO) {
         return@withContext cleaningRecordDAO.getAllCleaningRecordData()
     }
+
+    //Function to retrieve data for x old days - used for Reports
+    suspend fun  cleaningReport(oldDate: Date): List<CleaningRecord>{
+        return cleaningRecordDAO.cleaningReport(oldDate)
+    }
+
+//    //Function to retrieve data for x old days - used for Reports
+//    suspend fun  cleaningReportWeekly(oldDate: Date): LiveData<List<CleaningRecord>>{
+//        return cleaningRecordDAO.cleaningReportWeekly(oldDate)
+//    }
+
+//    val cleaningReportWeekly: LiveData<List<CleaningRecord>> =
+//         cleaningRecordDAO.cleaningReportWeekly()
 
     /*
 ******************- Repository functions related to EquipmentTemperatureRecord -******************

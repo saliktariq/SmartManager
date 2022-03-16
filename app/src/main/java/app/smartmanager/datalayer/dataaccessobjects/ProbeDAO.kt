@@ -19,7 +19,7 @@ interface ProbeDAO {
     fun getAllProbeData(): List<Probe>?
 
     // Query to retrieve data related to a probe based on given probeName
-    @Query("Select * from probe WHERE probeName = :key ORDER BY probeName DESC LIMIT 1")
+    @Query("Select * from probe WHERE probeName = :key")
     fun getProbeByName(key: String): Probe?
 
     //Query to update probeName based on probeName

@@ -522,5 +522,29 @@
         <action
             android:id="@+id/action_reportsHomeFragment_to_homeScreen"
             app:destination="@id/homeScreen" />
+        <action
+            android:id="@+id/action_reportsHomeFragment_to_foodSafetyReportsFragment"
+            app:destination="@id/foodSafetyReportsFragment" />
+        <action
+            android:id="@+id/action_reportsHomeFragment_to_inventoryReportsFragment"
+            app:destination="@id/inventoryReportsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodSafetyReportsFragment"
+        android:name="app.smartmanager.ui.reports.FoodSafetyReportsFragment"
+        android:label="Food Safety Reports"
+        tools:layout="@layout/food_safety_management_reports_fragment" >
+        <action
+            android:id="@+id/action_foodSafetyReportsFragment_to_reportsHomeFragment"
+            app:destination="@id/reportsHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryReportsFragment"
+        android:name="app.smartmanager.ui.reports.InventoryReportsFragment"
+        android:label="Inventory Reports"
+        tools:layout="@layout/fragment_inventory_reports" >
+        <action
+            android:id="@+id/action_inventoryReportsFragment_to_reportsHomeFragment"
+            app:destination="@id/reportsHomeFragment" />
     </fragment>
 </navigation>

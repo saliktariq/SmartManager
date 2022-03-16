@@ -13,4 +13,13 @@
     <dimen name="largeElevation">12dp</dimen>
     <dimen name="regularButtonHeight">40dp</dimen>
 
+
+    <dimen name="xxxLargeMargin">48dp</dimen>
+
+    <dimen name="padding_large">12dp</dimen>
+    <dimen name="padding_extra_large">16dp</dimen>
+    <dimen name="padding_ultra_larger">48dp</dimen>
+
+
+
 </resources>
