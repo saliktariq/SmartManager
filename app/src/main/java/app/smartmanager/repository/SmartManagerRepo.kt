@@ -53,6 +53,7 @@ class SmartManagerRepo private constructor(context: Context) {
     private val dailyInventoryRecordDAO = database.dailyInventoryRecordDAO
     private val deliveryRecordDAO = database.deliveryRecordDAO
     private val foodWasteRecordDAO = database.foodWasteRecordDAO
+    private val authenticationDAO = database.authenticationDAO
 
 
     /*
@@ -458,6 +459,74 @@ class SmartManagerRepo private constructor(context: Context) {
     suspend fun generateFoodWasteReport(oldDate: Date): List<FoodWasteRecord>{
         return foodWasteRecordDAO.generateReport(oldDate)
     }
+
+//    ******************- Repository functions related to Authentication -******************
+
+
+    /*
+Following code is from my own work that I carried out
+during university project making 'Archelon App'.
+ */
+
+    //Function to register a new user to system
+    suspend fun insertAuthenticationData(
+        uid: Long,
+        username: String,
+        password: Long,
+        email: String,
+        firstname: String,
+        authCode: Long
+    ) = withContext(Dispatchers.IO) {
+        val data = Authentication(uid, username, password, email, firstname, authCode)
+        authenticationDAO.insertAuthenticationData(data)
+    }
+
+    //Function to retrieve all data based on email
+    suspend fun getUserDataByEmail(email: String?): Authentication? = withContext(Dispatchers.IO) {
+        return@withContext authenticationDAO.getUserDataByEmail(email)
+    }
+
+
+    //Function to update user password based on email address
+    suspend fun updatePassword(newPassword: Long, email: String) = withContext(Dispatchers.IO) {
+        authenticationDAO.updatePassword(newPassword, email)
+    }
+
+    //Function to update user authCode based on email address
+    suspend fun updateAuthCode(newAuthCode: Long, email: String) = withContext(Dispatchers.IO) {
+        authenticationDAO.updateAuthCode(newAuthCode, email)
+    }
+
+    // Function to retrieve all data based on username
+    suspend fun getUserData(key: String): Authentication? = withContext(Dispatchers.IO) {
+        return@withContext authenticationDAO.getUserData(key)
+    }
+
+    // Function to retrieve password based on username
+    suspend fun getPassword(key: String): Long? = withContext(Dispatchers.IO) {
+        return@withContext authenticationDAO.getPassword(key)
+    }
+
+    // Function to retrieve authCode based on given email
+    suspend fun getAuthCodeBasedOnEmail(key: String): Long = withContext(Dispatchers.IO) {
+        return@withContext authenticationDAO.getAuthCodeBasedOnEmail(key)
+    }
+
+    //Function to update password and authcode simultaneously in one transaction
+    suspend fun updatePasswordAndAuthCode(email: String, password: Long, authCode: Long) =
+        withContext(Dispatchers.IO) {
+
+            authenticationDAO.updatePassword(
+                password,
+                email
+            )
+
+            authenticationDAO.updateAuthCode(
+                authCode,
+                email
+            )
+
+        }
 
 
 }

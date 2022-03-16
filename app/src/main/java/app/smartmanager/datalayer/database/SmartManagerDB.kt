@@ -14,8 +14,9 @@ import app.smartmanager.datalayer.typeconverter.DateTypeConverter
 @Database(
     entities = [Probe::class, Supplier::class, Equipment::class, ControlChecks::class, CleaningTask::class, ChemicalListCOSHH::class,
         ProbeCalibrationRecord::class, CookedProductItem::class, InventoryItem::class, CleaningRecord::class, EquipmentTemperatureRecord::class,
-               CookedProductTemperatureRecord::class, CookingRecord::class, DailyInventoryRecord::class, DeliveryRecord::class, FoodWasteRecord::class],
-    version = 1,
+               CookedProductTemperatureRecord::class, CookingRecord::class, DailyInventoryRecord::class, DeliveryRecord::class, FoodWasteRecord::class,
+        Authentication::class],
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(DateTypeConverter::class)
@@ -36,6 +37,7 @@ abstract class SmartManagerDB : RoomDatabase() {
     abstract val dailyInventoryRecordDAO: DailyInventoryRecordDAO
     abstract val deliveryRecordDAO: DeliveryRecordDAO
     abstract val foodWasteRecordDAO: FoodWasteRecordDAO
+    abstract val authenticationDAO: AuthenticationDAO
 
     companion object {
         @Volatile
