@@ -13,9 +13,9 @@ import app.smartmanager.datalayer.entity.DeliveryRecord
 
 class DeliveryReportAdapter() : RecyclerView.Adapter<DeliveryReportAdapter.MyViewHolder>() {
 
-    var deliveryRecord = ArrayList<DeliveryRecord>()
+    var deliveryRecord = emptyList<DeliveryRecord>()
 
-    fun setDeliveryRecordData(data: ArrayList<DeliveryRecord>){
+    fun setDeliveryRecordData(data: List<DeliveryRecord>){
         this.deliveryRecord = data
 
     }

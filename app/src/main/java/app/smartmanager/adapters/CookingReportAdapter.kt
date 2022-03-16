@@ -13,9 +13,9 @@ import app.smartmanager.datalayer.entity.CookingRecord
 
 class CookingReportAdapter() : RecyclerView.Adapter<CookingReportAdapter.MyViewHolder>() {
 
-    var cookingRecord = ArrayList<CookingRecord>()
+    var cookingRecord = emptyList<CookingRecord>()
 
-    fun setCookingRecordData(data: ArrayList<CookingRecord>){
+    fun setCookingRecordData(data: List<CookingRecord>){
         this.cookingRecord = data
 
     }

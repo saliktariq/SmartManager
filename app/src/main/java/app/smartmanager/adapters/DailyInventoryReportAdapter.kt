@@ -13,9 +13,9 @@ import app.smartmanager.datalayer.entity.DailyInventoryRecord
 
 class DailyInventoryReportAdapter() : RecyclerView.Adapter<DailyInventoryReportAdapter.MyViewHolder>() {
 
-    var dailyInventoryRecord = ArrayList<DailyInventoryRecord>()
+    var dailyInventoryRecord = emptyList<DailyInventoryRecord>()
 
-    fun setDailyInventoryRecordData(data: ArrayList<DailyInventoryRecord>){
+    fun setDailyInventoryRecordData(data: List<DailyInventoryRecord>){
         this.dailyInventoryRecord = data
 
     }

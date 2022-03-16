@@ -12,9 +12,9 @@ import app.smartmanager.datalayer.entity.FoodWasteRecord
 
 class FoodWasteReportAdapter() : RecyclerView.Adapter<FoodWasteReportAdapter.MyViewHolder>() {
 
-    var foodWasteRecord = ArrayList<FoodWasteRecord>()
+    var foodWasteRecord = emptyList<FoodWasteRecord>()
 
-    fun setFoodWasteRecordData(data: ArrayList<FoodWasteRecord>){
+    fun setFoodWasteRecordData(data: List<FoodWasteRecord>){
         this.foodWasteRecord = data
 
     }
