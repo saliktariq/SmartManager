@@ -29,9 +29,6 @@
             android:id="@+id/action_homeScreen_to_initialSettings"
             app:destination="@id/initialSettings" />
         <action
-            android:id="@+id/action_homeScreen_to_viewProfile"
-            app:destination="@id/viewProfile" />
-        <action
             android:id="@+id/action_homeScreen_to_foodSafetyManagementHomeFragment"
             app:destination="@id/foodSafetyManagementHomeFragment" />
         <action
@@ -61,12 +58,19 @@
         <action
             android:id="@+id/action_forgetPassword_to_updatePassword"
             app:destination="@id/updatePassword" />
+        <action
+            android:id="@+id/action_forgetPassword_to_registerNewAccount"
+            app:destination="@id/registerNewAccount" />
     </fragment>
     <fragment
         android:id="@+id/registerNewAccount"
         android:name="app.smartmanager.ui.authentication.RegisterNewAccount"
         tools:layout="@layout/register_new_account_fragment"
-        android:label="Register New Account" />
+        android:label="Register New Account" >
+        <action
+            android:id="@+id/action_registerNewAccount_to_forgetPassword"
+            app:destination="@id/forgetPassword" />
+    </fragment>
     <fragment
         android:id="@+id/initialSettings"
         android:name="app.smartmanager.ui.setup.Settings"
@@ -100,15 +104,7 @@
             android:id="@+id/action_initialSettings_to_cookedProductItemFragment"
             app:destination="@id/cookedProductItemFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/viewProfile"
-        android:name="app.smartmanager.ui.authentication.ViewProfile"
-        tools:layout="@layout/view_profile_fragment"
-        android:label="View Profile" >
-        <action
-            android:id="@+id/action_viewProfile_to_homeScreen"
-            app:destination="@id/homeScreen" />
-    </fragment><action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment"/><action android:id="@+id/action_global_homeScreen" app:destination="@id/homeScreen"/>
+    <action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment"/><action android:id="@+id/action_global_homeScreen" app:destination="@id/homeScreen"/>
     <fragment
         android:id="@+id/probeFragment"
         android:name="app.smartmanager.ui.setup.ProbeFragment"
