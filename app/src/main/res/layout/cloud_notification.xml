@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/largeMargin">
+        <ImageView
+            android:id="@+id/notification_logo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/logo400px"
+            android:layout_marginTop="@dimen/normalMargin"
+            android:layout_marginLeft="@dimen/normalMargin"/>
+
+        <TextView
+            android:id="@+id/notification_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:textSize="@dimen/largeFont"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/notification_logo"
+            android:layout_marginTop="@dimen/normalMargin"
+            android:layout_marginLeft="@dimen/normalMargin"
+            />
+
+        <TextView
+            android:id="@+id/notification_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Body of the notification"
+            android:textSize="@dimen/largeFont"
+            android:layout_toEndOf="@id/notification_logo"
+            android:layout_below="@id/notification_title"
+
+            android:layout_marginLeft="@dimen/normalMargin"
+            />
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
