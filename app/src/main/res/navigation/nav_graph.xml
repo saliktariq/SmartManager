@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_loginFragment_to_forgetPassword"
             app:destination="@id/forgetPassword" />
+        <action
+            android:id="@+id/action_loginFragment_to_updatePassword"
+            app:destination="@id/updatePassword" />
     </fragment>
     <fragment
         android:id="@+id/homeScreen"
@@ -49,6 +52,12 @@
         <action
             android:id="@+id/action_updatePassword_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_updatePassword_to_forgetPassword"
+            app:destination="@id/forgetPassword" />
+        <action
+            android:id="@+id/action_updatePassword_to_registerNewAccount"
+            app:destination="@id/registerNewAccount" />
     </fragment>
     <fragment
         android:id="@+id/forgetPassword"

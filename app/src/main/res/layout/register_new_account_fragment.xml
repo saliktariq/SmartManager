@@ -75,29 +75,7 @@
                             android:textAlignment="viewStart"
                             android:textSize="@dimen/largeFont" />
                     </com.google.android.material.textfield.TextInputLayout>
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Last Name"
-                        android:textAlignment="viewStart"
-                        android:textSize="@dimen/largeFont" />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/lastNameField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:errorEnabled="true"
-                        app:hintEnabled="false">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/lastName"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="#CFE1F3"
-                            android:maxLines="1"
-                            android:textAlignment="viewStart"
-                            android:textSize="@dimen/largeFont" />
-                    </com.google.android.material.textfield.TextInputLayout>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
@@ -126,32 +104,7 @@
                             android:textSize="@dimen/largeFont" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Phone number"
-                        android:textAlignment="viewStart"
-                        android:textSize="@dimen/largeFont" />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/phoneNumberField"
-                        app:errorEnabled="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:helperTextEnabled="true"
-                        app:helperText="Example: 00447575775577"
-                        app:hintEnabled="false">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/phoneNumber"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="#CFE1F3"
-                            android:inputType="phone"
-                            android:maxLines="1"
-                            android:textAlignment="viewStart"
-                            android:textSize="@dimen/largeFont" />
-                    </com.google.android.material.textfield.TextInputLayout>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"

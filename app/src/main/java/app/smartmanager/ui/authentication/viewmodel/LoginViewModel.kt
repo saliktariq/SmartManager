@@ -34,7 +34,7 @@ class LoginViewModel : ViewModel() {
     }
 
     /*
-Following code is from my own work that I carried out
+Following code is an adaptation of my own work that I carried out
 during university project making 'Archelon App'.
  */
 

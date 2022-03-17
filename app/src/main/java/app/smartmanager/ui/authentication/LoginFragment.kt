@@ -65,13 +65,17 @@ class LoginFragment : Fragment() {
         val loginButton: AppCompatButton = viewBinding.buttonLogin
         val signUpButton: AppCompatTextView = viewBinding.btnSignUp
         val forgetPasswordButton: AppCompatTextView = viewBinding.btnForgetPassword
-
+        val resetPasswordButton: AppCompatTextView = viewBinding.btnResetPassword
         signUpButton.setOnClickListener{
             findNavController().navigate(R.id.action_loginFragment_to_registerNewAccount)
         }
 
         forgetPasswordButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgetPassword)
+        }
+
+        resetPasswordButton.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_updatePassword)
         }
 
 

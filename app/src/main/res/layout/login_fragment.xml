@@ -179,6 +179,27 @@
                         android:textSize="@dimen/normalFont" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/RegularFontStyle"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Got reset code?" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnResetPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/largeMargin"
+                        android:text="Reset Password"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/normalFont" />
+                </LinearLayout>
+
                 <!-->Using official google Sign-in button
                 //Source: https://developers.google.com/android/reference/com/google/android/gms/common/SignInButton
                 //Google logo is trademark of Google Inc. -->
