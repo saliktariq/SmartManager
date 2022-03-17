@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "124024050855",
+    "project_id": "smartmanager-1622552224426",
+    "storage_bucket": "smartmanager-1622552224426.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124024050855:android:3554b27adc793c7f6eb782",
+        "android_client_info": {
+          "package_name": "app.smartmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124024050855-6rbqmbhtdl8m2jdlsn9ocv0g7rogd455.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.smartmanager",
+            "certificate_hash": "c827b7edf6dbe6be6a9ba65ee4e0551e45e7efe1"
+          }
+        },
+        {
+          "client_id": "124024050855-jr3qgu7uks9n5js1g3buo40pqa8d20u9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6x1KXKpebkjniQLuJnT_WeGdME_HKv9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124024050855-jr3qgu7uks9n5js1g3buo40pqa8d20u9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
