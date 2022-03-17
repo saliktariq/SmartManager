@@ -11,23 +11,20 @@ import app.smartmanager.ui.authentication.viewmodel.ForgetPasswordViewModel
 
 class ForgetPassword : Fragment() {
 
-    companion object {
-        fun newInstance() = ForgetPassword()
-    }
-
-    private lateinit var viewModel: ForgetPasswordViewModel
+    private lateinit var forgetPasswordViewModel: ForgetPasswordViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.forget_password_fragment, container, false)
-    }
+        val fragmentView = inflater.inflate(R.layout.forget_password_fragment, container, false)
+        forgetPasswordViewModel = ViewModelProvider(this).get(ForgetPasswordViewModel::class.java)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ForgetPasswordViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
+
+
+
+
+        return fragmentView
+    }
 }

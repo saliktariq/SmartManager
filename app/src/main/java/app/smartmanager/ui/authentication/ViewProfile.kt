@@ -11,9 +11,7 @@ import app.smartmanager.ui.authentication.viewmodel.ViewProfileViewModel
 
 class ViewProfile : Fragment() {
 
-    companion object {
-        fun newInstance() = ViewProfile()
-    }
+
 
     private lateinit var viewModel: ViewProfileViewModel
 
@@ -27,7 +25,7 @@ class ViewProfile : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ViewProfileViewModel::class.java)
-        // TODO: Use the ViewModel
+        // TODO: Class not implemented
     }
 
 }
