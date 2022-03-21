@@ -1,7 +1,6 @@
 package app.smartmanager
 
 import app.smartmanager.datalayer.database.SmartManagerDB
-import org.junit.Assert.assertEquals
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry

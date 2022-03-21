@@ -73,19 +73,19 @@ class ProbeDAOTests{
 
     }
 
-    @Test
-    fun updateProbeNameTest() {
-        val newProbeData = Probe("P4")
-        GlobalScope.launch {
-            probeDAO.insertProbeData(newProbeData)
-            probeDAO.updateProbeName("P5", "P4")
-            val userData = probeDAO.getProbeByName("P5")
-            Log.d("New ProbeName ", userData?.probeName.toString())
-            assertEquals( "P5",userData?.probeName)
-
-        }
-
-    }
+//    @Test
+//    fun updateProbeNameTest() {
+//        val newProbeData = Probe("P4")
+//        GlobalScope.launch {
+//            probeDAO.insertProbeData(newProbeData)
+//            probeDAO.updateProbeName("P5", "P4")
+//            val userData = probeDAO.getProbeByName("P5")
+//            Log.d("New ProbeName ", userData?.probeName.toString())
+//            assertEquals( "P5",userData?.probeName)
+//
+//        }
+//
+//    }
 
     @Test
     fun deleteProbeByIDTest() {

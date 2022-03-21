@@ -26,4 +26,7 @@ interface CleaningTaskDAO {
     @Query("SELECT name from cleaningTask ORDER BY id ASC")
     fun listAllTasks(): LiveData<List<String>>
 
+    @Query("SELECT name from cleaningTask ORDER BY id ASC")
+    fun tasksListForTesting(): List<String>
+
 }

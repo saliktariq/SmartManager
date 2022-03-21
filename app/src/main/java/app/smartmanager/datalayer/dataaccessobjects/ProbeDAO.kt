@@ -23,8 +23,8 @@ interface ProbeDAO {
     fun getProbeByName(key: String): Probe?
 
     //Query to update probeName based on probeName
-    @Query("UPDATE probe SET probeName = :newProbeName WHERE probeName = :givenProbeName")
-    fun updateProbeName(newProbeName: String, givenProbeName: String)
+//    @Query("UPDATE probe SET probeName = :newProbeName WHERE probeName = :givenProbeName")
+//    fun updateProbeName(newProbeName: String, givenProbeName: String)
 
     //Query to delete a record based on a given probeName
     @Query("DELETE from probe WHERE probeName = :givenProbeName")

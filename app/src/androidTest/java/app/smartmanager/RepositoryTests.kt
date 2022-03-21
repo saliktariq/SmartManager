@@ -23,7 +23,7 @@ import java.io.IOException
 
 
 @RunWith(AndroidJUnit4::class)
-class ProbeRepoTests{
+class RepositoryTests{
     private lateinit var probeDAO: ProbeDAO
     private lateinit var database: SmartManagerDB
     @Test
@@ -73,21 +73,6 @@ class ProbeRepoTests{
             val userData = repo.getProbeByName("P2")
             Log.d("ProbeName ", userData?.probeName.toString())
             assertEquals( "P3",userData?.probeName)
-
-        }
-
-    }
-
-    @Test
-    fun updateProbeNameTest() {
-        val newProbeData = Probe("P3")
-        val repo = SmartManagerRepo.get()
-        GlobalScope.launch {
-            repo.insertProbeData(newProbeData)
-            repo.updateProbeName("P4", "P3")
-            val userData = repo.getProbeByName("P4")
-            Log.d("New ProbeName ", userData?.probeName.toString())
-            assertEquals( "P4",userData?.probeName)
 
         }
 

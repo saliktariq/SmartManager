@@ -21,4 +21,8 @@ interface ChemicalListCOSHHDAO {
 
     @Delete
     fun deleteChemicalListCOSHH(chemicalListCOSHH: ChemicalListCOSHH)
+
+
+    @Query("SELECT * from chemicalList ORDER BY id ASC")
+    fun readDataQueryForUnitTest(): List<ChemicalListCOSHH>
 }

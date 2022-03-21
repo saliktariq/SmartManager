@@ -83,10 +83,10 @@ class SmartManagerRepo private constructor(context: Context) {
 
 
     // Function to update probeName based on probeID
-    suspend fun updateProbeName(newProbeName: String, givenProbeName: String) =
-        withContext(Dispatchers.IO) {
-            return@withContext probeDAO.updateProbeName(newProbeName, givenProbeName)
-        }
+//    suspend fun updateProbeName(newProbeName: String, givenProbeName: String) =
+//        withContext(Dispatchers.IO) {
+//            return@withContext probeDAO.updateProbeName(newProbeName, givenProbeName)
+//        }
 
     // Function to delete a record based on a given probeName
     suspend fun deleteProbeByName(probeName: String) = withContext(Dispatchers.IO) {
