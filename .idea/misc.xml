@@ -72,6 +72,7 @@
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cooked_product_temperature_report_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cooking_report_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/daily_inventory_report_list_item.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/delivery_record_fragment.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/delivery_report_list_item.xml" value="0.1" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/equipment_temperature_report_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/food_safety_management_reports_fragment.xml" value="0.4" />
@@ -82,7 +83,7 @@
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_food_safety_management_home.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_inventory_management_home.xml" value="0.1585144927536232" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_inventory_reports.xml" value="0.1585144927536232" />
-        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_reports_home.xml" value="0.1" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_reports_home.xml" value="0.4" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_update_probe_calibration_record.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/fragment_update_supplier.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/home_screen_fragment.xml" value="0.1585144927536232" />

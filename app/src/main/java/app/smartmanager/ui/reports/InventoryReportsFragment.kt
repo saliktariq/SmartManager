@@ -26,7 +26,9 @@ class InventoryReportsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val fragmentView =  inflater.inflate(R.layout.fragment_inventory_reports, container, false)
-        inventoryReportsViewModel = ViewModelProvider(this).get(InventoryReportsViewModel::class.java)
+       inventoryReportsViewModel =
+           ViewModelProvider(this).get(InventoryReportsViewModel::class.java)
+
 
         val cookingReportAdapter = CookingReportAdapter()
         val dailyInventoryReportAdapter = DailyInventoryReportAdapter()
@@ -65,12 +67,13 @@ class InventoryReportsFragment : Fragment() {
 
 
         cookingReportDailyButton.setOnClickListener {
+            //Implementing recyclerview
+            recyclerView.adapter = cookingReportAdapter
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            cookingReportAdapter.setCookingRecordData(inventoryReportsViewModel.cookingReportDaily)
+            ToastMaker.showToast("Daily Cooking Report Loaded", GetAppContext.appContext)
         }
-        //Implementing recyclerview
-        recyclerView.adapter = cookingReportAdapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        cookingReportAdapter.setCookingRecordData(inventoryReportsViewModel.cookingReportDaily)
-        ToastMaker.showToast("Daily Cooking Report Loaded", GetAppContext.appContext)
+
 
         cookingReportWeeklyButton.setOnClickListener {
             //Implementing recyclerview

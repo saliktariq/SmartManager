@@ -27,7 +27,7 @@ class CookedProductTemperatureViewModel (application: Application) : AndroidView
     private val repository: SmartManagerRepo = SmartManagerRepo.get()
 
     init{
-        listAllCookedProduct = repository.listAllTasks
+        listAllCookedProduct = repository.listAllCookedProductItem
         allData = MutableLiveData()
         viewModelScope.launch {
             getAllData()

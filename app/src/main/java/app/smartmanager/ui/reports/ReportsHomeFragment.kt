@@ -28,7 +28,7 @@ class ReportsHomeFragment : Fragment()
         // Inflate the layout for this fragment
         val fragmentView = inflater.inflate(R.layout.fragment_reports_home, container, false)
 
-        val foodSafetyReportsButton: AppCompatButton = fragmentView.findViewById<AppCompatButton>(R.id.btnFoodSafetyReports)
+        val foodSafetyReportsButton: AppCompatButton = fragmentView.findViewById(R.id.btnFoodSafetyReports)
         val inventoryReportsButton: AppCompatButton = fragmentView.findViewById(R.id.btnInventoryReports)
         val backToHomeButton: AppCompatButton = fragmentView.findViewById(R.id.btnbackToHome)
         val signOutButton: AppCompatButton = fragmentView.findViewById(R.id.btnLogOut)

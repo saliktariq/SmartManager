@@ -68,12 +68,13 @@ class FoodSafetyReportsFragment : Fragment() {
             fragmentView.findViewById(R.id.doneness_report_monthly)
 
         probeCalibrationDailyButton.setOnClickListener {
+            //Implementing recyclerview
+            recyclerView.adapter = probeAdapter
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            probeAdapter.setDataSet(foodSafetyReportsViewModel.probeCalibrationDaily)
+            ToastMaker.showToast("Daily Probe Report Loaded", GetAppContext.appContext)
         }
-        //Implementing recyclerview
-        recyclerView.adapter = probeAdapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        probeAdapter.setDataSet(foodSafetyReportsViewModel.probeCalibrationDaily)
-        ToastMaker.showToast("Daily Probe Report Loaded", GetAppContext.appContext)
+
 
         probeCalibrationWeeklyButton.setOnClickListener {
             //Implementing recyclerview
