@@ -1,32 +1,13 @@
-#version: 2.1
-#
-#orbs:
-#  android: circleci/android@0.2.1
-#
-#jobs:
-#  build:
-#    executor: android/android
-#
-#    steps:
-#      - checkout
-#      - run:
-#          command: sudo chmod +x ./gradlew
+version: 2.1
 
-
-version: '2.1'
 orbs:
-  android: circleci/android@2.0
+  android: circleci/android@0.2.1
+
 jobs:
-  test:
-    executor:
-      name: android/android-machine
-      resource-class: large
+  build:
+    executor: android/android
+
     steps:
       - checkout
-      - android/start-emulator-and-run-tests:
-          system-image: system-images;android-30;default;x86
-workflows:
-  test:
-    jobs:
-      - android/run-ui-tests:
-          system-image: system-images;android-30;default;x86
+      - run:
+          command: sudo chmod +x ./gradlew
