@@ -59,6 +59,10 @@ class Settings : Fragment() {
             viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToCookedProductItemFragment())
         }
 
+        viewBinding.addStaffTrainingTopic.setOnClickListener {
+            viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToStaffTrainingTopicFragment())
+        }
+
         //Setting OnClickListener to btnBack
         viewBinding.btnBack.setOnClickListener {
             viewBinding.root.findNavController().navigate(SettingsDirections.actionInitialSettingsToHomeScreen())

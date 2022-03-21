@@ -130,6 +130,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addProductList" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addStaffTrainingTopic"
+                style="@style/RegularButtonStyle"
+                android:layout_width="250dp"
+                android:layout_height="@dimen/regularButtonHeight"
+                android:layout_marginTop="@dimen/xLargeMargin"
+                android:text="Add Staff Training Topic"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addCookedProductList" />
             <LinearLayout
                 android:id="@+id/bottomLinearLayout"
                 android:layout_width="match_parent"
@@ -160,21 +172,7 @@
                     android:text="@string/logout"
                     android:textColor="@color/colorPrimaryDark" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/RegularFontStyle"
-                    android:layout_margin="@dimen/xLargeMargin"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="@string/any_issues_with_the_application" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/btnContactAdmin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/largeMargin"
-                    android:layout_marginBottom="@dimen/xLargeMargin"
-                    android:text="@string/contact_support"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/normalFont" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

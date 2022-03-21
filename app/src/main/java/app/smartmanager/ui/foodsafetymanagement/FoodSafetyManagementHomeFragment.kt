@@ -24,6 +24,7 @@ class FoodSafetyManagementHomeFragment : Fragment() {
         val btnAddCleaningRecord: Button = fragmentView.findViewById<Button>(R.id.btnAddCleaningRecord)
         val btnEquipmentTemperatureRecord: Button = fragmentView.findViewById<Button>(R.id.btnEquipmentTemperatureRecord)
         val btnCookedProductTemperatureRecord: Button = fragmentView.findViewById<Button>(R.id.btnCookedProductTemperatureRecord)
+        val btnStaffTrainingRecord: Button = fragmentView.findViewById(R.id.btnStaffTrainingRecord)
         val backButton: Button = fragmentView.findViewById<Button>(R.id.btnBack)
 
         btnProbeCalibrationRecord.setOnClickListener{

@@ -1,11 +1,18 @@
 package app.smartmanager.helper
 
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import android.widget.DatePicker
 import java.util.*
+
 
 class FormattedDate {
     companion object{
+        fun createDateObjectFromDatePicker(datePicker: DatePicker): Date? {
+            val extractedYear = datePicker.year
+            val extractedMonth = datePicker.month
+            val extractedDay = datePicker.dayOfMonth
+            val calendarObject = Calendar.getInstance()
+            calendarObject.set(extractedYear, extractedMonth,extractedDay )
+            return calendarObject.time
+        }
     }
 }

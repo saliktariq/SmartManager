@@ -576,7 +576,7 @@ during university project making 'Archelon App'.
 
     //    ******************- Repository functions related to StaffTrainingTopic -******************
 
-    suspend fun addStaffTrainingTopic(staffTrainingTopic: StaffTrainingTopic) {
+    suspend fun addStaffTrainingTopic(staffTrainingTopic: StaffTrainingTopic) = withContext(Dispatchers.IO) {
         staffTrainingTopicDAO.addStaffTrainingTopic(staffTrainingTopic)
     }
 
@@ -589,7 +589,7 @@ during university project making 'Archelon App'.
         staffTrainingTopicDAO.updateStaffTrainingTopic(staffTrainingTopic)
     }
 
-    suspend fun deleteStaffTrainingTopic(staffTrainingTopic: StaffTrainingTopic) {
+    suspend fun deleteStaffTrainingTopic(staffTrainingTopic: StaffTrainingTopic) = withContext(Dispatchers.IO) {
         staffTrainingTopicDAO.deleteStaffTrainingTopic(staffTrainingTopic)
     }
 
@@ -597,8 +597,8 @@ during university project making 'Archelon App'.
         return staffTrainingTopicDAO.readStaffTrainingTopic()
     }
 
-    suspend fun readStaffTrainingTopicForUnitTests(): List<StaffTrainingTopic> {
-        return staffTrainingTopicDAO.readStaffTrainingTopicForUnitTests()
+    suspend fun readStaffTrainingTopicForUnitTests(): List<StaffTrainingTopic> = withContext(Dispatchers.IO) {
+        return@withContext staffTrainingTopicDAO.readStaffTrainingTopicForUnitTests()
     }
 
 

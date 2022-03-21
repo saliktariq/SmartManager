@@ -112,6 +112,9 @@
         <action
             android:id="@+id/action_initialSettings_to_cookedProductItemFragment"
             app:destination="@id/cookedProductItemFragment" />
+        <action
+            android:id="@+id/action_initialSettings_to_staffTrainingTopicFragment"
+            app:destination="@id/staffTrainingTopicFragment" />
     </fragment>
     <action android:id="@+id/action_global_loginFragment" app:destination="@id/loginFragment"/><action android:id="@+id/action_global_homeScreen" app:destination="@id/homeScreen"/>
     <fragment
@@ -326,6 +329,9 @@
         <action
             android:id="@+id/action_foodSafetyManagementHomeFragment_to_cookedProductTemperatureFragment"
             app:destination="@id/cookedProductTemperatureFragment" />
+        <action
+            android:id="@+id/action_foodSafetyManagementHomeFragment_to_staffTrainingRecordFragment"
+            app:destination="@id/staffTrainingRecordFragment" />
     </fragment>
     <fragment
         android:id="@+id/probeCalibrationRecordFragment2"
@@ -579,4 +585,21 @@
             android:id="@+id/action_inventoryReportsFragment_to_reportsHomeFragment"
             app:destination="@id/reportsHomeFragment" />
     </fragment><action android:id="@+id/action_global_initialSettings" app:destination="@id/initialSettings"/>
+    <fragment
+        android:id="@+id/staffTrainingTopicFragment"
+        android:name="app.smartmanager.ui.setup.StaffTrainingTopicFragment"
+        android:label="staff_training_topic_fragment"
+        tools:layout="@layout/staff_training_topic_fragment" />
+    <fragment
+        android:id="@+id/staffTrainingRecordFragment"
+        android:name="app.smartmanager.ui.foodsafetymanagement.stafftrainingrecord.StaffTrainingRecordFragment"
+        android:label="staff_training_record_fragment"
+        tools:layout="@layout/staff_training_record_fragment" >
+        <action
+            android:id="@+id/action_staffTrainingRecordFragment_to_staffTrainingTopicFragment"
+            app:destination="@id/staffTrainingTopicFragment" />
+        <action
+            android:id="@+id/action_staffTrainingRecordFragment_to_foodSafetyManagementHomeFragment"
+            app:destination="@id/foodSafetyManagementHomeFragment" />
+    </fragment>
 </navigation>

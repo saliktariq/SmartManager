@@ -74,6 +74,15 @@
             android:text="Cooked Product Temperature Record"
             android:textColor="@color/colorPrimaryDark" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStaffTrainingRecord"
+            style="@style/RegularButtonStyle"
+            android:layout_width="250dp"
+            android:layout_height="@dimen/regularButtonHeight"
+            android:layout_marginTop="@dimen/xLargeMargin"
+            android:text="Staff Training Record"
+            android:textColor="@color/colorPrimaryDark" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBack"

@@ -21,9 +21,9 @@ interface StaffTrainingTopicDAO {
     fun deleteStaffTrainingTopic(staffTrainingTopic: StaffTrainingTopic)
 
     //Query to retrieve all staff Training topic names to be used by other classes
-    @Query("Select topic from training_topic ORDER BY id DESC")
+    @Query("Select topic from training_topic ORDER BY topic DESC")
     fun readStaffTrainingTopic(): LiveData<List<String>>
 
-    @Query("Select name from supplier ORDER BY id DESC")
+    @Query("Select * from training_topic ORDER BY id DESC")
     fun readStaffTrainingTopicForUnitTests(): List<StaffTrainingTopic>
 }

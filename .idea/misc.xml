@@ -68,6 +68,7 @@
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cleaning_record_fragment.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cleaning_record_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cleaning_report_list_item.xml" value="0.1" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cleaning_task_fragment.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cloud_notification.xml" value="0.1" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cooked_product_temperature_report_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/cooking_report_list_item.xml" value="0.2630208333333333" />
@@ -93,7 +94,10 @@
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/probe_calibration_record_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/probe_calibration_report_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/probe_fragment.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/probe_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/register_new_account_fragment.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/staff_training_topic_fragment.xml" value="0.2630208333333333" />
+        <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/staff_training_topic_list_item.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/update_password_fragment.xml" value="0.2630208333333333" />
         <entry key="..\:/Users/salik/Documents/GitHub/app/src/main/res/layout/view_profile_fragment.xml" value="0.2630208333333333" />
       </map>
