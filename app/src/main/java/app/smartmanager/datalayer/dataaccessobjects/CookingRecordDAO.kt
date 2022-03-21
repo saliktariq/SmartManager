@@ -21,6 +21,6 @@ interface CookingRecordDAO {
     fun deleteCookingRecord(cookingRecord: CookingRecord)
 
     //Query to retrieve data for x days
-    @Query("SELECT * FROM cooking_record WHERE timestamp >= :oldDate")
-    fun generateReport(oldDate: Date): List<CookingRecord>
+    @Query("SELECT * FROM cooking_record WHERE timestamp >= :arg0")
+    fun generateReport(arg0: Date): List<CookingRecord>
 }

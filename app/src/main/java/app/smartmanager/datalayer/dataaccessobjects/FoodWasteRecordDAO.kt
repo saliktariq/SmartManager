@@ -22,6 +22,6 @@ interface FoodWasteRecordDAO {
     fun deleteFoodWasteRecord(foodWasteRecord: FoodWasteRecord)
 
     //Query to retrieve data for x days
-    @Query("SELECT * FROM food_waste_record WHERE timestamp >= :oldDate")
-    fun generateReport(oldDate: Date): List<FoodWasteRecord>
+    @Query("SELECT * FROM food_waste_record WHERE timestamp >= :arg0")
+    fun generateReport(arg0: Date): List<FoodWasteRecord>
 }

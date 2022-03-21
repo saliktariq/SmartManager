@@ -27,6 +27,6 @@ interface ProbeCalibrationRecordDAO {
 
 
     //Query to retrieve data for x days
-    @Query("SELECT * FROM probe_calibration_record WHERE date >= :oldDate")
-    fun generateReport(oldDate: Date): List<ProbeCalibrationRecord>
+    @Query("SELECT * FROM probe_calibration_record WHERE date >= :arg0")
+    fun generateReport(arg0: Date): List<ProbeCalibrationRecord>
 }

@@ -23,4 +23,7 @@ interface EquipmentDAO {
 
     @Query("SELECT name from equipment ORDER BY id ASC")
     fun listAllEquipment(): LiveData<List<String>>
+
+    @Query("SELECT name from equipment ORDER BY id ASC")
+    fun listAllEquipmentForUnitTests(): List<String>
 }

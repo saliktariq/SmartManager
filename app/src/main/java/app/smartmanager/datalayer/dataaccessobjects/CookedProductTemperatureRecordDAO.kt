@@ -26,6 +26,6 @@ interface CookedProductTemperatureRecordDAO {
 
 
     //Query to retrieve data for x days
-    @Query("SELECT * FROM cooked_product_temperature_record WHERE timestamp >= :oldDate")
-    fun generateReport(oldDate: Date): List<CookedProductTemperatureRecord>
+    @Query("SELECT * FROM cooked_product_temperature_record WHERE timestamp >= :arg0")
+    fun generateReport(arg0: Date): List<CookedProductTemperatureRecord>
 }

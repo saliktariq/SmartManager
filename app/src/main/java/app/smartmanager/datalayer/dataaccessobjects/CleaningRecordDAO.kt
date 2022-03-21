@@ -30,6 +30,6 @@ interface CleaningRecordDAO {
 //    fun cleaningReportWeekly(oldDate: Date): LiveData<List<CleaningRecord>>
 
     //Query to retrieve data for x days
-    @Query("SELECT * FROM cleaning_record WHERE timestamp >= :oldDate")
-    fun cleaningReport(oldDate: Date): List<CleaningRecord>
+    @Query("SELECT * FROM cleaning_record WHERE timestamp >= :arg0")
+    fun cleaningReport(arg0: Date): List<CleaningRecord>
 }

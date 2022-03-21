@@ -1,7 +1,6 @@
-package app.smartmanager.daoTests
+package app.smartmanager.dataObjectTests
 
 
-import android.util.Log
 import app.smartmanager.datalayer.database.SmartManagerDB
 import app.smartmanager.datalayer.dataaccessobjects.ProbeDAO
 import app.smartmanager.datalayer.entity.Probe
@@ -22,7 +21,7 @@ import java.io.IOException
 
 
 @RunWith(AndroidJUnit4::class)
-class ProbeDAOTests{
+class ProbeTests{
     private lateinit var probeDAO: ProbeDAO
     private lateinit var database: SmartManagerDB
     @Test

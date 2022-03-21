@@ -1,22 +1,23 @@
-package app.smartmanager.daoTests
+package app.smartmanager.dataObjectTests
 
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import app.smartmanager.datalayer.dataaccessobjects.AuthenticationDAO
+import app.smartmanager.datalayer.dataaccessobjects.CleaningRecordDAO
 import app.smartmanager.datalayer.database.SmartManagerDB
-import app.smartmanager.datalayer.entity.Authentication
+import app.smartmanager.datalayer.entity.CleaningRecord
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import java.io.IOException
+import java.util.*
 
 
 @RunWith(AndroidJUnit4::class)
-class AuthenticationDAOTests{
-    private lateinit var authenticationDAO: AuthenticationDAO
+class CleaningRecordTests{
+    private lateinit var cleaningRecordDAO: CleaningRecordDAO
     private lateinit var database: SmartManagerDB
     @Test
     @Throws(Exception::class)
@@ -29,7 +30,7 @@ class AuthenticationDAOTests{
         database = Room.inMemoryDatabaseBuilder(context, SmartManagerDB::class.java)
             .allowMainThreadQueries()
             .build()
-        authenticationDAO = database.authenticationDAO
+        cleaningRecordDAO = database.cleaningRecordDAO
     }
 
     @After
@@ -43,17 +44,18 @@ class AuthenticationDAOTests{
     fun createInsertRetrieveObjectTest() {
 
         //creating object
-        val newObject = Authentication(0,"salik",2000L,"saliktariq@icloud.com",
-        "Salik",1000L)
+        val newObject = CleaningRecord(0,"task2",Calendar.getInstance().time)
 
         //inserting object in db
-        authenticationDAO.insertAuthenticationData(newObject)
+        cleaningRecordDAO.addCleaningRecord(newObject)
 
         //retrieving object from db
-            val retrievedObject = authenticationDAO.getUserDataByEmail("saliktariq@icloud.com")
+        val retrievedObject = cleaningRecordDAO.getAllCleaningRecordData()
+
+
 
         //Checking if retrieved data is equal to inserted data
-        Assert.assertEquals("salik", retrievedObject?.username)
+        Assert.assertEquals("task2", retrievedObject?.first()?.task_name)
 
     }
 

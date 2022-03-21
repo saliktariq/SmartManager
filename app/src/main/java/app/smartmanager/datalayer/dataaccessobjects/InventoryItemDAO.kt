@@ -22,4 +22,7 @@ interface InventoryItemDAO {
     @Query("Select name from inventory_item ORDER BY id DESC")
     fun readInventoryItemName(): LiveData<List<String>>
 
+    @Query("Select name from inventory_item ORDER BY id DESC")
+    fun readInventoryItemNameForUnitTests(): List<String>
+
 }

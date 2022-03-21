@@ -19,16 +19,16 @@ interface ProbeDAO {
     fun getAllProbeData(): List<Probe>?
 
     // Query to retrieve data related to a probe based on given probeName
-    @Query("Select * from probe WHERE probeName = :key")
-    fun getProbeByName(key: String): Probe?
+    @Query("Select * from probe WHERE probeName = :arg0")
+    fun getProbeByName(arg0: String): Probe?
 
     //Query to update probeName based on probeName
 //    @Query("UPDATE probe SET probeName = :newProbeName WHERE probeName = :givenProbeName")
 //    fun updateProbeName(newProbeName: String, givenProbeName: String)
 
     //Query to delete a record based on a given probeName
-    @Query("DELETE from probe WHERE probeName = :givenProbeName")
-    fun deleteProbeByName(givenProbeName: String)
+    @Query("DELETE from probe WHERE probeName = :arg0")
+    fun deleteProbeByName(arg0: String)
 
     //Query to delete a record based on a given probe object
     @Delete

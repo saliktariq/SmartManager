@@ -22,4 +22,7 @@ interface SupplierDAO {
     //Query to retrieve all supplier names to be used by other classes
     @Query("Select name from supplier ORDER BY id DESC")
     fun readSupplierName(): LiveData<List<String>>
+
+    @Query("Select name from supplier ORDER BY id DESC")
+    fun readSupplierNameForUnitTests(): List<String>
 }

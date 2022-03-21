@@ -21,4 +21,10 @@ interface CookedProductItemDAO {
     @Query("Select name from cooked_product_item ORDER BY id DESC")
     fun listAllCookedProductItem(): LiveData<List<String>>
 
+    @Query("Select name from cooked_product_item ORDER BY id DESC")
+    fun cookedProductItemForUnitTest(): List<String>
+
+    @Query("Select * from cooked_product_item ORDER BY id DESC")
+    fun readAllCookedProductItemDataForTesting(): List<CookedProductItem>
+
 }

@@ -1,13 +1,10 @@
-package app.smartmanager.daoTests
+package app.smartmanager.dataObjectTests
 
-import android.util.Log
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import app.smartmanager.datalayer.dataaccessobjects.ProbeCalibrationRecordDAO
-import app.smartmanager.datalayer.dataaccessobjects.ProbeDAO
 import app.smartmanager.datalayer.database.SmartManagerDB
-import app.smartmanager.datalayer.entity.Probe
 import app.smartmanager.datalayer.entity.ProbeCalibrationRecord
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -21,7 +18,7 @@ import java.util.*
 
 
 @RunWith(AndroidJUnit4::class)
-class ProbeCalibrationRecordDAOTests {
+class ProbeCalibrationRecordTests {
     private lateinit var probeCalibrationRecordDAO: ProbeCalibrationRecordDAO
     private lateinit var database: SmartManagerDB
     @Test

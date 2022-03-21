@@ -12,7 +12,7 @@ interface ControlChecksDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addControlChecks(controlChecks: ControlChecks)
 
-    @Query("SELECT * from controlChecks ORDER BY id ASC")
+    @Query("SELECT * from controlChecks ORDER BY id DESC")
     fun readAllControlChecksData(): LiveData<List<ControlChecks>>
 
     @Update
@@ -20,4 +20,8 @@ interface ControlChecksDAO {
 
     @Delete
     fun deleteControlChecks(controlChecks: ControlChecks)
+
+    @Query("SELECT * from controlChecks ORDER BY id DESC")
+    fun readDataForUnitTests(): List<ControlChecks>
+
 }

@@ -124,6 +124,10 @@ class SmartManagerRepo private constructor(context: Context) {
     //Variable to retrieve only names of suppliers
     val readSupplierName: LiveData<List<String>> = supplierDAO.readSupplierName()
 
+    suspend fun readSupplierNameForUnitTests(): List<String>{
+        return supplierDAO.readSupplierNameForUnitTests()
+    }
+
     /*
     ******************- Repository functions related to Equipment Entity -******************
      */
@@ -145,6 +149,10 @@ class SmartManagerRepo private constructor(context: Context) {
     val listAllEquipment: LiveData<List<String>> =
         equipmentDAO.listAllEquipment()
 
+    suspend fun listAllEquipmentForUnitTests(): List<String>{
+        return equipmentDAO.listAllEquipmentForUnitTests()
+    }
+
     /*
     ******************- Repository functions related to ControlChecks Entity -******************
      */
@@ -162,6 +170,10 @@ class SmartManagerRepo private constructor(context: Context) {
 
     val readAllControlChecksData: LiveData<List<ControlChecks>> =
         controlChecksDAO.readAllControlChecksData()
+
+    suspend fun readControlChecksDataForUnitTests(): List<ControlChecks> {
+        return controlChecksDAO.readDataForUnitTests()
+    }
 
     /*
 ******************- Repository functions related to CleaningTask Entity -******************
@@ -185,6 +197,10 @@ class SmartManagerRepo private constructor(context: Context) {
     val listAllTasks: LiveData<List<String>> =
         cleaningTaskDAO.listAllTasks()
 
+    suspend fun tasksListForTesting(): List<String>{
+       return cleaningTaskDAO.tasksListForTesting()
+    }
+
     /*
 ******************- Repository functions related to ChemicalListCOSHH Entity -******************
  */
@@ -203,6 +219,11 @@ class SmartManagerRepo private constructor(context: Context) {
 
     val readAllChemicalListCOSHHData: LiveData<List<ChemicalListCOSHH>> =
         chemicalListCOSHHDAO.readAllChemicalListCOSHHData()
+
+    suspend fun readAllChemicalListDataForUnitTesting(): List<ChemicalListCOSHH> {
+        return chemicalListCOSHHDAO.readDataQueryForUnitTest()
+
+    }
 
     /*
 ******************- Repository functions related to Probe Calibration Record -******************
@@ -229,6 +250,10 @@ class SmartManagerRepo private constructor(context: Context) {
         return probeCalibrationRecordDAO.generateReport(oldDate)
     }
 
+    suspend fun retrieveProbeCalibrationDataForTesting(): List<ProbeCalibrationRecord>{
+        return probeCalibrationRecordDAO.retrieveData()
+    }
+
     /*
 ******************- Repository functions related to CookedProductItem -******************
 */
@@ -252,6 +277,9 @@ class SmartManagerRepo private constructor(context: Context) {
     val listAllCookedProductItem: LiveData<List<String>> =
         cookedProductItemDAO.listAllCookedProductItem()
 
+    suspend fun readAllCookedProductItemDataForTesting(): List<CookedProductItem>{
+        return cookedProductItemDAO.readAllCookedProductItemDataForTesting()
+    }
 
     /*
 ******************- Repository functions related to InventoryItem -******************
@@ -277,6 +305,11 @@ class SmartManagerRepo private constructor(context: Context) {
     //Variable to retrieve only the list of names of inventory items to be used by other classes
     val readInventoryItemName: LiveData<List<String>> =
         inventoryItemDAO.readInventoryItemName()
+
+
+    suspend fun readInventoryItemNameForUnitTests(): List<String>{
+        return inventoryItemDAO.readInventoryItemNameForUnitTests()
+    }
 
     /*
 ******************- Repository functions related to CleaningRecord -******************

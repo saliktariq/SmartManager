@@ -27,6 +27,6 @@ interface EquipmentTemperatureRecordDAO {
     fun getAllEquipmentTemperatureRecordData(): List<EquipmentTemperatureRecord>?
 
     //Query to retrieve data for x days
-    @Query("SELECT * FROM equipment_temperature_record WHERE timestamp >= :oldDate")
-    fun generateEquipmentTemperatureReport(oldDate: Date): List<EquipmentTemperatureRecord>
+    @Query("SELECT * FROM equipment_temperature_record WHERE timestamp >= :arg0")
+    fun generateEquipmentTemperatureReport(arg0: Date): List<EquipmentTemperatureRecord>
 }

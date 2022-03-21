@@ -23,6 +23,6 @@ interface DailyInventoryRecordDAO {
 
 
     //Query to retrieve data for x days
-    @Query("SELECT * FROM daily_inventory_record WHERE timestamp >= :oldDate")
-    fun generateReport(oldDate: Date): List<DailyInventoryRecord>
+    @Query("SELECT * FROM daily_inventory_record WHERE timestamp >= :arg0")
+    fun generateReport(arg0: Date): List<DailyInventoryRecord>
 }

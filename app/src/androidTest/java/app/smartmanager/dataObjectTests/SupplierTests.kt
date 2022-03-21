@@ -1,23 +1,22 @@
-package app.smartmanager.daoTests
+package app.smartmanager.dataObjectTests
 
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import app.smartmanager.datalayer.dataaccessobjects.CleaningRecordDAO
+import app.smartmanager.datalayer.dataaccessobjects.SupplierDAO
 import app.smartmanager.datalayer.database.SmartManagerDB
-import app.smartmanager.datalayer.entity.CleaningRecord
+import app.smartmanager.datalayer.entity.Supplier
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import java.io.IOException
-import java.util.*
 
 
 @RunWith(AndroidJUnit4::class)
-class CleaningRecordDAOTests{
-    private lateinit var cleaningRecordDAO: CleaningRecordDAO
+class SupplierTests{
+    private lateinit var supplierDAO: SupplierDAO
     private lateinit var database: SmartManagerDB
     @Test
     @Throws(Exception::class)
@@ -30,7 +29,7 @@ class CleaningRecordDAOTests{
         database = Room.inMemoryDatabaseBuilder(context, SmartManagerDB::class.java)
             .allowMainThreadQueries()
             .build()
-        cleaningRecordDAO = database.cleaningRecordDAO
+        supplierDAO = database.supplierDAO
     }
 
     @After
@@ -39,23 +38,20 @@ class CleaningRecordDAOTests{
         database.close()
     }
 
-
     @Test
     fun createInsertRetrieveObjectTest() {
 
         //creating object
-        val newObject = CleaningRecord(0,"task2",Calendar.getInstance().time)
+        val newObject = Supplier(0,"supplier_1","supplier@supplier.com","02087675445",null)
 
         //inserting object in db
-        cleaningRecordDAO.addCleaningRecord(newObject)
+        supplierDAO.addSupplier(newObject)
 
         //retrieving object from db
-        val retrievedObject = cleaningRecordDAO.getAllCleaningRecordData()
-
-
+        val retrievedObject = supplierDAO.readSupplierNameForUnitTests()
 
         //Checking if retrieved data is equal to inserted data
-        Assert.assertEquals("task2", retrievedObject?.first()?.task_name)
+        Assert.assertEquals("supplier_1", retrievedObject?.first())
 
     }
 
