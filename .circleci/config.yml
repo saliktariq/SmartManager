@@ -27,5 +27,4 @@ jobs:
           system-image: system-images;android-30;default;x86
 workflows:
   test:
-    jobs:
-      - ./gradlew ProbeDAOTests -PdisablePreDex
+    - ./gradlew ProbeDAOTests -PdisablePreDex
