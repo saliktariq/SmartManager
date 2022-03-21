@@ -28,4 +28,5 @@ jobs:
 workflows:
   test:
     jobs:
-      - Test
+      - android/run-ui-tests:
+          system-image: system-images;android-30;default;x86
