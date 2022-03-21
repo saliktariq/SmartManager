@@ -578,5 +578,5 @@
         <action
             android:id="@+id/action_inventoryReportsFragment_to_reportsHomeFragment"
             app:destination="@id/reportsHomeFragment" />
-    </fragment>
+    </fragment><action android:id="@+id/action_global_initialSettings" app:destination="@id/initialSettings"/>
 </navigation>

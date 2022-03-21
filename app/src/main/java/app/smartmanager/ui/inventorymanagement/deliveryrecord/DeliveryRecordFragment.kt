@@ -95,7 +95,7 @@ class DeliveryRecordFragment : Fragment(), DeliveryRecordAdapter.DeliveryRecordC
             productNameAdapter.notifyDataSetChanged()
             if (listOfItems.isEmpty()){
                 ToastMaker.showToast("Add Inventory items in SETUP before adding delivery record", GetAppContext.appContext)
-                findNavController().navigate(R.id.action_deliveryRecordFragment_to_inventoryItemFragment)
+                findNavController().navigate(R.id.action_global_initialSettings)
             }
         }
         deliveryRecordViewModel.listAllSuppliers.observe(viewLifecycleOwner) { listOfItems ->
@@ -105,7 +105,7 @@ class DeliveryRecordFragment : Fragment(), DeliveryRecordAdapter.DeliveryRecordC
             supplierNameAdapter.notifyDataSetChanged()
             if (listOfItems.isEmpty()){
                 ToastMaker.showToast("Add Supplier in SETUP before adding delivery record", GetAppContext.appContext)
-                findNavController().navigate(R.id.action_deliveryRecordFragment_to_supplierFragment)
+                findNavController().navigate(R.id.action_global_initialSettings)
             }
         }
 
