@@ -11,39 +11,21 @@
 #      - checkout
 #      - run:
 #          command: sudo chmod +x ./gradlew
-version: 2
+
+
+version: '2.1'
+orbs:
+  android: circleci/android@2.0
 jobs:
-  build:
-    working_directory: ~
-    docker:
-      - image: cimg/android:2021.10.2
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    environment:
-      JVM_OPTS: -Xmx3200m
+  test:
+    executor:
+      name: android/android-machine
+      resource-class: large
     steps:
       - checkout
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-         name: Chmod permissions
-         command: sudo chmod +x ./gradlew
-      - run:
-          name: Download Dependencies
-          command: ./gradlew androidDependencies
-
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Run Tests
-          command: ./gradlew lint test
-      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
-          path: app/build/reports
-          destination: reports
-      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-          path: app/build/test-results
-
-      # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
+      - android/start-emulator-and-run-tests:
+          system-image: system-images;android-30;default;x86
+workflows:
+  test:
+    jobs:
+      - test
