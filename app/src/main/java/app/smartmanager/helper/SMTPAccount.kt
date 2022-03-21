@@ -3,6 +3,6 @@ package app.smartmanager.helper
 class SMTPAccount {
     companion object{
         const val USER: String = "apikey"
-        const val PASSWORD: String = "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"
+        const val PASSWORD: String = "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"
     }
 }

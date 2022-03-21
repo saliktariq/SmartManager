@@ -79,10 +79,10 @@ lateinit var emailAddress: String
         repository.updatePassword(newPassword.hashCode().toLong(), emailAddress)
 
             //Sending email to user indicating that their password is reset and sending information about updated account details
-        Mailer.SendMail(emailAddress,"SmartManager: Your new password","Dear $retrievedFirstName,\\n\\n\" +\n" +
-                "                        \" Your password is successfully updated.\\n\\n Please use the following login details to sign into the App:\\n\\n\\n\" +\n" +
-                "                        \"Associated email address: $emailAddress\\n\\n\" +\n" +
-                "                        \"New password: $newPassword \\n")
+        Mailer.SendMail(emailAddress,"SmartManager: Your new password","Dear $retrievedFirstName,\n" +
+                "                         Your password is successfully updated.\n Please use the following login details to sign into the App: +\n" +
+                "                        Associated email address: $emailAddress \n" +
+                "                        New password: $newPassword \n")
 
 
         //Setting isOperationCompleted to true indicating that the password reset process has succeeded

@@ -28,9 +28,9 @@ class Mailer {
 
             val props = Properties()
             injectProperties(props, "mail.smtp.host", "smtp.sendgrid.net")
-            injectProperties(props, "mail.smtp.port", "25")
+            injectProperties(props, "mail.smtp.port", "587")
             injectProperties(props, "mail.smtp.auth", "true")
-            injectProperties(props, "mail.smtp.starttls.enable", "false")
+            injectProperties(props, "mail.smtp.starttls.enable", "true")
 
             val session = Session.getDefaultInstance(props, object : javax.mail.Authenticator() {
                 override fun getPasswordAuthentication(): PasswordAuthentication {
