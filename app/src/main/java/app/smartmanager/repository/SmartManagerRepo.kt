@@ -2,6 +2,7 @@ package app.smartmanager.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import androidx.room.*
 import app.smartmanager.datalayer.dataaccessobjects.*
 import app.smartmanager.datalayer.database.SmartManagerDB
 import app.smartmanager.datalayer.entity.*
@@ -54,6 +55,8 @@ class SmartManagerRepo private constructor(context: Context) {
     private val deliveryRecordDAO = database.deliveryRecordDAO
     private val foodWasteRecordDAO = database.foodWasteRecordDAO
     private val authenticationDAO = database.authenticationDAO
+    private val staffTrainingTopicDAO = database.staffTrainingTopicDAO
+    private val staffTrainingRecordDAO = database.staffTrainingRecordDAO
 
 
     /*
@@ -76,7 +79,7 @@ class SmartManagerRepo private constructor(context: Context) {
         return@withContext probeDAO.getAllProbeData()
     }
 
-//     Function to retrieve data related to a probe based on given probeName
+    //     Function to retrieve data related to a probe based on given probeName
     suspend fun getProbeByName(probeName: String): Probe? = withContext(Dispatchers.IO) {
         return@withContext probeDAO.getProbeByName(probeName)
     }
@@ -124,7 +127,7 @@ class SmartManagerRepo private constructor(context: Context) {
     //Variable to retrieve only names of suppliers
     val readSupplierName: LiveData<List<String>> = supplierDAO.readSupplierName()
 
-    suspend fun readSupplierNameForUnitTests(): List<String>{
+    suspend fun readSupplierNameForUnitTests(): List<String> {
         return supplierDAO.readSupplierNameForUnitTests()
     }
 
@@ -149,7 +152,7 @@ class SmartManagerRepo private constructor(context: Context) {
     val listAllEquipment: LiveData<List<String>> =
         equipmentDAO.listAllEquipment()
 
-    suspend fun listAllEquipmentForUnitTests(): List<String>{
+    suspend fun listAllEquipmentForUnitTests(): List<String> {
         return equipmentDAO.listAllEquipmentForUnitTests()
     }
 
@@ -197,8 +200,8 @@ class SmartManagerRepo private constructor(context: Context) {
     val listAllTasks: LiveData<List<String>> =
         cleaningTaskDAO.listAllTasks()
 
-    suspend fun tasksListForTesting(): List<String>{
-       return cleaningTaskDAO.tasksListForTesting()
+    suspend fun tasksListForTesting(): List<String> {
+        return cleaningTaskDAO.tasksListForTesting()
     }
 
     /*
@@ -246,11 +249,11 @@ class SmartManagerRepo private constructor(context: Context) {
         probeCalibrationRecordDAO.readAllProbeCalibrationRecordData()
 
     //Function to retrieve data for x old days - used for Reports
-    suspend fun generateProbeCalibrationReport(oldDate: Date): List<ProbeCalibrationRecord>{
+    suspend fun generateProbeCalibrationReport(oldDate: Date): List<ProbeCalibrationRecord> {
         return probeCalibrationRecordDAO.generateReport(oldDate)
     }
 
-    suspend fun retrieveProbeCalibrationDataForTesting(): List<ProbeCalibrationRecord>{
+    suspend fun retrieveProbeCalibrationDataForTesting(): List<ProbeCalibrationRecord> {
         return probeCalibrationRecordDAO.retrieveData()
     }
 
@@ -277,7 +280,7 @@ class SmartManagerRepo private constructor(context: Context) {
     val listAllCookedProductItem: LiveData<List<String>> =
         cookedProductItemDAO.listAllCookedProductItem()
 
-    suspend fun readAllCookedProductItemDataForTesting(): List<CookedProductItem>{
+    suspend fun readAllCookedProductItemDataForTesting(): List<CookedProductItem> {
         return cookedProductItemDAO.readAllCookedProductItemDataForTesting()
     }
 
@@ -307,7 +310,7 @@ class SmartManagerRepo private constructor(context: Context) {
         inventoryItemDAO.readInventoryItemName()
 
 
-    suspend fun readInventoryItemNameForUnitTests(): List<String>{
+    suspend fun readInventoryItemNameForUnitTests(): List<String> {
         return inventoryItemDAO.readInventoryItemNameForUnitTests()
     }
 
@@ -315,15 +318,15 @@ class SmartManagerRepo private constructor(context: Context) {
 ******************- Repository functions related to CleaningRecord -******************
 */
 
-    suspend fun addCleaningRecord(cleaningRecord: CleaningRecord){
+    suspend fun addCleaningRecord(cleaningRecord: CleaningRecord) {
         cleaningRecordDAO.addCleaningRecord(cleaningRecord)
     }
 
-    suspend fun updateCleaningRecord(cleaningRecord: CleaningRecord){
+    suspend fun updateCleaningRecord(cleaningRecord: CleaningRecord) {
         cleaningRecordDAO.updateCleaningRecord(cleaningRecord)
     }
 
-    suspend fun deleteCleaningRecord(cleaningRecord: CleaningRecord){
+    suspend fun deleteCleaningRecord(cleaningRecord: CleaningRecord) {
         cleaningRecordDAO.deleteCleaningRecord(cleaningRecord)
     }
 
@@ -337,21 +340,22 @@ class SmartManagerRepo private constructor(context: Context) {
     }
 
     //Function to retrieve data for x old days - used for Reports
-    suspend fun  cleaningReport(oldDate: Date): List<CleaningRecord>{
+    suspend fun cleaningReport(oldDate: Date): List<CleaningRecord> {
         return cleaningRecordDAO.cleaningReport(oldDate)
     }
+
     /*
 ******************- Repository functions related to EquipmentTemperatureRecord -******************
 */
-    suspend fun addEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord){
+    suspend fun addEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord) {
         equipmentTemperatureRecordDAO.addEquipmentTemperatureRecord(equipmentTemperatureRecord)
     }
 
-    suspend fun updateEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord){
+    suspend fun updateEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord) {
         equipmentTemperatureRecordDAO.updateEquipmentTemperatureRecord(equipmentTemperatureRecord)
     }
 
-    suspend fun deleteEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord){
+    suspend fun deleteEquipmentTemperatureRecord(equipmentTemperatureRecord: EquipmentTemperatureRecord) {
         equipmentTemperatureRecordDAO.deleteEquipmentTemperatureRecord(equipmentTemperatureRecord)
     }
 
@@ -359,39 +363,47 @@ class SmartManagerRepo private constructor(context: Context) {
         equipmentTemperatureRecordDAO.readAllEquipmentTemperatureRecordData()
 
     //Function to retrieve data for x old days - used for Reports
-    suspend fun generateEquipmentTemperatureReport(oldDate: Date): List<EquipmentTemperatureRecord>{
+    suspend fun generateEquipmentTemperatureReport(oldDate: Date): List<EquipmentTemperatureRecord> {
         return equipmentTemperatureRecordDAO.generateEquipmentTemperatureReport(oldDate)
     }
 
 
-    suspend fun getAllEquipmentTemperatureRecordData(): List<EquipmentTemperatureRecord>? = withContext(Dispatchers.IO) {
-        return@withContext equipmentTemperatureRecordDAO.getAllEquipmentTemperatureRecordData()
-    }
+    suspend fun getAllEquipmentTemperatureRecordData(): List<EquipmentTemperatureRecord>? =
+        withContext(Dispatchers.IO) {
+            return@withContext equipmentTemperatureRecordDAO.getAllEquipmentTemperatureRecordData()
+        }
 
     /*
 ******************- Repository functions related to CookedProductTemperatureRecord -******************
 */
-    suspend fun addCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord){
-        cookedProductTemperatureRecordDAO.addCookedProductTemperatureRecord(cookedProductTemperatureRecord)
+    suspend fun addCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord) {
+        cookedProductTemperatureRecordDAO.addCookedProductTemperatureRecord(
+            cookedProductTemperatureRecord
+        )
     }
 
-    suspend fun updateCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord){
-        cookedProductTemperatureRecordDAO.updateCookedProductTemperatureRecord(cookedProductTemperatureRecord)
+    suspend fun updateCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord) {
+        cookedProductTemperatureRecordDAO.updateCookedProductTemperatureRecord(
+            cookedProductTemperatureRecord
+        )
     }
 
-    suspend fun deleteCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord){
-        cookedProductTemperatureRecordDAO.deleteCookedProductTemperatureRecord(cookedProductTemperatureRecord)
+    suspend fun deleteCookedProductTemperatureRecord(cookedProductTemperatureRecord: CookedProductTemperatureRecord) {
+        cookedProductTemperatureRecordDAO.deleteCookedProductTemperatureRecord(
+            cookedProductTemperatureRecord
+        )
     }
 
     val readAllCookedProductTemperatureRecordData: LiveData<List<CookedProductTemperatureRecord>> =
         cookedProductTemperatureRecordDAO.readAllCookedProductTemperatureRecordData()
 
-    suspend fun getAllCookedProductTemperatureRecordData(): List<CookedProductTemperatureRecord>? = withContext(Dispatchers.IO){
-        return@withContext cookedProductTemperatureRecordDAO.getAllCookedProductTemperatureRecordData()
-    }
+    suspend fun getAllCookedProductTemperatureRecordData(): List<CookedProductTemperatureRecord>? =
+        withContext(Dispatchers.IO) {
+            return@withContext cookedProductTemperatureRecordDAO.getAllCookedProductTemperatureRecordData()
+        }
 
     //Function to retrieve data for x old days - used for Reports
-    suspend fun generateCookedProductTemperatureReport(oldDate: Date): List<CookedProductTemperatureRecord>{
+    suspend fun generateCookedProductTemperatureReport(oldDate: Date): List<CookedProductTemperatureRecord> {
         return cookedProductTemperatureRecordDAO.generateReport(oldDate)
     }
 
@@ -399,25 +411,25 @@ class SmartManagerRepo private constructor(context: Context) {
 ******************- Repository functions related to CookingRecord -******************
 */
 
-    suspend fun addCookingRecord(cookingRecord: CookingRecord){
+    suspend fun addCookingRecord(cookingRecord: CookingRecord) {
         cookingRecordDAO.addCookingRecord(cookingRecord)
     }
 
-    suspend fun updateCookingRecord(cookingRecord: CookingRecord){
+    suspend fun updateCookingRecord(cookingRecord: CookingRecord) {
         cookingRecordDAO.updateCookingRecord(cookingRecord)
     }
 
-    suspend fun deleteCookingRecord(cookingRecord: CookingRecord){
+    suspend fun deleteCookingRecord(cookingRecord: CookingRecord) {
         cookingRecordDAO.deleteCookingRecord(cookingRecord)
     }
 
     suspend fun readAllCookingRecordData(): List<CookingRecord> = withContext(Dispatchers.IO)
     {
         return@withContext cookingRecordDAO.readAllCookingRecordData()
-      }
+    }
 
     //Function to retrieve data for x old days - used for Reports
-    suspend fun generateCookingRecordReport(oldDate: Date): List<CookingRecord>{
+    suspend fun generateCookingRecordReport(oldDate: Date): List<CookingRecord> {
         return cookingRecordDAO.generateReport(oldDate)
     }
 
@@ -425,71 +437,74 @@ class SmartManagerRepo private constructor(context: Context) {
 ******************- Repository functions related to DailyInventoryRecord -******************
 */
 
-    suspend fun addDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord){
+    suspend fun addDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord) {
         dailyInventoryRecordDAO.addDailyInventoryRecord(dailyInventoryRecord)
     }
 
-    suspend fun updateDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord){
+    suspend fun updateDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord) {
         dailyInventoryRecordDAO.updateDailyInventoryRecord(dailyInventoryRecord)
     }
 
-    suspend fun deleteDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord){
+    suspend fun deleteDailyInventoryRecord(dailyInventoryRecord: DailyInventoryRecord) {
         dailyInventoryRecordDAO.deleteDailyInventoryRecord(dailyInventoryRecord)
     }
 
-    suspend fun readAllDailyInventoryRecordData(): List<DailyInventoryRecord> = withContext(Dispatchers.IO){
-        return@withContext dailyInventoryRecordDAO.readAllDailyInventoryRecordData()
-    }
+    suspend fun readAllDailyInventoryRecordData(): List<DailyInventoryRecord> =
+        withContext(Dispatchers.IO) {
+            return@withContext dailyInventoryRecordDAO.readAllDailyInventoryRecordData()
+        }
 
     //Function to retrieve data for x old days - used for Reports
-    suspend fun generateInventoryReport(oldDate: Date): List<DailyInventoryRecord>{
+    suspend fun generateInventoryReport(oldDate: Date): List<DailyInventoryRecord> {
         return dailyInventoryRecordDAO.generateReport(oldDate)
     }
 
     /*
 ******************- Repository functions related to DeliveryRecord -******************
 */
-    suspend fun addDeliveryRecord(deliveryRecord: DeliveryRecord){
+    suspend fun addDeliveryRecord(deliveryRecord: DeliveryRecord) {
         deliveryRecordDAO.addDeliveryRecord(deliveryRecord)
     }
 
-    suspend fun updateDeliveryRecord(deliveryRecord: DeliveryRecord){
+    suspend fun updateDeliveryRecord(deliveryRecord: DeliveryRecord) {
         deliveryRecordDAO.updateDeliveryRecord(deliveryRecord)
     }
 
-    suspend fun deleteDeliveryRecord(deliveryRecord: DeliveryRecord){
+    suspend fun deleteDeliveryRecord(deliveryRecord: DeliveryRecord) {
         deliveryRecordDAO.deleteDeliveryRecord(deliveryRecord)
     }
 
-    suspend fun readAllDeliveryRecordData(): List<DeliveryRecord> = withContext(Dispatchers.IO){
+    suspend fun readAllDeliveryRecordData(): List<DeliveryRecord> = withContext(Dispatchers.IO) {
         return@withContext deliveryRecordDAO.readAllDeliveryRecordData()
     }
 
     //Function to retrieve data for x old days - used for Reports
-    suspend fun generateDeliveryRecordReport(oldDate: Date): List<DeliveryRecord>{
+    suspend fun generateDeliveryRecordReport(oldDate: Date): List<DeliveryRecord> {
         return deliveryRecordDAO.generateReport(oldDate)
     }
+
     /*
 ******************- Repository functions related to FoodWasteRecord -******************
 */
-    suspend fun addFoodWasteRecord(foodWasteRecord: FoodWasteRecord){
+    suspend fun addFoodWasteRecord(foodWasteRecord: FoodWasteRecord) {
         foodWasteRecordDAO.addFoodWasteRecord(foodWasteRecord)
     }
 
-    suspend fun updateFoodWasteRecord(foodWasteRecord: FoodWasteRecord){
+    suspend fun updateFoodWasteRecord(foodWasteRecord: FoodWasteRecord) {
         foodWasteRecordDAO.updateFoodWasteRecord(foodWasteRecord)
     }
 
-    suspend fun deleteFoodWasteRecord(foodWasteRecord: FoodWasteRecord){
+    suspend fun deleteFoodWasteRecord(foodWasteRecord: FoodWasteRecord) {
         foodWasteRecordDAO.deleteFoodWasteRecord(foodWasteRecord)
     }
-//    val readAllFoodWasteRecordData: LiveData<List<FoodWasteRecord>> =
-    suspend fun readAllFoodWasteRecordData(): List<FoodWasteRecord> = withContext(Dispatchers.IO){
+
+    //    val readAllFoodWasteRecordData: LiveData<List<FoodWasteRecord>> =
+    suspend fun readAllFoodWasteRecordData(): List<FoodWasteRecord> = withContext(Dispatchers.IO) {
         return@withContext foodWasteRecordDAO.readAllFoodWasteRecordData()
-}
+    }
 
     //Function to retrieve data for x old days - used for Reports
-    suspend fun generateFoodWasteReport(oldDate: Date): List<FoodWasteRecord>{
+    suspend fun generateFoodWasteReport(oldDate: Date): List<FoodWasteRecord> {
         return foodWasteRecordDAO.generateReport(oldDate)
     }
 
@@ -559,5 +574,58 @@ during university project making 'Archelon App'.
 
         }
 
+    //    ******************- Repository functions related to StaffTrainingTopic -******************
+
+    suspend fun addStaffTrainingTopic(staffTrainingTopic: StaffTrainingTopic) {
+        staffTrainingTopicDAO.addStaffTrainingTopic(staffTrainingTopic)
+    }
+
+    suspend fun readAllStaffTrainingTopicData(): LiveData<List<StaffTrainingTopic>> {
+        return staffTrainingTopicDAO.readAllStaffTrainingTopicData()
+    }
+
+
+    suspend fun updateStaffTrainingTopic(staffTrainingTopic: StaffTrainingTopic) {
+        staffTrainingTopicDAO.updateStaffTrainingTopic(staffTrainingTopic)
+    }
+
+    suspend fun deleteStaffTrainingTopic(staffTrainingTopic: StaffTrainingTopic) {
+        staffTrainingTopicDAO.deleteStaffTrainingTopic(staffTrainingTopic)
+    }
+
+    suspend fun readStaffTrainingTopic(): LiveData<List<String>> {
+        return staffTrainingTopicDAO.readStaffTrainingTopic()
+    }
+
+    suspend fun readStaffTrainingTopicForUnitTests(): List<StaffTrainingTopic> {
+        return staffTrainingTopicDAO.readStaffTrainingTopicForUnitTests()
+    }
+
+
+    //    ******************- Repository functions related to StaffTrainingRecord -******************
+
+    suspend fun addStaffTrainingRecord(staffTrainingRecord: StaffTrainingRecord) {
+        staffTrainingRecordDAO.addStaffTrainingRecord(staffTrainingRecord)
+    }
+
+    suspend fun readAllStaffTrainingRecordData(): LiveData<List<StaffTrainingRecord>> {
+        return staffTrainingRecordDAO.readAllStaffTrainingRecordData()
+    }
+
+    suspend fun updateStaffTrainingRecord(staffTrainingRecord: StaffTrainingRecord) {
+        staffTrainingRecordDAO.updateStaffTrainingRecord(staffTrainingRecord)
+    }
+
+    suspend fun deleteStaffTrainingRecord(staffTrainingRecord: StaffTrainingRecord) {
+        staffTrainingRecordDAO.deleteStaffTrainingRecord(staffTrainingRecord)
+    }
+
+    suspend fun readStaffTrainingRecord(): LiveData<List<StaffTrainingRecord>> {
+        return staffTrainingRecordDAO.readStaffTrainingRecord()
+    }
+
+    suspend fun readStaffTrainingRecordForTesting(): List<StaffTrainingRecord> {
+        return staffTrainingRecordDAO.readStaffTrainingRecordForTesting()
+    }
 
 }
