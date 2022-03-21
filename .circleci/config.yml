@@ -14,7 +14,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/code
+    working_directory: ~
     docker:
       - image: cimg/android:2021.10.2
         auth:
