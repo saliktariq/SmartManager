@@ -12,6 +12,8 @@ import androidx.appcompat.widget.AppCompatSpinner
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import app.smartmanager.R
+import app.smartmanager.helper.GetAppContext
+import app.smartmanager.helper.ToastMaker
 import app.smartmanager.ui.foodsafetymanagement.proberecord.viewmodel.ProbeCalibrationRecordViewModel
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime.now
@@ -83,7 +85,14 @@ class AddProbeCalibrationRecordFragment : Fragment() {
                 probeNameDataRetrieved.add(name.toString())
             }
             chooseProbeAdapter.notifyDataSetChanged()
+            if (listOfProbes.isEmpty()){
+                ToastMaker.showToast("Add probe thermometer before you can add calibration record", GetAppContext.appContext)
+                findNavController().navigate(R.id.action_addProbeCalibrationRecordFragment_to_probeFragment)
+            }
         }
+
+
+
 
 //        //Creating simple date object
 //        // Used this link to learn to create this object https://stackoverflow.com/questions/47006254/how-to-get-current-local-date-and-time-in-kotlin
