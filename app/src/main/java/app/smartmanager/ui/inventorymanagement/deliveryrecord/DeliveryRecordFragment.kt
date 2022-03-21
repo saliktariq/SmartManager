@@ -12,6 +12,7 @@ import androidx.appcompat.widget.AppCompatSpinner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -92,12 +93,20 @@ class DeliveryRecordFragment : Fragment(), DeliveryRecordAdapter.DeliveryRecordC
                 productNameDataRetrieved.add(name.toString())
             }
             productNameAdapter.notifyDataSetChanged()
+            if (listOfItems.isEmpty()){
+                ToastMaker.showToast("Add Inventory items in SETUP before adding delivery record", GetAppContext.appContext)
+                findNavController().navigate(R.id.action_deliveryRecordFragment_to_inventoryItemFragment)
+            }
         }
         deliveryRecordViewModel.listAllSuppliers.observe(viewLifecycleOwner) { listOfItems ->
             for (name in listOfItems) {
                 supplierNameDataRetrieved.add(name.toString())
             }
             supplierNameAdapter.notifyDataSetChanged()
+            if (listOfItems.isEmpty()){
+                ToastMaker.showToast("Add Supplier in SETUP before adding delivery record", GetAppContext.appContext)
+                findNavController().navigate(R.id.action_deliveryRecordFragment_to_supplierFragment)
+            }
         }
 
         deliveryRecordViewModel.getAllDataObserver().observe(viewLifecycleOwner, Observer {

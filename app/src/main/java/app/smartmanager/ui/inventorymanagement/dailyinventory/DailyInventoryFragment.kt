@@ -12,6 +12,7 @@ import androidx.appcompat.widget.AppCompatSpinner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -84,6 +85,11 @@ class DailyInventoryFragment: Fragment(), DailyInventoryRecordAdapter.DailyInven
                 productNameDataRetrieved.add(name.toString())
             }
             productNameAdapter.notifyDataSetChanged()
+
+            if (listOfItems.isEmpty()){
+                ToastMaker.showToast("Add Products in SETUP before you can add Inventory record", GetAppContext.appContext)
+                findNavController().navigate(R.id.action_dailyInventoryFragment_to_inventoryItemFragment)
+            }
         }
 
         dailyInventoryViewModel.getAllDataObserver().observe(viewLifecycleOwner, Observer {

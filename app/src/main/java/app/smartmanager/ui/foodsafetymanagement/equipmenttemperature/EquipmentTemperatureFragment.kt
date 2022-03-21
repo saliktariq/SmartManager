@@ -12,6 +12,7 @@ import androidx.appcompat.widget.AppCompatSpinner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -83,6 +84,11 @@ class EquipmentTemperatureFragment : Fragment(), EquipmentTemperatureRecordAdapt
                 equipmentNameDataRetrieved.add(name.toString())
             }
             equipmentNameAdapter.notifyDataSetChanged()
+
+            if (listOfEquipment.isEmpty()){
+                ToastMaker.showToast("Add Equipment in SETUP before you can add equipment record", GetAppContext.appContext)
+                findNavController().navigate(R.id.action_equipmentTemperatureFragment_to_equipmentFragment)
+            }
         }
 
         equipmentTemperatureViewModel.getAllDataObserver().observe(viewLifecycleOwner, Observer {

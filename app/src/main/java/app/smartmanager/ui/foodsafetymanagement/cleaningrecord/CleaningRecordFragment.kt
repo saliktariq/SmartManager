@@ -13,6 +13,7 @@ import androidx.appcompat.widget.AppCompatSpinner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -85,6 +86,11 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
                 cleaningTaskNameDataRetrieved.add(name.toString())
             }
             chooseCleaningTaskNameAdapter.notifyDataSetChanged()
+
+            if (listOfTasks.isEmpty()){
+                ToastMaker.showToast("Add Cleaning Task in SETUP before you can add cleaning record", GetAppContext.appContext)
+                findNavController().navigate(R.id.action_cleaningRecordFragment_to_cleaningTaskFragment)
+            }
         }
 
         cleaningRecordViewModel.getAllDataObserver().observe(viewLifecycleOwner, Observer {

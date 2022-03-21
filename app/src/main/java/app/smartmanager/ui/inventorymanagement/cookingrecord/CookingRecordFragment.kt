@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -83,6 +84,10 @@ class CookingRecordFragment : Fragment(), CookingRecordAdapter.CookingRecordClic
                 cookedProductNameDataRetrieved.add(name.toString())
             }
             cookedProductAdapter.notifyDataSetChanged()
+            if (listOfItems.isEmpty()){
+                ToastMaker.showToast("Add Cooked Products in SETUP before you can add cooking record", GetAppContext.appContext)
+                findNavController().navigate(R.id.action_cookingRecordFragment_to_cookedProductItemFragment)
+            }
         }
 
         cookingRecordViewModel.getAllDataObserver().observe(viewLifecycleOwner, Observer {

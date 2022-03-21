@@ -446,6 +446,9 @@
         <action
             android:id="@+id/action_cleaningRecordFragment_to_foodSafetyManagementHomeFragment"
             app:destination="@id/foodSafetyManagementHomeFragment" />
+        <action
+            android:id="@+id/action_cleaningRecordFragment_to_cleaningTaskFragment"
+            app:destination="@id/cleaningTaskFragment" />
     </fragment>
     <fragment
         android:id="@+id/equipmentTemperatureFragment"
@@ -455,6 +458,9 @@
         <action
             android:id="@+id/action_equipmentTemperatureFragment_to_foodSafetyManagementHomeFragment"
             app:destination="@id/foodSafetyManagementHomeFragment" />
+        <action
+            android:id="@+id/action_equipmentTemperatureFragment_to_equipmentFragment"
+            app:destination="@id/equipmentFragment" />
     </fragment>
     <fragment
         android:id="@+id/cookedProductTemperatureFragment"
@@ -464,6 +470,9 @@
         <action
             android:id="@+id/action_cookedProductTemperatureFragment_to_foodSafetyManagementHomeFragment"
             app:destination="@id/foodSafetyManagementHomeFragment" />
+        <action
+            android:id="@+id/action_cookedProductTemperatureFragment_to_cookedProductItemFragment"
+            app:destination="@id/cookedProductItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/inventoryManagementHomeFragment"
@@ -494,6 +503,9 @@
         <action
             android:id="@+id/action_cookingRecordFragment_to_inventoryManagementHomeFragment"
             app:destination="@id/inventoryManagementHomeFragment" />
+        <action
+            android:id="@+id/action_cookingRecordFragment_to_cookedProductItemFragment"
+            app:destination="@id/cookedProductItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/dailyInventoryFragment"
@@ -503,6 +515,9 @@
         <action
             android:id="@+id/action_dailyInventoryFragment_to_inventoryManagementHomeFragment"
             app:destination="@id/inventoryManagementHomeFragment" />
+        <action
+            android:id="@+id/action_dailyInventoryFragment_to_inventoryItemFragment"
+            app:destination="@id/inventoryItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/deliveryRecordFragment"
@@ -512,6 +527,12 @@
         <action
             android:id="@+id/action_deliveryRecordFragment_to_inventoryManagementHomeFragment"
             app:destination="@id/inventoryManagementHomeFragment" />
+        <action
+            android:id="@+id/action_deliveryRecordFragment_to_inventoryItemFragment"
+            app:destination="@id/inventoryItemFragment" />
+        <action
+            android:id="@+id/action_deliveryRecordFragment_to_supplierFragment"
+            app:destination="@id/supplierFragment" />
     </fragment>
     <fragment
         android:id="@+id/foodWasteRecordFragment"
@@ -521,6 +542,9 @@
         <action
             android:id="@+id/action_foodWasteRecordFragment_to_inventoryManagementHomeFragment"
             app:destination="@id/inventoryManagementHomeFragment" />
+        <action
+            android:id="@+id/action_foodWasteRecordFragment_to_cookedProductItemFragment"
+            app:destination="@id/cookedProductItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportsHomeFragment"

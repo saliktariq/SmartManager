@@ -86,7 +86,7 @@ class AddProbeCalibrationRecordFragment : Fragment() {
             }
             chooseProbeAdapter.notifyDataSetChanged()
             if (listOfProbes.isEmpty()){
-                ToastMaker.showToast("Add probe thermometer before you can add calibration record", GetAppContext.appContext)
+                ToastMaker.showToast("Add probe thermometer in SETUP before you can add calibration record", GetAppContext.appContext)
                 findNavController().navigate(R.id.action_addProbeCalibrationRecordFragment_to_probeFragment)
             }
         }
