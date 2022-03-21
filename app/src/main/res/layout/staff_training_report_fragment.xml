@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/floralWhite"
+android:focusable="true"
+android:focusableInTouchMode="true"
+android:orientation="vertical"
+tools:context=".ui.reports.StaffTrainingReportFragment">
+
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="@dimen/normalMargin"
+    android:text="Staff Training Reports"
+    android:textSize="@dimen/largeFont"
+    android:textStyle="bold" />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/training_report_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/xxLargeMargin"
+        android:layout_marginLeft="@dimen/xxLargeMargin"
+        style="@style/RegularButtonStyle"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="View All Training Record" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnbackToReportsHome"
+        style="@style/Theme.MaterialComponents.Light"
+        android:layout_width="250dp"
+        android:layout_height="@dimen/regularButtonHeight"
+        android:layout_marginTop="@dimen/xLargeMargin"
+        android:text="Back to Reports Home"
+        android:textColor="@color/colorPrimaryDark" />
+
+
+</LinearLayout>
+
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reportCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xLargeMargin"
+            android:layout_marginTop="@dimen/normalMargin"
+            android:layout_marginEnd="@dimen/xLargeMargin"
+            app:cardElevation="@dimen/normalElevation">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/showReportView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </ScrollView>
+</LinearLayout>
+
+</LinearLayout>

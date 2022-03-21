@@ -593,8 +593,11 @@ during university project making 'Archelon App'.
         staffTrainingTopicDAO.deleteStaffTrainingTopic(staffTrainingTopic)
     }
 
-    suspend fun readStaffTrainingTopic(): LiveData<List<String>> {
-        return staffTrainingTopicDAO.readStaffTrainingTopic()
+    val listAllTopics: LiveData<List<String>> =
+        staffTrainingTopicDAO.readStaffTrainingTopic()
+
+    suspend fun readStaffTrainingTopic(): LiveData<List<String>> = withContext(Dispatchers.IO) {
+        return@withContext staffTrainingTopicDAO.readStaffTrainingTopic()
     }
 
     suspend fun readStaffTrainingTopicForUnitTests(): List<StaffTrainingTopic> = withContext(Dispatchers.IO) {
@@ -624,8 +627,8 @@ during university project making 'Archelon App'.
         return staffTrainingRecordDAO.readStaffTrainingRecord()
     }
 
-    suspend fun readStaffTrainingRecordForTesting(): List<StaffTrainingRecord> {
-        return staffTrainingRecordDAO.readStaffTrainingRecordForTesting()
+    suspend fun readStaffTrainingRecordAsList(): List<StaffTrainingRecord> = withContext(Dispatchers.IO) {
+        return@withContext staffTrainingRecordDAO.readStaffTrainingRecordForTesting()
     }
 
 }

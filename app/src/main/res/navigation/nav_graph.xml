@@ -566,6 +566,9 @@
         <action
             android:id="@+id/action_reportsHomeFragment_to_inventoryReportsFragment"
             app:destination="@id/inventoryReportsFragment" />
+        <action
+            android:id="@+id/action_reportsHomeFragment_to_staffTrainingReportFragment"
+            app:destination="@id/staffTrainingReportFragment" />
     </fragment>
     <fragment
         android:id="@+id/foodSafetyReportsFragment"
@@ -588,12 +591,12 @@
     <fragment
         android:id="@+id/staffTrainingTopicFragment"
         android:name="app.smartmanager.ui.setup.StaffTrainingTopicFragment"
-        android:label="staff_training_topic_fragment"
+        android:label="Training Topics"
         tools:layout="@layout/staff_training_topic_fragment" />
     <fragment
         android:id="@+id/staffTrainingRecordFragment"
         android:name="app.smartmanager.ui.foodsafetymanagement.stafftrainingrecord.StaffTrainingRecordFragment"
-        android:label="staff_training_record_fragment"
+        android:label="Staff Training Record"
         tools:layout="@layout/staff_training_record_fragment" >
         <action
             android:id="@+id/action_staffTrainingRecordFragment_to_staffTrainingTopicFragment"
@@ -601,5 +604,14 @@
         <action
             android:id="@+id/action_staffTrainingRecordFragment_to_foodSafetyManagementHomeFragment"
             app:destination="@id/foodSafetyManagementHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/staffTrainingReportFragment"
+        android:name="app.smartmanager.ui.reports.StaffTrainingReportFragment"
+        android:label="Staff Training Reports"
+        tools:layout="@layout/staff_training_report_fragment" >
+        <action
+            android:id="@+id/action_staffTrainingReportFragment_to_reportsHomeFragment"
+            app:destination="@id/reportsHomeFragment" />
     </fragment>
 </navigation>

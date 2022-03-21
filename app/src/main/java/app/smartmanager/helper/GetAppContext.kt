@@ -1,12 +1,13 @@
 package app.smartmanager.helper
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import app.smartmanager.repository.SmartManagerRepo
 
 
 /*
-Declaration: Main concept of this application is from the following stackoverflow post:
+Declaration: Main concept of this class is from the following stackoverflow post:
 https://stackoverflow.com/questions/2002288/static-way-to-get-context-in-android?rq=1
  */
 

@@ -43,6 +43,9 @@ class FoodSafetyManagementHomeFragment : Fragment() {
             findNavController().navigate(R.id.action_foodSafetyManagementHomeFragment_to_cookedProductTemperatureFragment)
         }
 
+        btnStaffTrainingRecord.setOnClickListener{
+            findNavController().navigate(R.id.action_foodSafetyManagementHomeFragment_to_staffTrainingRecordFragment)
+        }
 
         backButton.setOnClickListener {
             findNavController().navigate(R.id.action_foodSafetyManagementHomeFragment_to_homeScreen)

@@ -31,6 +31,7 @@ class ReportsHomeFragment : Fragment()
         val foodSafetyReportsButton: AppCompatButton = fragmentView.findViewById(R.id.btnFoodSafetyReports)
         val inventoryReportsButton: AppCompatButton = fragmentView.findViewById(R.id.btnInventoryReports)
         val backToHomeButton: AppCompatButton = fragmentView.findViewById(R.id.btnbackToHome)
+        val staffTrainingReportsButton: AppCompatButton = fragmentView.findViewById(R.id.btnStaffTraining)
         val signOutButton: AppCompatButton = fragmentView.findViewById(R.id.btnLogOut)
 
         foodSafetyReportsButton.setOnClickListener {
@@ -39,6 +40,10 @@ class ReportsHomeFragment : Fragment()
 
         inventoryReportsButton.setOnClickListener {
             findNavController().navigate(R.id.action_reportsHomeFragment_to_inventoryReportsFragment)
+        }
+
+        staffTrainingReportsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_reportsHomeFragment_to_staffTrainingReportFragment)
         }
 
         backToHomeButton.setOnClickListener {
