@@ -94,21 +94,6 @@
                     style="@style/RegularButtonStyle"
                     android:text="@string/logout"/>
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/RegularFontStyle"
-                    android:fontFamily="@font/roboto_medium"
-                    android:layout_margin="@dimen/xLargeMargin"
-                    android:text="@string/any_issues_with_the_application" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/btnContactAdmin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/largeMargin"
-                    android:text="@string/contact_support"
-                    android:layout_marginBottom="@dimen/xLargeMargin"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/normalFont" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
