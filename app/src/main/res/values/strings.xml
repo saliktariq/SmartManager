@@ -7,46 +7,22 @@
     <string name="sign_up">Sign up</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="get_new">Get new</string>
-    <string name="smart_manager_logo">Smart Manager Logo</string>
     <string name="icon">Icon</string>
-    <string name="register_new_account">Register new account</string>
-    <string name="request_new_password">Request new password</string>
     <string name="reset_password">Reset Password</string>
-    <string name="choose_new_password">Choose new password</string>
     <string name="don_t_have_authorization_code">Don\'t have authorization code?</string>
     <string name="request_new_code">Request new code</string>
     <string name="retype_password">Retype Password</string>
     <string name="new_password">New Password</string>
     <string name="authorization_code">Authorization Code</string>
-    <string name="update_account_details">Update account details</string>
-    <string name="update_profile">Update Profile</string>
     <string name="register">Register</string>
-    <string name="first_time_setup">Initial Setup</string>
-    <string name="setup_new_thermometer">Setup New Thermometer</string>
-    <string name="thermometer_identification">Thermometer Identification</string>
-    <string name="add_thermometer">Add Thermometer</string>
     <string name="logout">Logout</string>
-    <string name="any_issues_with_the_application">Any issues with the application?</string>
-    <string name="contact_support">Contact Support</string>
     <string name="setup_new_probe_thermometer">Add Probe Thermometer</string>
     <string name="add_new_supplier">Add Supplier</string>
-    <string name="add_new_product">Add Product</string>
-    <string name="sign_in_with_google">Sign in with Google</string>
-    <string name="title_activity_maps">MapsActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Defining critical control types for cricial control type spinner in fragment_add_control_checks layout file -->
-    <string-array name="criticalcontroltype">
-        <item>Opening Check</item>
-        <item>Closing Check</item>
-    </string-array>
 
     <!-- Defining frequency of cleaning task for cleaning task frequency spinner in fragment_add_cleaning_task layout file -->
-    <string-array name="cleaningTaskFrequency">
-        <item>Daily Task</item>
-        <item>Weekly Task</item>
-    </string-array>
 
 
 </resources>
