@@ -68,7 +68,7 @@ class FoodWasteRecordFragment : Fragment(), FoodWasteRecordAdapter.FoodWasteReco
             fragmentView.findViewById<AppCompatSpinner>(R.id.cookedProduct)
 
         //Arraylist to hold values retrieved from DB for spinner
-        var cookedProductNameDataRetrieved = ArrayList<String>()
+        val cookedProductNameDataRetrieved = ArrayList<String>()
 
         //Setting ArrayAdapter for Spinner
         val cookedProductAdapter = ArrayAdapter<String>(
@@ -103,7 +103,7 @@ class FoodWasteRecordFragment : Fragment(), FoodWasteRecordAdapter.FoodWasteReco
 
         val btnAddData: AppCompatButton =
             fragmentView.findViewById<AppCompatButton>(R.id.btnAddData)
-        var quantity: TextInputEditText =  fragmentView.findViewById<TextInputEditText>(R.id.waste_quantity)
+        val quantity: TextInputEditText =  fragmentView.findViewById<TextInputEditText>(R.id.waste_quantity)
 
         btnAddData.setOnClickListener {
 
@@ -134,7 +134,7 @@ class FoodWasteRecordFragment : Fragment(), FoodWasteRecordAdapter.FoodWasteReco
 
     override fun onDeleteFoodWasteRecordClickListener(foodWasteRecord: FoodWasteRecord) {
 
-        var foodWasteRecordViewModel =
+        val foodWasteRecordViewModel =
             ViewModelProvider(this).get(FoodWasteRecordViewModel::class.java)
 
         foodWasteRecordViewModel

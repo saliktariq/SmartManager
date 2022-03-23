@@ -63,7 +63,7 @@ class EquipmentTemperatureFragment : Fragment(), EquipmentTemperatureRecordAdapt
             fragmentView.findViewById<AppCompatSpinner>(R.id.select_equipment)
 
         //Arraylist to hold values retrieved from DB for spinner
-        var equipmentNameDataRetrieved = ArrayList<String>()
+        val equipmentNameDataRetrieved = ArrayList<String>()
 
         //Setting ArrayAdapter for Spinner
         val equipmentNameAdapter = ArrayAdapter<String>(
@@ -129,7 +129,7 @@ class EquipmentTemperatureFragment : Fragment(), EquipmentTemperatureRecordAdapt
     }
 
     override fun onDeleteEquipmentTemperatureRecordClickListener(equipmentTemperatureRecord: EquipmentTemperatureRecord) {
-        var equipmentTemperatureViewModel =
+        val equipmentTemperatureViewModel =
             ViewModelProvider(this).get(EquipmentTemperatureViewModel::class.java)
 
         equipmentTemperatureViewModel

@@ -43,7 +43,7 @@ class UpdateInventoryItemFragment : Fragment() {
         val relatedSupplierSpinner: AppCompatSpinner = fragmentView.findViewById<AppCompatSpinner>(R.id.relatedSupplier)
 
         //Arraylist to hold values of supplierlist
-        var relatedSupplierListRetrieved = ArrayList<String?>()
+        val relatedSupplierListRetrieved = ArrayList<String?>()
 
         //Setting arrayAdapter for relatedSupplierListRetrieved
         val chooseSupplierAdapter = ArrayAdapter<String>(

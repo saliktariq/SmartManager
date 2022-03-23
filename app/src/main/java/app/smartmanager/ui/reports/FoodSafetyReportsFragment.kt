@@ -107,9 +107,7 @@ class FoodSafetyReportsFragment : Fragment() {
             cleaningAdapter.setDataSet(foodSafetyReportsViewModel.cleaningReportWeekly)
             ToastMaker.showToast("Weekly Cleaning Report Loaded", GetAppContext.appContext)
 
-//            reportsViewModel.cleaningReportWeekly.observe(viewLifecycleOwner, Observer { data ->
-//                adapter.setDataSet(data)
-//            })
+
         }
         cleaningReportMonthlyButton.setOnClickListener {
             //Implementing recyclerview

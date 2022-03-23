@@ -41,7 +41,7 @@ class CookingRecordViewModel (application: Application) : AndroidViewModel(appli
             val list = repository.readAllCookingRecordData()
             allData.postValue(list)
         }
-        run.join()
+        run.join() //Only proceed once run is completed
     }
 
 
@@ -52,6 +52,8 @@ class CookingRecordViewModel (application: Application) : AndroidViewModel(appli
             getAllData()
         }
     }
+
+    //Function to insert data
 
     fun addCookingRecord(cookingRecord: CookingRecord){
         viewModelScope.launch(Dispatchers.IO) {

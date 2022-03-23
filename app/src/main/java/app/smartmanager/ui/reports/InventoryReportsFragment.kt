@@ -106,9 +106,6 @@ class InventoryReportsFragment : Fragment() {
             dailyInventoryReportAdapter.setDailyInventoryRecordData(inventoryReportsViewModel.inventoryReportWeekly)
             ToastMaker.showToast("Weekly Inventory Report Loaded", GetAppContext.appContext)
 
-//            reportsViewModel.cleaningReportWeekly.observe(viewLifecycleOwner, Observer { data ->
-//                adapter.setDataSet(data)
-//            })
         }
         inventoryReportMonthlyButton.setOnClickListener {
             //Implementing recyclerview

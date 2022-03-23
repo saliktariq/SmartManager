@@ -11,6 +11,7 @@ import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
+//Setting constants to be used by class
 const val CHANNELID = "notification_channel"
 const val CHANNELNAME = "app.smartmanager"
 
@@ -20,6 +21,9 @@ const val CHANNELNAME = "app.smartmanager"
  */
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
+    /*
+    Setting notification title and body
+     */
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         if(remoteMessage.notification != null){
             makeNotification(remoteMessage.notification!!.title!!, remoteMessage.notification!!.body!!)
@@ -55,9 +59,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             val notificationChannel = NotificationChannel(CHANNELID, CHANNELNAME,
             NotificationManager.IMPORTANCE_HIGH)
             notificationManager.createNotificationChannel(notificationChannel)
-
         }
-
         notificationManager.notify(0,builder.build())
 
     }

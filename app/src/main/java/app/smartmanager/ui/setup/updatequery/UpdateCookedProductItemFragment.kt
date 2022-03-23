@@ -47,7 +47,7 @@ class UpdateCookedProductItemFragment : Fragment() {
         val relatedProductSpinner: AppCompatSpinner = fragmentView.findViewById<AppCompatSpinner>(R.id.updateRelatedProduct)
 
         //Arraylist to hold values of related inventory (product) items from the DB
-        var relatedProductInventoryItemsRetrieved = ArrayList<String?>()
+        val relatedProductInventoryItemsRetrieved = ArrayList<String?>()
 
         //Setting arrayAdapter for relatedProductSpinner
         val chooseProductItemAdapter = ArrayAdapter<String>(

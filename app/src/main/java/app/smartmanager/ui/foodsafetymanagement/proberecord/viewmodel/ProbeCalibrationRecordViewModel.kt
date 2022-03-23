@@ -22,9 +22,6 @@ class ProbeCalibrationRecordViewModel(application: Application) : AndroidViewMod
     val getAllProbeCalibrationRecords: LiveData<List<ProbeCalibrationRecord>>
     val getAllProbeNames: LiveData<List<String>>
 
-//    var currentTime: Date = Calendar.getInstance().time
-//    var formattedDate: String = DateFormat.getDateInstance(DateFormat.FULL).format(currentTime)
-
 
     //Retrieve instance of SmartManager's Repository
     private val repository: SmartManagerRepo = SmartManagerRepo.get()

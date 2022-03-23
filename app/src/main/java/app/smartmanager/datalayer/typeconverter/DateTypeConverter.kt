@@ -6,7 +6,8 @@ import java.util.*
 class DateTypeConverter {
 
     /*
-    Created using following Google Android Developers API guide: https://developer.android.com/training/data-storage/room/referencing-data
+    Created using following Google Android Developers API guide:
+     https://developer.android.com/training/data-storage/room/referencing-data
      */
 
     @TypeConverter

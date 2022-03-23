@@ -21,6 +21,8 @@ import app.smartmanager.datalayer.typeconverter.DateTypeConverter
 )
 @TypeConverters(DateTypeConverter::class)
 abstract class SmartManagerDB : RoomDatabase() {
+
+    //Variables to hold all data access objects in the application
     abstract val probeDAO: ProbeDAO
     abstract val supplierDAO: SupplierDAO
     abstract val equipmentDAO: EquipmentDAO
@@ -45,6 +47,7 @@ abstract class SmartManagerDB : RoomDatabase() {
         @Volatile
         private var INSTANCE: SmartManagerDB? = null
 
+        //Creating singleton of the database
         fun getInstance(context: Context): SmartManagerDB {
             synchronized(this) {
                 var instance = INSTANCE

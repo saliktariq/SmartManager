@@ -14,7 +14,6 @@ class ToastMaker {
         fun showToast(message: String?, context: Context?) {
             val duration = Toast.LENGTH_SHORT
             val toast = Toast.makeText(context, message, duration)
-//            toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
         }
 

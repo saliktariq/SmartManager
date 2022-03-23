@@ -28,9 +28,9 @@ class ForgetPassword : Fragment() {
         val fragmentView = inflater.inflate(R.layout.forget_password_fragment, container, false)
         forgetPasswordViewModel = ViewModelProvider(this).get(ForgetPasswordViewModel::class.java)
         val username: TextInputEditText = fragmentView.findViewById<TextInputEditText>(R.id.username)
-        var requestPasswordButton: AppCompatButton = fragmentView.findViewById(R.id.buttonRequestPassword)
-        var setNewPasswordTextView: AppCompatTextView = fragmentView.findViewById(R.id.btnSetNewPassword)
-        var signUpButton: AppCompatTextView = fragmentView.findViewById(R.id.btnSignUp)
+        val requestPasswordButton: AppCompatButton = fragmentView.findViewById(R.id.buttonRequestPassword)
+        val setNewPasswordTextView: AppCompatTextView = fragmentView.findViewById(R.id.btnSetNewPassword)
+        val signUpButton: AppCompatTextView = fragmentView.findViewById(R.id.btnSignUp)
 
         signUpButton.setOnClickListener {
             findNavController().navigate(

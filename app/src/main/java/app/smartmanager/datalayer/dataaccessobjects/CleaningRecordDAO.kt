@@ -25,10 +25,6 @@ interface CleaningRecordDAO {
     @Query("Select * from cleaning_record ORDER BY id DESC")
     fun getAllCleaningRecordData(): List<CleaningRecord>?
 
-//    //Query to retrieve data for last seven days
-//    @Query("SELECT * FROM cleaning_record WHERE timestamp >= :oldDate")
-//    fun cleaningReportWeekly(oldDate: Date): LiveData<List<CleaningRecord>>
-
     //Query to retrieve data for x days
     @Query("SELECT * FROM cleaning_record WHERE timestamp >= :arg0")
     fun cleaningReport(arg0: Date): List<CleaningRecord>

@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="app.smartmanager">
 
+    <!--
+    Setting permission to allow applicaiton to use internet
+    -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,13 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartManager">
 
-        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
-             See README(https://goo.gl/l4GJaQ) for more. -->
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@mipmap/ic_launcher" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message.-->
+
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
@@ -32,6 +29,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--
+        Setting Firebase service to allow Firebase Cloud Messaging
+        -->
 
         <service
             android:name=".MyFirebaseMessagingService"

@@ -146,16 +146,6 @@ class RegisterNewAccount : Fragment() {
                 registerNewAccountViewModel.userAlreadyExists = false
             }
         }
-
-
-
-
-
-
-
-
-
-
         return fragmentView
 
     }

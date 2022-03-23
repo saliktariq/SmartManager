@@ -63,7 +63,7 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
             fragmentView.findViewById<AppCompatSpinner>(R.id.cleaningTaskName)
 
         //Arraylist to hold values retrieved from DB for spinner
-        var cleaningTaskNameDataRetrieved = ArrayList<String>()
+        val cleaningTaskNameDataRetrieved = ArrayList<String>()
 
         //Setting ArrayAdapter for Spinner
         val chooseCleaningTaskNameAdapter = ArrayAdapter<String>(
@@ -132,7 +132,7 @@ class CleaningRecordFragment : Fragment(), CleaningRecordAdapter.CleaningRecordC
     }
 
     override fun onDeleteCleaningRecordClickListener(cleaningRecord: CleaningRecord) {
-        var cleaningRecordViewModel =
+        val cleaningRecordViewModel =
             ViewModelProvider(this).get(CleaningRecordViewModel::class.java)
 
         cleaningRecordViewModel

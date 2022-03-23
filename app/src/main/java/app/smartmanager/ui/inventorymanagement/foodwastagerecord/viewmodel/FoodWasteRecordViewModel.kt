@@ -51,6 +51,7 @@ class FoodWasteRecordViewModel(application: Application) : AndroidViewModel(appl
         }
     }
 
+    //Function to add new data
     fun addFoodWasteRecord(foodWasteRecord: FoodWasteRecord){
         viewModelScope.launch(Dispatchers.IO) {
             repository.addFoodWasteRecord(foodWasteRecord)

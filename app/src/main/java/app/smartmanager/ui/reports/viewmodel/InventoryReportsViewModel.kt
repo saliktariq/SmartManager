@@ -10,6 +10,9 @@ import kotlinx.coroutines.launch
 
 class InventoryReportsViewModel (application: Application) : AndroidViewModel(application){
 
+    /*
+    Variables to hold data for respective reports
+     */
     lateinit var cookingReportDaily: List<CookingRecord>
     lateinit var cookingReportWeekly: List<CookingRecord>
     lateinit var cookingReportMonthly: List<CookingRecord>
@@ -32,9 +35,15 @@ class InventoryReportsViewModel (application: Application) : AndroidViewModel(ap
     private val repository: SmartManagerRepo = SmartManagerRepo.get()
 
     init{
+        /*
+        Using helper function getOldDate() to retrieve date object from x days ago
+         */
         val weekAgo = HelperFunctions.getOldDate(7)
         val dayAgo = HelperFunctions.getOldDate(1)
         val monthAgo = HelperFunctions.getOldDate(30)
+
+        //Initialising the variables in a coroutine
+
         viewModelScope.launch(Dispatchers.IO) {
             cookingReportDaily = repository.generateCookingRecordReport(dayAgo)
             cookingReportWeekly = repository.generateCookingRecordReport(weekAgo)

@@ -7,7 +7,10 @@ import app.smartmanager.helper.Mailer
 import app.smartmanager.repository.SmartManagerRepo
 
 class ForgetPasswordViewModel : ViewModel() {
-
+/*
+This is my own code that I wrote during university module Wireless and Mobile Computing
+The private repository containing commits of this code can be shared upon request for datetime stamps
+ */
 //Variable to contain user email address
 lateinit var emailAddress: String
     var isValidEmail: Boolean = false
@@ -20,10 +23,6 @@ lateinit var emailAddress: String
         repository.getUserDataByEmail(emailAddress)
     }
 
-    /*
-Following code is from my own work that I carried out
-during university project making 'Archelon App'.
- */
 
     //Send Password reset code to email
     suspend fun sendAuthCode() {

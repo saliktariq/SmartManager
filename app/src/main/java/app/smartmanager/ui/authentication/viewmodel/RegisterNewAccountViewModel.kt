@@ -66,10 +66,10 @@ during university project making 'Archelon App'.
 
         //Send email to new user with account details
         Mailer.SendMail(
-            email, "Your new SmartManager account", "Dear $firstName,\\n\\n\" +\n" +
-                    "                        \" Your account is successfully registered.\\n\\n Following are the details of your new account:\\n\\n\\n\" +\n" +
-                    "                        \"Username: $username \\n\" +\n" +
-                    "                        \"Password: $pwd"
+            email, "Your new SmartManager account", "Dear $firstName,\n" +
+                    "                        Your account is successfully registered.\n\n Following are the details of your new account:\n" +
+                    "                        Username: $username \n" +
+                    "                       Password: $pwd"
         )
 
 

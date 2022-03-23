@@ -16,7 +16,7 @@ class SmartManagerRepo private constructor(context: Context) {
 
     /*
     DECLARATION:
-    Code (Lines 20-31) for repository to act as *singleton* implemented following instructions from
+    Code (Lines 26-33) for repository to act as *singleton* implemented following instructions from
     The Big Nerd Ranch Guide at
     https://learning.oreilly.com/library/view/android-programming-the/9780135257555/ch11s04.html
      */
