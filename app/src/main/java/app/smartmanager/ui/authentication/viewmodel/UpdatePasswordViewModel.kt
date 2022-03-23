@@ -1,6 +1,5 @@
 package app.smartmanager.ui.authentication.viewmodel
 
-import android.os.Build
 import androidx.lifecycle.ViewModel
 import app.smartmanager.helper.HelperFunctions
 import app.smartmanager.helper.Mailer
@@ -79,7 +78,7 @@ lateinit var emailAddress: String
         repository.updatePassword(newPassword.hashCode().toLong(), emailAddress)
 
             //Sending email to user indicating that their password is reset and sending information about updated account details
-        Mailer.SendMail(emailAddress,"SmartManager: Your new password","Dear $retrievedFirstName,\n" +
+        Mailer.sendMail(emailAddress,"SmartManager: Your new password","Dear $retrievedFirstName,\n" +
                 "                         Your password is successfully updated.\n Please use the following login details to sign into the App: +\n" +
                 "                        Associated email address: $emailAddress \n" +
                 "                        New password: $newPassword \n")

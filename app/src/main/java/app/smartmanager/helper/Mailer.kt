@@ -15,7 +15,7 @@ The following class is an adaptation of the mentioned github class
  */
 class Mailer {
     companion object {
-        fun SendMail(recipient: String, mailSubject: String, body: String) {
+        fun sendMail(recipient: String, mailSubject: String, body: String) {
             val userName = SMTPAccount.USER
             val password = SMTPAccount.PASSWORD
 

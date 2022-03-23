@@ -1,6 +1,5 @@
 package app.smartmanager.ui.authentication.viewmodel
 
-import android.os.Build
 import androidx.lifecycle.ViewModel
 import app.smartmanager.helper.Mailer
 import app.smartmanager.repository.SmartManagerRepo
@@ -65,7 +64,7 @@ during university project making 'Archelon App'.
         )
 
         //Send email to new user with account details
-        Mailer.SendMail(
+        Mailer.sendMail(
             email, "Your new SmartManager account", "Dear $firstName,\n" +
                     "                        Your account is successfully registered.\n\n Following are the details of your new account:\n" +
                     "                        Username: $username \n" +

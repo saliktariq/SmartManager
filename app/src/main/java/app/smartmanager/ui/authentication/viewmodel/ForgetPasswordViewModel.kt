@@ -1,8 +1,6 @@
 package app.smartmanager.ui.authentication.viewmodel
 
-import android.os.Build
 import androidx.lifecycle.ViewModel
-import app.smartmanager.datalayer.entity.Authentication
 import app.smartmanager.helper.Mailer
 import app.smartmanager.repository.SmartManagerRepo
 
@@ -32,7 +30,7 @@ lateinit var emailAddress: String
             //Retrieving authCode from the fetched dataset
             val authCode = userData.authCode
                 //Send email to new user with account details
-            Mailer.SendMail(emailAddress,"Your new password reset code","Dear ${userData.firstName},\n\n" +
+            Mailer.sendMail(emailAddress,"Your new password reset code","Dear ${userData.firstName},\n\n" +
                     " This is your one time password reset code.\n\n Please use the following code to reset your password.:\n\n\n" +
                     "Associated email address: $emailAddress\n\n" +
                     "Password reset code: $authCode \n")
