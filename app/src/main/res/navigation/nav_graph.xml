@@ -84,7 +84,7 @@
         android:id="@+id/initialSettings"
         android:name="app.smartmanager.ui.setup.Settings"
         tools:layout="@layout/initial_settings_fragment"
-        android:label="Settings" >
+        android:label="Setup" >
         <action
             android:id="@+id/action_initialSettings_to_homeScreen"
             app:destination="@id/homeScreen" />

@@ -34,7 +34,7 @@ android {
 
     defaultConfig {
         applicationId "app.smartmanager"
-        minSdkVersion 30
+        minSdkVersion 30 //change to 30 after test
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"

@@ -129,7 +129,7 @@ android:focusableInTouchMode="true">
                     app:counterEnabled="true"
                     app:counterMaxLength="6"
                     app:errorEnabled="true"
-                    app:helperText="Numeric value only. Example: 4.5"
+                    app:helperText="Numeric value only. Example: 4"
                     app:helperTextEnabled="true"
                     app:hintEnabled="false">
 

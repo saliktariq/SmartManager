@@ -140,13 +140,15 @@
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addCookedProductList" />
+                app:layout_constraintTop_toBottomOf="@id/addCookedProductList" />
             <LinearLayout
                 android:id="@+id/bottomLinearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
+                android:layout_marginTop="@dimen/normalMargin"
+                app:layout_constraintTop_toBottomOf="@id/addStaffTrainingTopic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
