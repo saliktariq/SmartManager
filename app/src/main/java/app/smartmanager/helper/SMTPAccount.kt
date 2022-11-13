@@ -7,7 +7,7 @@ class SMTPAccount {
         SendGrid provide a generous free tier allowance of 100 emails per day,
         if required, client will be switched on paid plan.
          */
-        const val USER: String = "apikey"
-        const val PASSWORD: String = "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"
+        const val USER: String = "######"
+        const val PASSWORD: String = "####################################"
     }
 }
